@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     ##custom app
     'core',
+    'userauths'
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,5 @@ JAZZMIN_SETTINGS = {
 #   "site_logo": "ecomprj/static/assets/imgs/logos/logo.png",
     "copyright": "e-commerse_solutions.com",
 }
+
+AUTH_USER_MODEL = 'userauths.user'
