@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'jazzmin',
-     'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -144,4 +144,4 @@ JAZZMIN_SETTINGS = {
     "copyright": "e-commerse_solutions.com",
 }
 
-AUTH_USER_MODEL = 'userauths.user'
+AUTH_USER_MODEL = 'userauths.User'
