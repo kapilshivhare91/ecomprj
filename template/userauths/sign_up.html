@@ -16,7 +16,8 @@
                 <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
                     <div class="row">
                         <div class="col-lg-6 pr-30 d-none d-lg-block">
-                            <img class="border-radius-15" src="{% static 'assets/imgs/page/login-1.png' %}" alt="login" />
+                            <img class="border-radius-15" src="{% static 'assets/imgs/page/login-1.png' %}"
+                                alt="login" />
                         </div>
                         <div class="col-lg-6 col-md-8">
                             <div class="login_wrp widget-taber_content background-white">
@@ -28,9 +29,10 @@
                                     </div>
                                     <form action="" method="post">
                                         <!-- push is for senisitive data and post for normal -->
-                                        {% csrf_token %}
+                                       
+                                        {% csrf_token %} 
                                         {{form.as_p}}
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <input type="text" required="" name="email" placeholder="Username or Email">
                                         </div>
                                         <div class="form-group">
@@ -47,7 +49,7 @@
                                                 <b class="text-sale">7</b>
                                                 <b class="text-best">5</b>
                                             </span>
-                                        </div>
+                                        </div> -->
                                         <div class="login_footer form-group mb-50">
                                             <div class="custome_cheakbox">
                                                 <input class="form-check-input" type="checkbox" name="checkbox" id="" />
@@ -56,6 +58,25 @@
                                             </div>
                                         </div>
                                         <a class="text-muted" href="#">Forgot password?</a>
+                                </div>
+                                <div class="col-lg-6 pr-30 d-none d-lg-block">
+                                    <div class="card-login mt-115">
+                                        <a href="{% url 'google_login' %}" class="btn btn-google btn-block mb-20">
+                                            <img src="{% static 'assets/imgs/theme/icons/icon-google.svg' %}"
+                                                alt="google" />
+                                            <span>Sign in with Google</span>
+                                        </a>
+                                        <a href="{% url 'facebook_login' %}" class="btn btn-google btn-block mb-20">
+                                            <img src="{% static 'assets/imgs/theme/icons/icon-facebook.svg' %}"
+                                                alt="facebook" />
+                                            <span>Sign in with facebook</span>
+                                        </a>
+                                        <a href="{% url 'apple_login' %}" class="btn btn-apple btn-block mb-20">
+                                            <img src="{% static 'assets/imgs/theme/icons/icon-apple.svg' %}"
+                                                alt="Apple" />
+                                            <span>Sign in with Apple </span>
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-heading btn-block hover-up" name="login">
