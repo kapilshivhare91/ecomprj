@@ -29,3 +29,10 @@ def register_view(request):
         'form' : form,
     }
     return render(request, "userauths/sign_up.html", context )
+
+
+def login_view(request):
+   if request.user.is_authenticated:
+      return redirect("core : index")
+   
+   if request.method == "POST":
