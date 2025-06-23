@@ -1,0 +1,105 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<main class="main pages">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                <span></span>My Account
+            </div>
+        </div>
+    </div>
+    <div class="page-content pt-150 pb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
+                    <div class="row">
+                        <div class="col-lg-6 pr-30 d-none d-lg-block">
+                            <img class="border-radius-15" src="{% static 'assets/imgs/page/login-1.png' %}"
+                                alt="login" />
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <div class="login_wrp widget-taber_content background-white">
+                                <div class="padding_eight_all bg_white">
+                                    <div class="heading_s1">
+                                        <h1 class="mb-5">login</h1>
+                                        <p class="mb-30">Don't have an account? <a href="page-register.html"></a>Create
+                                            here</p>
+                                    </div>
+                                    <div>
+                                        {% if form.errors %}>
+                                        <div class="error-message">
+                                            <strong>{{form.errors}}</strong>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <form action="" method="post">
+                                <!-- push is for senisitive data and post for normal -->
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{form.username}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.email}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.password1}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.password2}}
+                                </div>
+                                <div>
+                                    <div>
+                                        <input type="text" required="" name="email" placeholder="Security code">
+                                    </div>
+                                    <span class="security code">
+                                        <b class="text-new">8</b>
+                                        <b class="text-hot">6</b>
+                                        <b class="text-sale">7</b>
+                                        <b class="text-best">5</b>
+                                    </span>
+                                </div>
+                                <div class="login_footer form-group mb-50">
+                                    <div class="custome_cheakbox">
+                                        <input class="form-check-input" type="checkbox" name="checkbox" id="" />
+                                        <label class="form-check-label" for="exampleCheckbox1"><span>Remember
+                                                me</span>
+                                    </div>
+                                </div>
+                                <a class="text-muted" href="#">Forgot password?</a>
+                        </div>
+                        <div class="col-lg-6 pr-30 d-none d-lg-block">
+                            <div class="card-login mt-115">
+                                <a href="{% url 'google_login' %}" class="btn btn-google btn-block mb-20">
+                                    <img src="{% static 'assets/imgs/theme/icons/icon-google.svg' %}" alt="google" />
+                                    <span>Sign in with Google</span>
+                                </a>
+                                <a href="{% url 'facebook_login' %}" class="btn btn-google btn-block mb-20">
+                                    <img src="{% static 'assets/imgs/theme/icons/icon-facebook.svg' %}"
+                                        alt="facebook" />
+                                    <span>Sign in with facebook</span>
+                                </a>
+                                <a href="{% url 'apple_login' %}" class="btn btn-apple btn-block mb-20">
+                                    <img src="{% static 'assets/imgs/theme/icons/icon-apple.svg' %}" alt="Apple" />
+                                    <span>Sign in with Apple </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-heading btn-block hover-up" name="login">
+                                sign-up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</main>
+{% endblock content %}
