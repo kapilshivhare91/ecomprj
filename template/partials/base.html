@@ -687,6 +687,13 @@
                             </div>
                         </div>
                     </div>
+                    {% if messages %}
+                       {% for message in messages %}
+                    <div class="alert alert-{{ messages.tags}}">
+                        <strong>{{ message }}</strong>
+                    </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </header>
