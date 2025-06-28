@@ -17,7 +17,7 @@
     <!-- Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/fvicon.svg" />
     <!-- template css -->
-<!-- <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"> -->
 
@@ -119,7 +119,7 @@
                 </div>
             </div>
         </div>
-         <header class="header-area header-style-1 header-height-2"> 
+        <header class="header-area header-style-1 header-height-2">
             <div class="mobil-promotion">
                 <span>Grand opening, <strong>Up to 15%</strong> Off all items. Only<strong>3 days</strong>left</span>
             </div>
@@ -341,11 +341,17 @@
                                                     <li><a href="page-account.html"><i
                                                                 class="fi fi-rs-settings-slider mr-10"></i>My Orders</a>
                                                     </li>
+                                                    {% if request.user.is.authenticated %}
                                                     <li>
-                                                        <a href="Page-login.html"><i
+                                                        <a href="{% url 'userauths:sign-out' %}"><i
                                                                 class="fi fi-rs-sign-out mr-10"></i>Sign Out</a>
                                                     </li>
-
+                                                    {% else %}
+                                                    <li>
+                                                        <a href="{% url 'userauths:sign-out' %}"><i
+                                                                class="fi fi-rs-sign-out mr-10"></i>Sign Out</a>
+                                                    </li>
+                                                    {% endif %}
                                                 </ul>
                                             </div>
                                         </div>
@@ -683,7 +689,7 @@
                     </div>
                 </div>
             </div>
-        </header>  
+        </header>
 
 
 
@@ -691,7 +697,7 @@
 
         {% endblock content %}
 
-         <footer class="main">
+        <footer class="main">
             <section class="news-letter mb-15">
                 <div class="container">
                     <div class="row">
@@ -914,17 +920,17 @@
                             </div>
                         </div>
                     </section>
-        </footer> 
+        </footer>
         <!-- Pre-loader starts -->
         <div id="Preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="text-center">
-                    <img src="" alt="" />
+            <div class="preloader d-flex align-items-center justify-content-center">
+                <div class="preloader-inner position-relative">
+                    <div class="text-center">
+                        <img src="" alt="" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
         <!--vendor JS-->
         <script data-cfasync="false"
             src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
