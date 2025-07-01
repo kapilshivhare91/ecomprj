@@ -11,8 +11,18 @@ STATUS_CHOICE = (
 
 STATUS = (
     ("draft", "Draft"),
-    ("shiped", "Shipped"),
-    ("delivered", "Delivered"),
+    ("disabled", "Disabled"),
+    ("rejected", "Rejected"),
+    ("in_review", "In Review"),   
+    ("published", "Published"),
+)
+
+RATING = (
+    ( 1, "★☆☆☆☆"),
+    ( 2, "★★☆☆☆"),
+    ( 3, "★★★☆☆"),
+    ( 4, "★★★★☆"),
+    ( 5, "★★★★★"),
 )
 
 
@@ -82,7 +92,50 @@ class product(models.Model):
     product_status = models.CharField(choices=STATUS, 
     max_length=10, default ="in_review")
 
-    status = models.BooleanField
+    status = models.BooleanField(default=True)
+    in_stock = models.BooleanField(default=True)
+    featured = models.BooleanField(default=False)
+    digital  = models.BooleanField(default=False)
+
+    sku = ShortUUIDField(unique=True, Length=4, max_length=10, prefix="sku", alphabet="1234567890")
+
+    date = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTImeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Products"
+    
+    def product_image(self):
+        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
+    
+    def __str__(self):
+        return self.title
+    
+    def get_percentage(self):
+        new_price = (self.price / self.old_price) * 100
+        return new_price
+    
+class productImages(models.Model):
+    images = models.ImageField(upload_to="product-images", default="product.jpg")
+    product = models.ForeignKey(Product, on_delete=models.SET_NUll, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "product Images"
+
+
+############################################### Cart, Order, OrederItem, and Address  ########################################################
+############################################### Cart, Order, OrederItem, and Address  ########################################################
+############################################### Cart, Order, OrederItem, and Address  ########################################################
+############################################### Cart, Order, OrederItem, and Address  ########################################################
+
+
+class cartOrder(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    price = 
+
+ 
+
 
 
 
