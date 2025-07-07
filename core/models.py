@@ -75,8 +75,7 @@ class vendor(models.Model):
         return self.title
     
 class product(models.Model):
-    pid = ShortUUIDField(unique=True, length=10, max_length=20,
-                         prefix='pro', alphabet='abcdefgh1234')
+    pid = ShortUUIDField(unique=True, length=10, max_length=20, prefix='pro', alphabet='abcdefgh1234')
     
     title = models.CharField(max_length=100 ,default="Product Title")
     image = models.ImageField(upload_to=user_directory_path, default="product.jpg")
@@ -142,6 +141,7 @@ class cartOrder(models.Model):
 
 class CartOrderItem(models.Model):
     order = models.ForeignKey(cartOrder, on_delete=models.CASCADE)
+    invoice_No = models.CharField(max_length=100, default="INV_no-12345") 
     product_status = models.CharField(max_length=200)
     item = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
