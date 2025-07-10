@@ -30,7 +30,7 @@ class Tags(models.Model):
 
 
 def user_directory_path(instance , filename):
-    return 'user_{0}/{1}'.formate(instance.user.id, filename)
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
 
 class category(models.Model):
     cid = ShortUUIDField(unique=True, length=10, max_length=20, prefix='cat', alphabet='abcdefgh1234')
@@ -84,11 +84,11 @@ class product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(category, on_delete=models.SET_NULL, null=True)
 
-    price = models.DecimalField(max_digits=99999999999999999999999, null=False, blank=False, decimal_places=2, default=1.99)
-    old_price = models.DecimalField(max_digits=99999999999999999999999, null=False, blank=False, decimal_places=2, default=2.99)
+    price = models.DecimalField(max_digits=100, null=False, blank=False, decimal_places=2, default=1.99)
+    old_price = models.DecimalField(max_digits=100, null=False, blank=False, decimal_places=2, default=2.99)
 
     specifications = models.TextField(null=True, blank=True )
-    Tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
+    # Tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True, blank=True)
 
     product_status = models.CharField(choices=STATUS, 
     max_length=10, default ="in_review")
@@ -107,7 +107,7 @@ class product(models.Model):
         verbose_name_plural = "Products"
     
     def product_image(self):
-        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
+        return mark_safe('<img src="%s" width="100" height="100" />' % (self.image.url))
     
     def __str__(self):
         return self.title
@@ -131,7 +131,7 @@ class productImages(models.Model):
 
 class cartOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=99999999999, decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=100, decimal_places=2, default="1.99")
     paid_status = models.BooleanField(default=False)
     order_date = models.DateTimeField(auto_now_add=True)
     product_status = models.CharField(choices=STATUS_CHOICE,max_length=30, default="processing")
@@ -146,9 +146,9 @@ class CartOrderItem(models.Model):
     item = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
     quantity = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=99999999999,
+    price = models.DecimalField(max_digits=100,
     decimal_places=2,default="1.99")
-    total = models.DecimalField(max_digits=99999999999,decimal_places=2, default="1.99")
+    total = models.DecimalField(max_digits=100,decimal_places=2, default="1.99")
 
 
  ############################################### product_revew, wishlist and Address  ########################################################
