@@ -3,24 +3,36 @@
 {% block content %}
 
 <p>start-------------------------------------------------------------</p>
-<main>
-    <div>
-        <div>
-            <div>
-                <section>
-                    <div>
-                        <div>
-                            <div>
-                                <div>
-                                    <h1>
-
+<main class="main">
+    <div class="content mb-30">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-4-5">
+                <section class="home-slider position-relative mb-30">
+                    <div class="home-slider-cover mt-30">
+                        <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
+                            <div class="single-hero-slider single-animation-wrap" style="background-image: url({% static %})">
+                                <div class="slider-content">
+                                    <h1 class="display-2 mb-40">
+                                        Don't miss amazing <br> grocery deals
                                     </h1>
-                                    <p></p>
-                                    <form>
-                                        <input type="email" placeholder="Your ">
+                                    <p class="mb-65">Sign up for the daily newsletter</p>
+                                    <form  class="form-subcribe d-flex">
+                                        <input type="email" placeholder="Your email address"/>
+                                        <button class="btn" type="submit">subscribe</button>
                                     </form>
                                 </div>
                             </div>
+                            <div class="single-hero-slider single-animation-wrap" style="background-image: url({ % static % })">
+                                <div class="slider-content">
+                                    <h1 class="display-2 mb-40">
+                                        Fresh vegetables <br> Big discount
+                                    </h1>
+                                    <p class="mb-65">Save up to 50% off on your first order</p>
+                                    <form class="form-subcribe d-flex">
+                                        <input type="email" placeholder="Your email address"/>
+                                        <button class="btn" type="submit">subscribe </button>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </section>
@@ -28,7 +40,7 @@
         </div>
     </div>
 </main>
-
+ 
 <!-- menu-list-->
 <li class="menu-item-has-children">
     <a href="#">Technology</a>
