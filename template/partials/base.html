@@ -1,6 +1,7 @@
 {% load static %}
 
 
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -17,9 +18,13 @@
     <!-- Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/fvicon.svg" />
     <!-- template css -->
-<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/base_header.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/base_footer.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/sign-in.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/sign-up.css' %}">
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
@@ -970,6 +975,23 @@
         <!-- Template js -->
         <script src="{% static './assets/js/main.js?v=5.5' %}"></script>
         <script src="{% static './assets/js/shop.js?v=5.5' %}"></script>
+
+
+<script>
+    window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.product-img').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+        card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+    });
+</script>
+
+
+
 </body>
 
 

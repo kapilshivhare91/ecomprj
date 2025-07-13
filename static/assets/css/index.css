@@ -1,0 +1,157 @@
+/* ------------------ Section: Main Content & Slider ------------------ */
+.main {
+    background-color: #f6f6f6;
+    padding: 20px 0;
+}
+
+.home-slider-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hero-slider-1 {
+    position: relative;
+}
+
+.single-hero-slider {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 60px;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    border-radius: 10px;
+}
+
+.single-hero-slider .slider-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.single-hero-slider .slider-content p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.form-subscribe input[type="email"] {
+    width: 60%;
+    padding: 10px 15px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-subscribe .btn {
+    padding: 10px 25px;
+    border-radius: 0 4px 4px 0;
+    background-color: #3bb77e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-subscribe .btn:hover {
+    background-color: #29a36d;
+}
+
+/* ------------------ Section: Product Grid ------------------ */
+.product-card-wap {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid #e5e5e5;
+}
+
+.product-card-wap:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-img-action-wrap {
+    position: relative;
+}
+
+.product-img img {
+    width: 30%;
+    height: auto;
+    border-bottom: 2px solid #f0f0f0;
+    object-fit: cover;
+}
+
+.product-content-wrap {
+    padding: 15px;
+}
+
+.product-category a {
+    font-size: 13px;
+    color: #3bb77e;
+    text-transform: uppercase;
+}
+
+.product-content-wrap h2 a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+.product-rate-cover {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.product-rate .product-rating {
+    height: 10px;
+    background: #fdd835;
+    width: 90%;
+}
+
+.product-price span {
+    font-size: 18px;
+    color: #3bb77e;
+    font-weight: bold;
+}
+
+.product-price .old-price {
+    font-size: 14px;
+    color: #aaa;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+/* ------------------ Section: Hotline & Social ------------------ */
+.hotline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hotline img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.mobile-social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.mobile-social-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ------------------ Utilities ------------------ */
+.font-sm {
+    font-size: 14px;
+}
+
+.text-brand {
+    color: #3bb77e;
+    font-weight: 600;
+}

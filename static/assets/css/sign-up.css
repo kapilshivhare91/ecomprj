@@ -1,0 +1,135 @@
+/* ---------- Sign-Up Page Enhancements ---------- */
+
+/* Heading & Link */
+.heading_s1 h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+.heading_s1 p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+.heading_s1 p a {
+    color: #1f9d55;
+    text-decoration: underline;
+}
+
+/* Form Fields */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #1f9d55;
+    background: #fff;
+    outline: none;
+}
+
+/* Security Code Styles */
+.security.code {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.security.code b {
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+}
+.text-new {
+    background-color: #3b82f6;
+}
+.text-hot {
+    background-color: #ef4444;
+}
+.text-sale {
+    background-color: #f59e0b;
+}
+.text-best {
+    background-color: #10b981;
+}
+
+/* Social Login Buttons */
+.card-login {
+    background: #f9fafb;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+.card-login .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+.card-login .btn:hover {
+    background-color: #f3f4f6;
+    transform: translateY(-1px);
+}
+.card-login .btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Checkboxes */
+.custome_cheakbox {
+    display: flex;
+    align-items: center;
+}
+.custome_cheakbox input {
+    margin-right: 8px;
+}
+.custome_cheakbox label {
+    font-size: 14px;
+    color: #374151;
+}
+
+/* Forgot Password */
+.text-muted {
+    font-size: 13px;
+    color: #9ca3af;
+}
+.text-muted:hover {
+    color: #1f2937;
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-heading {
+    background-color: #1f9d55;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn-heading:hover {
+    background-color: #15803d;
+}
