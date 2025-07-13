@@ -1,157 +1,493 @@
-/* ------------------ Section: Main Content & Slider ------------------ */
+/* ---------- Main Content Layout ---------- */
 .main {
-    background-color: #f6f6f6;
-    padding: 20px 0;
+    background-color: #f8f9fa;
+    padding: 30px 15px;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.row.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* ---------- Slider Section ---------- */
+.home-slider {
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .home-slider-cover {
-    position: relative;
+    margin-top: 30px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* ---------- Individual Slide ---------- */
 .hero-slider-1 {
     position: relative;
+    display: flex;
+    overflow: hidden;
 }
 
 .single-hero-slider {
+    position: relative;
+    min-height: 500px;
     background-size: cover;
     background-position: center;
-    padding: 100px 60px;
-    color: #fff;
-    text-align: left;
-    position: relative;
-    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px;
+    transition: all 0.5s ease;
 }
 
-.single-hero-slider .slider-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 1.2;
+/* Optional: Dot styles */
+.dot-style-1 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
 }
 
-.single-hero-slider .slider-content p {
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-.form-subscribe input[type="email"] {
-    width: 60%;
-    padding: 10px 15px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.form-subscribe .btn {
-    padding: 10px 25px;
-    border-radius: 0 4px 4px 0;
-    background-color: #3bb77e;
-    border: none;
-    color: #fff;
+.dot-style-1-position-1 span {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
     cursor: pointer;
 }
 
-.form-subscribe .btn:hover {
-    background-color: #29a36d;
+/* ---------- Slider Content ---------- */
+.slider-content {
+    max-width: 600px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* ------------------ Section: Product Grid ------------------ */
-.product-card-wap {
+.slider-content h1.display-2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.slider-content p {
+    font-size: 18px;
+    margin-bottom: 65px;
+}
+
+/* ---------- Subscribe Form ---------- */
+.form-subscribe {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    flex-wrap: wrap;
+}
+
+.form-subscribe input[type="email"] {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
     background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-    border: 1px solid #e5e5e5;
+    color: #333;
+    outline: none;
+    min-width: 250px;
 }
 
-.product-card-wap:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.form-subscribe .btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: #3bb77e;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.product-img-action-wrap {
+.form-subscribe .btn:hover {
+    background-color: #28a96a;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+    .slider-content h1.display-2 {
+        font-size: 32px;
+    }
+
+    .form-subscribe {
+        flex-direction: column;
+    }
+
+    .form-subscribe input,
+    .form-subscribe .btn {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+/* Reset List Style */
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Menu Container */
+ul > li {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Menu Links */
+ul > li > a {
+    display: block;
+    padding: 12px 18px;
+    color: #fff;
+    background-color: #111;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect */
+ul > li > a:hover {
+    background-color: #007bff;
+}
+
+/* Dropdown Menu */
+ul.dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #222;
+    min-width: 200px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    padding: 10px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Show dropdown on hover */
+.menu-item-has-children:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Links */
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+.dropdown li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Nested Dropdown (Level 2) */
+.dropdown .menu-item-has-children {
     position: relative;
 }
 
-.product-img img {
-    width: 30%;
-    height: auto;
-    border-bottom: 2px solid #f0f0f0;
-    object-fit: cover;
+.dropdown .menu-item-has-children > .dropdown {
+    left: 100%;
+    top: 0;
+    margin-left: 1px;
 }
 
+/* Responsive (optional basic support) */
+@media (max-width: 768px) {
+    ul > li {
+        display: block;
+        margin-right: 0;
+    }
+    ul > li > a {
+        padding: 10px 15px;
+    }
+    ul.dropdown {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: #333;
+    }
+}
+
+/* -------- Product Grid Layout -------- */
+.col-lg-1-5 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0 15px;
+}
+
+@media (max-width: 1200px) {
+    .col-lg-1-5 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media (max-width: 992px) {
+    .col-lg-1-5 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+@media (max-width: 768px) {
+    .col-lg-1-5 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 576px) {
+    .col-lg-1-5 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* -------- Product Card Styles -------- */
+.product-card-wap {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+.product-card-wap:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* -------- Product Image -------- */
+.product-img-action-wrap {
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+.product-img img {
+    width: 100%;
+    transition: transform 0.5s ease;
+    border-bottom: 1px solid #eee;
+}
+.product-img:hover img.default-img {
+    transform: scale(1.05);
+}
+.product-img img.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.product-img:hover img.hover-img {
+    opacity: 1;
+}
+
+/* -------- Product Action Buttons -------- */
+.product-action-1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.product-action-1 .action-btn,
+.product-action-1 .action {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    color: #333;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+.product-action-1 .action-btn:hover,
+.product-action-1 .action:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* -------- Product Content -------- */
 .product-content-wrap {
     padding: 15px;
 }
-
 .product-category a {
-    font-size: 13px;
-    color: #3bb77e;
+    font-size: 12px;
+    color: #888;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
-
+.product-content-wrap h2 {
+    font-size: 16px;
+    margin: 5px 0;
+}
 .product-content-wrap h2 a {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
+    color: #222;
     text-decoration: none;
 }
+.product-content-wrap h2 a:hover {
+    color: #0066cc;
+}
 
+/* -------- Rating -------- */
 .product-rate-cover {
-    margin-top: 10px;
     display: flex;
     align-items: center;
+    margin: 5px 0;
+}
+.product-rate {
+    width: 80px;
+    height: 12px;
+    background: #ccc;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.product-rating {
+    height: 100%;
+    background: #f9d006;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.product-rate .product-rating {
-    height: 10px;
-    background: #fdd835;
-    width: 90%;
+/* -------- Pricing -------- */
+.product-price {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
 }
-
-.product-price span {
-    font-size: 18px;
-    color: #3bb77e;
-    font-weight: bold;
-}
-
 .product-price .old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+    font-weight: normal;
+    font-size: 14px;
+}
+/* General Footer Container Styling */
+.container.pb-30 {
+    padding-bottom: 30px;
+    background-color: #111; /* Dark background */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #333;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    height: 1px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+/* Copyright Text */
+.font-sm.mb-0 {
     font-size: 14px;
     color: #aaa;
-    text-decoration: line-through;
-    margin-left: 10px;
 }
 
-/* ------------------ Section: Hotline & Social ------------------ */
+.text-brand {
+    color: #4CAF50; /* Brand highlight color */
+}
+
+/* Hotline Section */
 .hotline {
-    display: flex;
     align-items: center;
+    gap: 12px;
     margin-bottom: 10px;
 }
 
 .hotline img {
-    width: 24px;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.hotline p {
+    margin: 0;
+    font-weight: 500;
+    color: #eee;
+}
+
+.hotline p span {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Mobile Social Icons Section */
+.mobile-social-icon h6 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.mobile-social-icon a {
+    display: inline-block;
     margin-right: 10px;
+    transition: transform 0.3s ease;
 }
 
-.mobile-social-icon {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.mobile-social-icon img {
+.mobile-social-icon a img {
     width: 24px;
     height: 24px;
+    filter: brightness(1.2);
 }
 
-/* ------------------ Utilities ------------------ */
-.font-sm {
-    font-size: 14px;
+.mobile-social-icon a:hover {
+    transform: scale(1.1);
+    filter: brightness(1.5);
 }
 
-.text-brand {
-    color: #3bb77e;
-    font-weight: 600;
+/* Subscribe Text */
+.text-end .font-sm {
+    margin-top: 8px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+/* Responsive Grid Fixes (if not using Bootstrap directly) */
+@media (max-width: 1199px) {
+    .d-none.d-xl-block {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .d-none.d-md-block {
+        display: none !important;
+    }
+
+    .text-end {
+        text-align: left !important;
+    }
 }
