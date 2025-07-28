@@ -5,7 +5,7 @@ from core.models import category, vendor, product, productImages, cartOrder, Car
 # Create your views here.
 def index(request):
 
-    server_products = product.objects.all()
+    server_products = product.objects.all().order_by("-id")
 
     context = { "front_product":server_products }
 

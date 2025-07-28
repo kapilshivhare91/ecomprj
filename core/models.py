@@ -83,6 +83,8 @@ class product(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(category, on_delete=models.SET_NULL, null=True)
+    vendor = models.ForeignKey(vendor, on_delete=models.SET_NULL, null=True)
+
 
     price = models.DecimalField(max_digits=100, null=False, blank=False, decimal_places=2, default=1.99)
     old_price = models.DecimalField(max_digits=100, null=False, blank=False, decimal_places=2, default=2.99)
