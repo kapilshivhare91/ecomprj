@@ -82,8 +82,8 @@
             <div class="product-img-action-wrap">
                 <div class="product-img product-img-zoom">
                     <a href="shop-product-right.html">
-                        <img class="default-img" src="{{ p.image.url }}" alt="{{ p.title }}" />
-                        <img class="hover-img" src="{{ p.image.url }}" alt="{{ p.title }}" />
+                        <img class="default-img" src="{{ p.image.url }}" alt="" />
+                        <img class="hover-img" src="{{ p.image.url }}" alt="" />
                     </a>
                 </div>
                 <div class="product-action-1">
@@ -101,7 +101,10 @@
                     <div class="product-rate d-inline-block">
                         <div class="product-rating" style="width: 90%"></div>
                     </div>
-                    <span class="font-small ml-5 text-muted">({{ p.rating }})</span>
+                    <span class="font-small ml-5 text-muted">{{ p.rating }}</span>
+                </div>
+                <div>
+                    <span class="font-small text-muted">By <a href="vendor-details-1.html">{{p.vendor.title}}</a></span>
                 </div>
                 <div class="product-price">
                     <span>${{ p.price }}</span>
