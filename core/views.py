@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from core.models import category, vendor, product, productImages, cartOrder, CartOrderItem, product_review, wishlist, Address, Tags
 
+
+
 # Create your views here.
 def index(request):
 
@@ -12,6 +14,21 @@ def index(request):
 
     return render(request, 'core/index.html' , context)
 
+
+
+def product_list_view(request):
+    server_products = product.objects.filter(product_status="published").order_by("-id")
+
+    context = { 
+
+        "front_product":server_products
+         
+          }
+
+    return render(request, 'core/product-list.html', context)
+
+
+
 def category_list_view(request):
     categories = category.objects.all()
 
@@ -20,6 +37,7 @@ def category_list_view(request):
     }
 
     return render(request, 'core/category-list.html', context)
+
 
 
 def vendor_list_view(request):

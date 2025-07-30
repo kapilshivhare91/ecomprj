@@ -10,7 +10,8 @@
                 <section class="home-slider position-relative mb-30">
                     <div class="home-slider-cover mt-30">
                         <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                            <div class="single-hero-slider single-animation-wrap" style="background-image: url('{% static 'assets/imgs/banner/menu-banner.jpg' %}')">
+                            <div class="single-hero-slider single-animation-wrap"
+                                style="background-image: url('{% static 'assets/imgs/banner/menu-banner.jpg' %}')">
                                 <div class="slider-content">
                                     <h1 class="display-2 mb-40">
                                         Don't miss amazing <br> grocery deals
@@ -22,7 +23,8 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="single-hero-slider single-animation-wrap" style="background-image: url('{% static 'assets/imgs/banner/menu-banner.jpg' %}')">
+                            <div class="single-hero-slider single-animation-wrap"
+                                style="background-image: url('{% static 'assets/imgs/banner/menu-banner.jpg' %}')">
                                 <div class="slider-content">
                                     <h1 class="display-2 mb-40">
                                         Fresh vegetables <br> Big discount
@@ -93,24 +95,32 @@
                 </div>
             </div>
             {% if p.is_new %}
+
             <div class="product-badges product-badges-position product-badges-mrg">
                 <span class="hot">-{{p.get_Percentage|floatformat:0}}%</span>
-            {% endif %}
+                {% endif %}
             </div>
+            
             <div class="product-content-wrap">
+
                 <div class="product-category">
                     <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
                 </div>
-                <h2><a href="{ 'shop-product-right' }">{{ p.title }}</a></h2>
+
+                <h2><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h2>
+
                 <div class="product-rate-cover">
                     <div class="product-rate d-inline-block">
                         <div class="product-rating" style="width: 90%"></div>
                     </div>
                     <span class="font-small ml-5 text-muted">{{ p.rating }}</span>
                 </div>
+
                 <div>
-                    <span class="font-small text-muted">By <a href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
+                    <span class="font-small text-muted">By <a
+                            href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
                 </div>
+
                 <div class="product-price">
                     <span>${{ p.price }}</span>
                     {% if p.old_price %}
