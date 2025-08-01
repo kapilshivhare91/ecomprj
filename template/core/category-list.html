@@ -107,11 +107,11 @@
                 </h4>
                 <div class="entry-meto font-xs color-grey mt-10 pb-10">
                     <div>
-                        <span class="hit-count has-dot mr-10">Date</span>
+                        <span class="hit-count has-dot mr-10">{{c.category.all.count}} product{{c.category.count|pluralize:"s"}}</span>
                     </div>
                 </div>
             </div>
-        </article>"
+        </article>
         {% endfor %}
     </div>
 </div>

@@ -82,7 +82,7 @@ class product(models.Model):
     description = models.TextField(max_length=100, blank=False, null=False, default="Product Description")
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    category = models.ForeignKey(category, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(category, on_delete=models.SET_NULL, null=True, related_name="category")
     vendor = models.ForeignKey(vendor, on_delete=models.SET_NULL, null=True)
 
 
