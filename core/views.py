@@ -48,3 +48,13 @@ def vendor_list_view(request):
     }
 
     return render(request, 'core/vendor-list.html', context)
+
+def category_product_list_view(request, cid_front):
+    category = category.object.get(cid = cid_front)
+    products = product.objects.filter(product_status="published", category = category)
+
+    context = {
+        "category": category,
+        "products": products,
+    }
+    return render(request, 'core/category-product-list.html', context)
