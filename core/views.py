@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from core.models import category, vendor, product, productImages, cartOrder, CartOrderItem, product_review, wishlist, Address, Tags
+from core.models import Category, Vendor, Product, ProductImages, CartOrder, CartOrderItem, Product_review, Wishlist, Address, Tags
 
 
 
@@ -8,7 +8,7 @@ from core.models import category, vendor, product, productImages, cartOrder, Car
 def index(request):
 
     # server_products = product.objects.all().order_by("-id")
-    server_products = product.objects.filter(product_status="published", featured=True).order_by("-id")
+    server_products = Product.objects.filter(product_status="published", featured=True).order_by("-id")
 
     context = { "front_product":server_products }
 
@@ -17,7 +17,7 @@ def index(request):
 
 
 def product_list_view(request):
-    server_products = product.objects.filter(product_status="published").order_by("-id")
+    server_products = Product.objects.filter(product_status="published").order_by("-id")
 
     context = { 
 
@@ -30,7 +30,7 @@ def product_list_view(request):
 
 
 def category_list_view(request):
-    categories = category.objects.all()
+    categories = Category.objects.all()
 
     context = {
         "categories": categories
@@ -41,20 +41,21 @@ def category_list_view(request):
 
 
 def vendor_list_view(request):
-    vendors = vendor.objects.all()
+    vendors = Vendor.objects.all()
 
     context = {
-        "vendors": vendor
+        "vendors": Vendor
     }
 
     return render(request, 'core/vendor-list.html', context)
 
-def category_product_list_view(request, cid_front):
-    category = category.object.get(cid = cid_front)
-    products = product.objects.filter(product_status="published", category = category)
+def category_product_list_view(request, cid):
+    categorys = Category.objects.get(cid = cid)
+    products = Product.objects.filter(product_status="published", category = Category)
 
     context = {
-        "category": category,
-        "products": products,
+        "category": Category,
+        "products": Product,
     }
     return render(request, 'core/category-product-list.html', context)
+ 

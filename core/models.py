@@ -32,7 +32,7 @@ class Tags(models.Model):
 def user_directory_path(instance , filename):
     return 'user_{0}/{1}'.format(instance.user.id, filename)
 
-class category(models.Model):
+class Category(models.Model):
     cid = ShortUUIDField(unique=True, length=10, max_length=20, prefix='cat', alphabet='abcdefgh1234')
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to="category")
@@ -46,7 +46,7 @@ class category(models.Model):
     def __str__(self):
         return self.title
 
-class vendor(models.Model):
+class Vendor(models.Model):
 
     vid = ShortUUIDField(unique=True, length=10, max_length=20, prefix='ven', alphabet='abcdefgh1234')
 
@@ -74,7 +74,7 @@ class vendor(models.Model):
     def __str__(self):
         return self.title
     
-class product(models.Model):
+class Product(models.Model):
     pid = ShortUUIDField(unique=True, length=10, max_length=20, prefix='pro', alphabet='abcdefgh1234')
     
     title = models.CharField(max_length=100 ,default="Product Title")
@@ -82,8 +82,8 @@ class product(models.Model):
     description = models.TextField(max_length=100, blank=False, null=False, default="Product Description")
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    category = models.ForeignKey(category, on_delete=models.SET_NULL, null=True, related_name="category")
-    vendor = models.ForeignKey(vendor, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="category")
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
 
 
     price = models.DecimalField(max_digits=100, null=False, blank=False, decimal_places=2, default=1.99)
@@ -118,9 +118,9 @@ class product(models.Model):
         new_price = (self.price / self.old_price) * 100
         return new_price
     
-class productImages(models.Model):
+class ProductImages(models.Model):
     images = models.ImageField(upload_to="product-images", default="product.jpg")
-    product = models.ForeignKey(product, on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -131,7 +131,7 @@ class productImages(models.Model):
 ############################################### Cart, Order, OrederItem, and Address  ########################################################
 
 
-class cartOrder(models.Model):
+class CartOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=100, decimal_places=2, default="1.99")
     paid_status = models.BooleanField(default=False)
@@ -142,7 +142,7 @@ class cartOrder(models.Model):
         verbose_name_plural = "Cart Orders"
 
 class CartOrderItem(models.Model):
-    order = models.ForeignKey(cartOrder, on_delete=models.CASCADE)
+    order = models.ForeignKey(CartOrder, on_delete=models.CASCADE)
     invoice_No = models.CharField(max_length=100, default="INV_no-12345") 
     product_status = models.CharField(max_length=200)
     item = models.CharField(max_length=200)
@@ -155,9 +155,9 @@ class CartOrderItem(models.Model):
 
  ############################################### product_revew, wishlist and Address  ########################################################
 
-class product_review(models.Model):
+class Product_review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(product, on_delete = models.SET_NULL, null=True )
+    product = models.ForeignKey(Product, on_delete = models.SET_NULL, null=True )
     review = models.TextField()
     rating = models.IntegerField(choices=RATING, default=None)
     date = models.DateTimeField(auto_now_add=True)
@@ -172,9 +172,9 @@ class product_review(models.Model):
         return self.rating
 
 
-class wishlist(models.Model):
+class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(product, on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
