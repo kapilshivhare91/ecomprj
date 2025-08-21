@@ -4,19 +4,19 @@
 
 <p>start-------------------------------------------------------------</p>
 <main class="main">
-    <div class="content mb-30">
+    <div class="content mb-3">
         <div class="row flex-row-reverse">
-            <div class="col-lg-4-5">
-                <section class="home-slider position-relative mb-30">
-                    <div class="home-slider-cover mt-30">
+            <div class="col-lg-4">
+                <section class="home-slider position-relative mb-3">
+                    <div class="home-slider-cover mt-3">
                         <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
                             <div class="single-hero-slider single-animation-wrap"
-                                style="background-image: url('{% static 'assets/imgs/banner/menu-banner.jpg' %}')">
+                                style="background-image: url('{% static 'assets/imgs/logos/logo.png' %}')">
                                 <div class="slider-content">
-                                    <h1 class="display-2 mb-40">
+                                    <h1 class="display-2 mb-4">
                                         Don't miss amazing <br> grocery deals
                                     </h1>
-                                    <p class="mb-65">Sign up for the daily newsletter</p>
+                                    <p class="mb-6">Sign up for the daily newsletter</p>
                                     <form class="form-subscribe d-flex">
                                         <input type="email" placeholder="Your email address" />
                                         <button class="btn" type="submit">Subscribe</button>
@@ -24,12 +24,12 @@
                                 </div>
                             </div>
                             <div class="single-hero-slider single-animation-wrap"
-                                style="background-image: url('{% static 'assets/imgs/banner/menu-banner.jpg' %}')">
+                                style="background-image: url('{% static 'assets/imgs/logos/logo.png' %}')">
                                 <div class="slider-content">
-                                    <h1 class="display-2 mb-40">
+                                    <h1 class="display-2 mb-4">
                                         Fresh vegetables <br> Big discount
                                     </h1>
-                                    <p class="mb-65">Save up to 50% off on your first order</p>
+                                    <p class="mb-6">Save up to 50% off on your first order</p>
                                     <form class="form-subscribe d-flex">
                                         <input type="email" placeholder="Your email address" />
                                         <button class="btn" type="submit">Subscribe</button>
@@ -77,91 +77,106 @@
 </ul>
 
 <p>Ram Ram Ji ---------------------------------------</p>
-<div class="row">
-    {% for p in front_product %}
-    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-        <div class="product-card-wap mb-30">
-            <div class="product-img-action-wrap">
-                <div class="product-img product-img-zoom">
-                    <a href="shop-product-right.html">
-                        <img class="default-img" src="{{ p.image.url }}" alt="" />
-                        <img class="hover-img" src="{{ p.image.url }}" alt="" />
-                    </a>
-                </div>
-                <div class="product-action-1">
-                    <a aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"></a>
-                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"></a>
-                    <a aria-label="Quick view" class="action" data-bs-toggle="modal"></a>
-                </div>
-            </div>
-            {% if p.is_new %}
-
-            <div class="product-badges product-badges-position product-badges-mrg">
-                <span class="hot">-{{p.get_Percentage|floatformat:0}}%</span>
-                {% endif %}
-            </div>
-            
-            <div class="product-content-wrap">
-
-                <div class="product-category">
-                    <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
-                </div>
-
-                <h2><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h2>
-
-                <div class="product-rate-cover">
-                    <div class="product-rate d-inline-block">
-                        <div class="product-rating" style="width: 90%"></div>
-                    </div>
-                    <span class="font-small ml-5 text-muted">{{ p.rating }}</span>
-                </div>
-
-                <div>
-                    <span class="font-small text-muted">By <a
-                            href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
-                </div>
-
-                <div class="product-price">
-                    <span>${{ p.price }}</span>
-                    {% if p.old_price %}
-                    <span class="old-price">${{ p.old_price }}</span>
-                    {% endif %}
-                </div>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Product List</h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-md-6 my-3 px-2">
+                {% for p in front_product %}
+                <div class="product-card-wap">
+                    <div class="product-img-action-wrap">
+                        <div class="product-img product-img-zoom">
+                            <a href="shop-product-right.html">
+                                <img class="img-fluid default-img" src="{{ p.image.url }}" alt="" />
+                                <img class="img-fluid hover-img" src="{{ p.image.url }}" alt="" />
+                            </a>
+                        </div>
+                        <div class="product-action-1">
+                            <a aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"></a>
+                            <a aria-label="Compare" class="action-btn" href="shop-compare.html"></a>
+                            <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"></a>
+                        </div>
+                    </div>
+
+                    {% if p.is_new %}
+                    <div class="product-badges product-badges-position product-badges-mrg">
+                        <span class="hot">-{{p.get_Percentage|floatformat:0}}%</span>
+                    </div>
+                    {% endif %}
+
+
+                    <div class="product-content-wrap">
+
+                        <div class="product-category">
+                            <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
+                        </div>
+
+                        <h2><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h2>
+
+                        <div class="product-rate-cover">
+                            <div class="product-rate d-inline-block">
+                                <div class="product-rating" style="width: 90%"></div>
+                            </div>
+                            <span class="font-small ml-5 text-muted">{{ p.rating }}</span>
+                        </div>
+
+                        <div>
+                            <span class="font-small text-muted">By <a
+                                    href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
+                        </div>
+
+                        <div class="product-price">
+                            <span>${{ p.price }}</span>
+                            {% if p.old_price %}
+                            <span class="old-price">${{ p.old_price }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
     </div>
-    {% endfor %}
-</div>
+</section>
+
 
 <p>Shyam Shyam Ji ---------------------------------------</p>
 
 <div class="container pb-30">
-    <div class="col-12 mb-30">
-        <div class="footer-bottom"></div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6">
-        <p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">NEST</strong> - HTML ecommerce template</p>
-    </div>
-    <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
-        <div class="hotline d-lg-inline-flex mr-30">
-            <img src="" alt="hotline" />
-            <p>1900 - 6666 <span>Working 8:00 - 22:00</span></p>
+    <div class="row">
+        <div class="col-12 mb-30">
+            <div class="footer-bottom"></div>
         </div>
-        <div class="hotline d-lg-inline-flex">
-            <img src="" alt="hotline" />
-            <p>1900 - 8888 <span>24/7 Support Center</span></p>
+        <div class="col-xl-4 col-lg-6 col-md-6">
+            <p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">NEST</strong> - HTML ecommerce template</p>
         </div>
-    </div>
-    <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
-        <div class="mobile-social-icon">
-            <h6>Follow Us</h6>
-            <a href="#"><img src="" alt="" /></a>
-            <a href="#"><img src="" alt="" /></a>
-            <a href="#"><img src="" alt="" /></a>
-            <a href="#"><img src="" alt="" /></a>
-            <a href="#"><img src="" alt="" /></a>
+        <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
+            <div class="hotline d-lg-inline-flex mr-30">
+                <img src="" alt="hotline" />
+                <p>1900 - 6666 <span>Working 8:00 - 22:00</span></p>
+            </div>
+            <div class="hotline d-lg-inline-flex">
+                <img src="" alt="hotline" />
+                <p>1900 - 8888 <span>24/7 Support Center</span></p>
+            </div>
         </div>
-        <p class="font-sm">Up to 15% discount on your first subscribe</p>
+        <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
+            <div class="mobile-social-icon">
+                <h6>Follow Us</h6>
+                <a href="#"><img src="" alt="" /></a>
+                <a href="#"><img src="" alt="" /></a>
+                <a href="#"><img src="" alt="" /></a>
+                <a href="#"><img src="" alt="" /></a>
+                <a href="#"><img src="" alt="" /></a>
+            </div>
+            <p class="font-sm">Up to 15% discount on your first subscribe</p>
+        </div>
     </div>
 </div>
 <p>end-------------------------------------------------------------</p>
