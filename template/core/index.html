@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+<<<<<<< Updated upstream
 <p>start-------------------------------------------------------------</p>
 <main class="main">
     <div class="content mb-30">
@@ -162,9 +163,70 @@
             <a href="#"><img src="" alt="" /></a>
         </div>
         <p class="font-sm">Up to 15% discount on your first subscribe</p>
+=======
+<!-- Pricing Plan Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Product List</h6>
+            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h1>
+        </div>
+        <div class="row g-3">
+            {% for p in front_product %}
+            <div class="col-md-4">
+                <div class="bg-light text-center pt-5 mt-lg-5">
+                    <h3 class="text-uppercase"><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h3>
+                    <h6 class="text-body mb-5  "> <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
+                    </h6>
+                    <h6 class="text-body mb-5 ">
+                        <span class="font-small">By <a href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
+                    </h6>
+                    <div class="text-center bg-primary p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="size: 80vh; width: 100vh;">
+                                <a href="shop-product-right.html">
+                                    <img class="img-fluid" style="height: 50vh;" src="{{ p.image.url }}" alt="" />
+                                </a>
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between m-1">
+                            <a aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"></a>
+                            <a aria-label="Compare" class="action-btn" href="shop-compare.html"></a>
+                            <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"></a>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span class="font-small ml-5 text-muted">{{p.rating}}</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <i class="bi bi-check2 fs-4 text-primary">
+                                <span class="mx-1">${{ p.price }}</span>
+                            </i>
+                            <i class="bi bi-x fs-4 text-danger">
+                                {% if p.old_price %}
+                                <span class="old-price  ">${{ p.old_price }}</span>
+                                {% endif %}
+                            </i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>
+                                {% if p.is_new %}
+                                <div class="badge bg-success text-white">New</div>
+                                <span class="hot">-{{p.get_Percentage|floatformat:0}}%</span>
+                        </div>
+                        {% endif %}
+                        </span>
+                    </div>
+                    <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+>>>>>>> Stashed changes
     </div>
 </div>
-<p>end-------------------------------------------------------------</p>
-
-
+</div>
+<!-- Pricing Plan End -->
+ 
 {% endblock content %}
