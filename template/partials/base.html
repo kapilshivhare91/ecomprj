@@ -17,114 +17,9 @@
     <meta property="og:image" content="" />
     <!-- Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/fvicon.svg" />
-    <!-- template css -->
-<!-- <link rel="stylesheet" href="{% static 'assets/css/base_header.css' %}"> -->
-<!-- <link rel="stylesheet" href="{% static 'assets/css/base_footer.css' %}"> -->
-<link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
-<!-- <link rel="stylesheet" href="{% static 'assets/css/sign-in.css' %}"> -->
-<!-- <link rel="stylesheet" href="{% static 'assets/css/sign-up.css' %}"> -->
-<link rel="stylesheet" href="{% static 'assets/css/category-list.css' %}">
+    <!-- ----------------bootstrap css------------ -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-
-<!-- ----------------bootstrap css------------ -->
-<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-<<<<<<< Updated upstream
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-</head>
-
-<body>
-    <!-- quick view -->
-    <div class="modal fade custom modal" id="quickviewmodel" tabindex="-1" aria-labelledby="quickviewmodellabel"
-        aria-hidden="">
-        <div class="model-dialog">
-            <div class="model-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
-                            <div class="detail-gallery">
-                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
-                                <!-- main slides -->
-                                <div class="product-image-slider">
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="" alt="product image" />
-                                    </figure>
-                                </div>
-                                <!--thumbnail-->
-                                <div class="slider-nav-thumbnails">
-                                    <div><img src="" alt="product image" /></div>
-                                    <div><img src="" alt="product image" /></div>
-                                    <div><img src="" alt="product image" /></div>
-                                    <div><img src="" alt="product image" /></div>
-                                    <div><img src="" alt="product image" /></div>
-                                    <div><img src="" alt="product image" /></div>
-                                    <div><img src="" alt="product image" /></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                <div class="detail-info-pr-30-pl-30">
-                                    <span class="stock-status out-stack"> Sale Off</span>
-                                    <h2 class="title-detail"><a href="shop-product-right.html"
-                                            class="text-heading">seeds of </a></h2>
-                                    <div class="product-detail-rating">
-                                        <div class="product-rate-cover text-end">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="foot-small ml-5 text-muted">(32 reviews)</span>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix product-price-cover">
-                                        <div class="product-price primary-color float-left">
-                                            <span class="current-price text-brand">$38.85</span>
-                                            <span>
-                                                <span class="save-price fout-md color3-ml-15">26% off </span>
-                                                <span class="old-price font-md ml-15">$52</span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-                                    <div class="detail estralink mb-30">
-                                        <div class="detail-qty border radius">
-                                            <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                            <span class="qty-val">1</span>
-                                            <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
-                                        </div>
-                                        <div class="product-extra-link2">
-                                            <button class="button button-add-to-cart"><i
-                                                    class="fi-rs-shopping-cart"></i>Add to cart</button>
-
-                                        </div>
-                                    </div>
-                                    <div class="font-xs">
-                                        <ol>
-                                            <li class="mb-5">Vendor: <span class="text-brand">Nest</span></li>
-                                            <li class="mb-5">MFG:<span class="text-brand"> Jun 4.2022</span></li>
-                                        </ol>
-=======
     <!-- Icon Font Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="{% static 'assets/css/flaticon/font/flaticon.css' %}" rel="stylesheet">
@@ -142,7 +37,7 @@
 </head>
 
 <body>
-        <!-- Topbar Start -->
+    <!-- Topbar Start -->
     <div class="container-fluid border-bottom d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-4 text-center py-2">
@@ -201,7 +96,8 @@
                         <a href="detail.html" class="dropdown-item">Blog Detail</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
+                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact
+                    <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>
@@ -215,7 +111,8 @@
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="display-1 text-uppercase text-dark mb-lg-4">Pet Shop</h1>
                     <h1 class="text-uppercase text-white mb-lg-4">Make Your Pets Happy</h1>
-                    <p class="fs-4 text-white mb-lg-4">Dolore tempor clita lorem rebum kasd eirmod dolore diam eos kasd. Kasd clita ea justo est sed kasd erat clita sea</p>
+                    <p class="fs-4 text-white mb-lg-4">Dolore tempor clita lorem rebum kasd eirmod dolore diam eos kasd.
+                        Kasd clita ea justo est sed kasd erat clita sea</p>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
@@ -242,8 +139,8 @@
                 <div class="modal-body">
                     <!-- 16:9 aspect ratio -->
                     <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                            allowscriptaccess="always" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -258,7 +155,8 @@
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded" src="{% static 'assets/imgs/home_page/about.jpg' %}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded"
+                            src="{% static 'assets/imgs/home_page/about.jpg' %}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -266,13 +164,14 @@
                         <h6 class="text-primary text-uppercase">About Us</h6>
                         <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
                     </div>
-                    <h4 class="text-body mb-4">Diam dolor diam ipsum tempor sit. Clita erat ipsum et lorem stet no labore lorem sit clita duo justo magna dolore</h4>
+                    <h4 class="text-body mb-4">Diam dolor diam ipsum tempor sit. Clita erat ipsum et lorem stet no
+                        labore lorem sit clita duo justo magna dolore</h4>
                     <div class="bg-light p-4">
                         <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item w-50" role="presentation">
-                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
-                                    aria-selected="true">Our Mission</button>
+                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab"
+                                    aria-controls="pills-1" aria-selected="true">Our Mission</button>
                             </li>
                             <li class="nav-item w-50" role="presentation">
                                 <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
@@ -281,11 +180,22 @@
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
-                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                            <div class="tab-pane fade show active" id="pills-1" role="tabpanel"
+                                aria-labelledby="pills-1-tab">
+                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor
+                                    diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
+                                    sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit.
+                                    Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata
+                                    consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna
+                                </p>
                             </div>
                             <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
-                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor
+                                    diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
+                                    sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit.
+                                    Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata
+                                    consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -294,7 +204,7 @@
         </div>
     </div>
     <!-- About End -->
-    
+
 
     <!-- Services Start -->
     <div class="container-fluid py-5">
@@ -310,7 +220,8 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Boarding</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="">Read More<i
+                                    class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -320,7 +231,8 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Feeding</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="">Read More<i
+                                    class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -330,7 +242,8 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Grooming</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="">Read More<i
+                                    class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -340,7 +253,8 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Training</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="">Read More<i
+                                    class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -350,7 +264,8 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Exercise</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="">Read More<i
+                                    class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -360,7 +275,8 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Treatment</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="">Read More<i
+                                    class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -448,7 +364,9 @@
                         <h6 class="text-dark text-uppercase">Special Offer</h6>
                         <h1 class="display-5 text-uppercase text-white mb-0">Save 50% on all items your first order</h1>
                     </div>
-                    <p class="text-white mb-4">Eirmod sed tempor lorem ut dolores sit kasd ipsum. Dolor ea et dolore et at sea ea at dolor justo ipsum duo rebum sea. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo lorem. Elitr ut dolores magna sit. Sea dolore sed et.</p>
+                    <p class="text-white mb-4">Eirmod sed tempor lorem ut dolores sit kasd ipsum. Dolor ea et dolore et
+                        at sea ea at dolor justo ipsum duo rebum sea. Eos vero eos vero ea et dolore eirmod et. Dolores
+                        diam duo lorem. Elitr ut dolores magna sit. Sea dolore sed et.</p>
                     <a href="" class="btn btn-light py-md-3 px-md-5 me-3">Shop Now</a>
                     <a href="" class="btn btn-outline-light py-md-3 px-md-5">Read More</a>
                 </div>
@@ -472,8 +390,7 @@
                         <h6 class="text-body mb-5">The Best Choice</h6>
                         <div class="text-center bg-primary p-4 mb-2">
                             <h1 class="display-4 text-white mb-0">
-                                <small class="align-top"
-                                    style="font-size: 22px; line-height: 45px;">$</small>49<small
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small
                                     class="align-bottom" style="font-size: 16px; line-height: 40px;">/
                                     Mo</small>
                             </h1>
@@ -505,8 +422,7 @@
                         <h6 class="text-body mb-5">The Best Choice</h6>
                         <div class="text-center bg-dark p-4 mb-2">
                             <h1 class="display-4 text-white mb-0">
-                                <small class="align-top"
-                                    style="font-size: 22px; line-height: 45px;">$</small>99<small
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99<small
                                     class="align-bottom" style="font-size: 16px; line-height: 40px;">/
                                     Mo</small>
                             </h1>
@@ -538,8 +454,7 @@
                         <h6 class="text-body mb-5">The Best Choice</h6>
                         <div class="text-center bg-primary p-4 mb-2">
                             <h1 class="display-4 text-white mb-0">
-                                <small class="align-top"
-                                    style="font-size: 22px; line-height: 45px;">$</small>149<small
+                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149<small
                                     class="align-bottom" style="font-size: 16px; line-height: 40px;">/
                                     Mo</small>
                             </h1>
@@ -673,24 +588,32 @@
                     <div class="owl-carousel testimonial-carousel bg-white p-5">
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-4">
-                                <img class="img-fluid mx-auto" src="{% static 'assets/imgs/home_page/leather.jpg' %}" alt="">
-                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                                <img class="img-fluid mx-auto" src="{% static 'assets/imgs/home_page/leather.jpg' %}"
+                                    alt="">
+                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white"
+                                    style="width: 45px; height: 45px;">
                                     <i class="bi bi-chat-square-quote text-primary"></i>
                                 </div>
                             </div>
-                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum sit ipsum.</p>
+                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At
+                                lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum
+                                sit ipsum.</p>
                             <hr class="w-25 mx-auto">
                             <h5 class="text-uppercase">Client Name</h5>
                             <span>Profession</span>
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-4">
-                                <img class="img-fluid mx-auto" src="{% static 'assets/imgs/home_page/lipstik.jpg' %}" alt="">
-                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                                <img class="img-fluid mx-auto" src="{% static 'assets/imgs/home_page/lipstik.jpg' %}"
+                                    alt="">
+                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white"
+                                    style="width: 45px; height: 45px;">
                                     <i class="bi bi-chat-square-quote text-primary"></i>
                                 </div>
                             </div>
-                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum sit ipsum.</p>
+                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At
+                                lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum
+                                sit ipsum.</p>
                             <hr class="w-25 mx-auto">
                             <h5 class="text-uppercase">Client Name</h5>
                             <span>Profession</span>
@@ -715,7 +638,8 @@
                     <div class="blog-item">
                         <div class="row g-0 bg-light overflow-hidden">
                             <div class="col-12 col-sm-5 h-100">
-                                <img class="img-fluid h-100" src="{% static 'assets/imgs/home_page/pose.jpg' %}" style="object-fit: cover;">
+                                <img class="img-fluid h-100" src="{% static 'assets/imgs/home_page/pose.jpg' %}"
+                                    style="object-fit: cover;">
                             </div>
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
@@ -724,8 +648,10 @@
                                         <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
                                     </div>
                                     <h5 class="text-uppercase mb-3">Dolor sit magna rebum clita rebum dolor</h5>
-                                    <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos dolor</p>
-                                    <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                                    <p>Ipsum sed lorem amet dolor amet duo ipsum amet et dolore est stet tempor eos
+                                        dolor</p>
+                                    <a class="text-primary text-uppercase" href="">Read More<i
+                                            class="bi bi-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -735,14 +661,14 @@
                     <div class="blog-item">
                         <div class="row g-0 bg-light overflow-hidden">
                             <div class="col-12 col-sm-5 h-100">
-                                <img class="img-fluid h-100" src="{% static 'assets/imgs/home_page/russian.jpg' %}" style="object-fit: cover;">
+                                <img class="img-fluid h-100" src="{% static 'assets/imgs/home_page/russian.jpg' %}"
+                                    style="object-fit: cover;">
                             </div>
                             <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
                                         <small class="me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
                                         <small><i class="bi bi-calendar-date me-2"></i>01 Jan, 2045</small>
->>>>>>> Stashed changes
                                     </div>
                                 </div>
                             </div>
@@ -751,85 +677,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< Updated upstream
-        <h1 style="color: orange; border: 2px brown ;">HEADER AREA</h1>
-        <header class="header-area header-style-1 header-height-2">
-            <div class="mobil-promotion">
-                <span>Grand opening, <strong>Up to 15%</strong> Off all items. Only<strong>3 days</strong>left</span>
-            </div>
-            <div class="header-top header-top-ptb-1 d-none d-lg-block">
-                <div class="container">
-                    <div class="row-align-items-center">
-                        <div class="col-xl 3 col-lg-4">
-                            <div class="header-info">
-                                <ul>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">My Account</a></li>
-                                    <li><a href="">wishlist</a></li>
-                                    <li><a href="">Order Tracking</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-4">
-                            <div class="text-center">
-                                <div id="news-flash" class="d-inline-block">
-                                    <ul>
-                                        <li>100% Secure delivery without contecting the couriers</li>
-                                        <li>supper Value Deals - Save more with coupans</li>
-                                        <li>trendy 25 silver jewelry, save up 35% off today</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4">
-                            <div class="header-info header-info-right">
-                                <ul>
-                                    <li>Need help? Call Us: <strong class="text-brand"> + 1800 900</strong></li>
-                                    <li>
-                                        <a class="language-dropdown-active" href="#">English <i
-                                                class="fi-rs-angle-down"></i></a>
-                                        <ul class="language-dropdown">
-                                            <li><a href="#"><img src="{% static 'assets/imgs/theme/flag-fr.png' %}"
-                                                        alt="" /></a></li>
-                                            <li><a href="#"><img src="" alt=""></a></li>
-                                            <li><a href="#"><img src="" alt=""></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a class="language-dropdown-active" href="#"> English <i
-                                                class="fi-rs-angle-small-down"></i></a>
-                                        <ul class="language-dropdown">
-                                            <li>
-                                                <a href="#"><img src="{% static 'asserts/imgs/theme/' %}" alt=""></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'asserts/imgs/theme/' %}" alt=""></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'asserts/imgs/theme/' %}" alt=""></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a class="language-dropdown-active" href="#">USD <i
-                                                class="fi-rs-angle-small-down"></i></a>
-                                        <ul class="language-dropdown">
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-fr.png' %}"
-                                                        alt=""></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme/flag-ru.png' %}"
-                                                        alt="logo" /> </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><img src="{% static 'assets/imgs/theme' %}" alt="" /></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-=======
     </div>
     <!-- Blog End -->
 
@@ -876,10 +723,14 @@
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About
+                            Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our
+                            Services</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The
+                            Team</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest
+                            Blog</a>
                         <a class="text-body" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                     </div>
                 </div>
@@ -887,10 +738,14 @@
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Popular Links</h5>
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About
+                            Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our
+                            Services</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The
+                            Team</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest
+                            Blog</a>
                         <a class="text-body" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                     </div>
                 </div>
@@ -900,848 +755,58 @@
                         <div class="input-group">
                             <input type="text" class="form-control p-3" placeholder="Your Email">
                             <button class="btn btn-primary">Sign Up</button>
->>>>>>> Stashed changes
                         </div>
-                    </div>
                 </div>
             </div>
-            <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
-                <div class="container">
-                    <div class="header-wrap">
-                        <div class="logo logo-width-1">
-                            <a href="index.html"><img src="{% static 'assets/imgs/theme/' %}" alt="logo" /></a>
-                        </div>
-                        <div class="header-right">
-                            <div class="search-style-2">
-                                <form action="#">
-                                    <select class="select-active">
-                                        <option>All Categories</option>
-                                        <option>Milks & Dairies</option>
-                                        <option>Wines & Alcohol</option>
-                                        <option>Clothing & Beauty </option>
-                                        <option>Pet Foods & Tov </option>
-                                        <option>Fast Food</option>
-                                        <option>Baking Food</option>
-                                        <option>Vegitables</option>
-                                        <option>Fresh Seafood</option>
-                                        <option>Noodles & rice</option>
-                                        <option>Ice cream</option>
-                                    </select>
-                                    <input type="text" placeholder="Search for items..." />
-                                </form>
-                            </div>
-                            <div class="header-action-right">
-                                <div class="header-action-2">
-                                    <div class="search-location">
-                                        <form action="#">
-                                            <select class="select active">
-                                                <option>Your location</option>
-                                                <option>Alaonma</option>
-                                                <option>Alaska</option>
-                                                <option>Arizona</option>
-                                                <option>Delaware</option>
-                                                <option>Florida</option>
-                                                <option>Georgia</option>
-                                                <option>Hawaii</option>
-                                                <option>Indiana</option>
-                                                <option>Maryland</option>
-                                                <option>Mevada</option>
-                                                <option>New Jersey</option>
-                                                <option>New Maxico</option>
-                                                <option>New York</option>
-                                            </select>
-                                            <input type="text" placeholder="Search location..." />
-                                        </form>
-                                    </div>
-                                    <div class="header-action-icon-2">
-                                        <a href="shop-compare.html">
-                                            <img class="svgInject" alt="Nest"
-                                                src="{% static 'asserts/imgs/theme/icons/icon-compare.svg' %}" />
-                                            <span class="pro-count blue">3</span>
-                                        </a>
-                                        <a href="shop-compare.html">
-                                            <span class="lable ml-0">Compare</span>
-                                        </a>
-                                    </div>
-                                    <div class="header-action-icon-2">
-                                        <a href="shop-wishlist.html">
-                                            <img class="svgInject" alt="Nest"
-                                                src="{% static 'asserts/imgs/theme/icons/icon-heart.svg' %}" />
-                                            <span class="pro-count blue">6</span>
-                                        </a>
-                                        <a href="shop-wishlist.html">
-                                            <span class="lable">Wishlist</span>
-                                        </a>
-                                        <div class="header-action-icon-2">
-                                            <a class="mini-cart-icon" href="shop-cart.html">
-                                                <img alt="Nest"
-                                                    src="{% static 'asserts/imgs/theme/icons/icon-cart.svg' %}" />
-                                                <span class="pro-count blue">2</span>
-                                            </a>
-                                            <a href="shop-cart.html">
-                                                <img alt="Nest"
-                                                    src="{% static 'asserts/imgs/theme/icons/icon-cart.svg' %}" />
-                                                <span class="lable">Cart</span>
-                                            </a>
-                                            <div class="caft-dropdown-wrap cart-dropdown-hm2">
-                                                <ul>
-                                                    <li>
-                                                        <div class="shopping-cart-img">
-                                                            <a href="shop-product-right.html"><img alt="Nest"
-                                                                    src="{% static 'asserts/imgs/theme/icons/'%}" </a>
-                                                        </div>
-                                                        <div class="shopping-cart-title">
-                                                            <h4><a href="shop-product-right.html">Daisy Casual Bag</a>
-                                                            </h4>
-                                                            <h4><span>1 x</span>$800.00</h4>
-                                                        </div>
-                                                        <div class="shopping-cart-delete">
-                                                            <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="shopping-cart-img">
-                                                            <a href="shop-product-right.html"><img alt="Nest"
-                                                                    src="{% static 'asserts/imgs/theme/icons/' %}" /></a>
-                                                        </div>
-                                                        <div class="shopping-cart-title">
-                                                            <h4><a href="shop-product-right.html">Corduroy shirts</a>
-                                                            </h4>
-                                                            <h4><span>1 x</span>$3200.00</h4>
-                                                        </div>
-                                                        <div class="shopping-cart-delete">
-                                                            <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div class="shopping-cart-footer">
-                                                    <div class="shopping-cart-total">
-                                                        <h4>Total <span>$4000.00</span></h4>
-                                                    </div>
-                                                    <div class="shopping-cart-button">
-                                                        <a href="shop-cart.html" class="outline">view cart</a>
-                                                        <a href="shop-cheakout.html">checkout</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="header-action-icon-2">
-                                            <a href="page-account.html">
-                                                <img alt="Nest" class="svgInject"
-                                                    src="{% static 'asserts/imgs/theme/icons/icon-user.svg' %}" />
-                                            </a>
-                                            <a href="page-account.html">
-                                                <span class="lable ml-0">Account</span>
-                                            </a>
-                                            <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                                                <ul>
-                                                    <li><a href="page-account.html"><i
-                                                                class="fi fi-rs-user mr-10"></i>My Account</a></li>
-                                                    <li><a href="page-account.html"><i
-                                                                class="fi fi-rs-location-alt mr-10"></i>My Orders</a>
-                                                    </li>
-                                                    <li><a href="page-account.html"><i
-                                                                class="fi fi-rs-label mr-10"></i>My Voucher</a></li>
-                                                    <li><a href="shop-wishlist.html"><i
-                                                                class="fi fi-rs-heart mr-10"></i>My wishlist</a></li>
-                                                    <li><a href="page-account.html"><i
-                                                                class="fi fi-rs-settings-slider mr-10"></i>My Orders</a>
-                                                    </li>
-                                                    {% if request.user.is.authenticated %}
-                                                    <li>
-                                                        <a href="{% url 'userauths:sign-out' %}"><i
-                                                                class="fi fi-rs-sign-out mr-10"></i>Sign Out</a>
-                                                    </li>
-                                                    {% else %}
-                                                    <li>
-                                                        <a href="{% url 'userauths:sign-out' %}"><i
-                                                                class="fi fi-rs-sign-out mr-10"></i>Sign Out</a>
-                                                    </li>
-                                                    {% endif %}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-buttom header-buttom-bg-color sticky-bar">
-                    <div class="container">
-                        <div class="header-wrap header-spae-between position-relative">
-                            <div class="logo logo-width-1 d-block-d-lg-none">
-                                <a href="index.html"><img src="{% static 'asserts/imgs/theme/logo.svg' %}"
-                                        alt="logo" /></a>
-                            </div>
-                            <div class="header-nav d-none d-lg-flex">
-                                <div class="main-categori-wrap d-none d-lg-block">
-                                    <a class="categoris-button-active" href="#">
-                                        <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
-                                        <i class="fi-rs-angle-down"></i>
-                                    </a>
-                                    <div class="categories-dropdown-wrap categories dropdown-active-large font-heading">
-                                        <div class="d-flex categori-dropdown-inner">
-                                            <ul>
-                                                <li>
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-1.svg' %}"
-                                                            alt="" />
-                                                        <span>Fruits & Vegetables</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-2.svg' %}"
-                                                            alt="" />
-                                                        <span>Meats & Seafood</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-3.svg' %}"
-                                                            alt="" />
-                                                        <span>Milks & Dairies</span></a>
-                                                </li>
-                                                <li class="d-lg-none">
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-4.svg' %}"
-                                                            alt="" />
-                                                        <span>Wines & Alcohol</span></a>
-                                                </li>
-                                                <li class="d-lg-none">
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-5.svg' %}"
-                                                            alt="" />
-                                                        <span>Clothing & Beauty</span></a>
-                                                </li>
-                                            </ul>
-                                            <ul class="end">
-                                                <li>
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-6.svg' %}"
-                                                            alt="" />
-                                                        <span>Pet Foods & Toys</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-7.svg' %}"
-                                                            alt="" />
-                                                        <span>Fast Food</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-8.svg' %}"
-                                                            alt="" />
-                                                        <span>Baking Food</span></a>
-                                                </li>
-                                                <li class="d-lg-none">
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-9.svg' %}"
-                                                            alt="" />
-                                                        <span>Fresh Seafood</span></a>
-                                                </li>
-                                                <li class="d-lg-none">
-                                                    <a href="shop-grid-right.html"><img
-                                                            src="{% static 'asserts/imgs/theme/icons/category-10.svg' %}"
-                                                            alt="" />
-                                                        <span>Noodles & Rice</span></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="more-categories">
-                                        <span class="icon"></span><span class="heading-sm-1">Show more</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-menu main-menu-padding-1 main-menu-1h-2 d-none d-lg-block font-heading">
-                                <nav>
-                                    <ul>
-                                        <li class="hot-deals"><img src="{% static 'assets/imgs/theme/icons/'%}" alt="">
-                                        </li>
-                                        <li>
-                                            <a class="active" href="index.html">Home<i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html">Home-1</a></li>
-                                                <li><a href="index-2.html">Home-2</a></li>
-                                                <li><a href="index-3.html">Home-3</a></li>
-                                                <li><a href="index-4.html">Home-4</a></li>
-                                                <li><a href="index-5.html">Home-5</a></li>
-                                                <li><a href="index-6.html">Home-6</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="page-about.html">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-right.html">Shop<i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop-grid-right.html">Shop Grid - Right Sidebar</a></li>
-                                                <li><a href="shop-grid-left.html">Shop Grid - left Sidebar</a></li>
-                                                <li><a href="shop-grid-right.html">Shop Grid - Right Sidebar</a></li>
-                                                <li><a href="shop-grid-left.html">Shop Grid - left Sidebar</a></li>
-                                                <li><a href="shop-fullwidth.html">Shop - Wide</a></li>
-                                                <li>
-                                                    <a href="#">Single Product <i class="fi-rs-angle-right"></i></a>
-                                                    <ul class="level-menu">
-                                                        <li><a href="">Product - Right Sidebar</a></li>
-                                                        <li><a href="">Product - left Sidebar</a></li>
-                                                        <li><a href="">Product - no Sidebar</a></li>
-                                                        <li><a href="">Product - Vendor Info</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="shop-filter.html">shop - filter</a></li>
-                                                <li><a href="shop-wishlist.html">shop - wishlist</a></li>
-                                                <li><a href="shop-cart.html">shop - Cart</a></li>
-                                                <li><a href="shop-checkout.html">shop - checkout</a></li>
-                                                <li><a href="shop-compare.html">shop - compare</a></li>
-                                                <li>
-                                                    <a href="#">Shop Invoice<i class="fi-rs-angle-right"></i></a>
-                                                    <ul class="level-menu">
-                                                        <li><a href="Shop-Invoice-1.html">Shop Invoice 1</a></li>
-                                                        <li><a href="Shop-Invoice-2.html">Shop Invoice 2</a></li>
-                                                        <li><a href="Shop-Invoice-3.html">Shop Invoice 3</a></li>
-                                                        <li><a href="Shop-Invoice-4.html">Shop Invoice 4</a></li>
-                                                        <li><a href="Shop-Invoice-5.html">Shop Invoice 5</a></li>
-                                                        <li><a href="Shop-Invoice-6.html">Shop Invoice 6</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Vendors <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="vendors grid.html">Vendors Grid</a></li>
-                                                <li><a href="vendors-list.html">Vendors List</a></li>
-                                                <li><a href="vendors-details-1.html">Vendors details 01</a></li>
-                                                <li><a href="vendors-details-2.html">Vendors details 02</a></li>
-                                                <li><a href="vendors-dashboard.html">Vendors dashboards</a></li>
-                                                <li><a href="vendors-guide.html">Vendors guide</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="position-static">
-                                            <a href="#">Mega menu <i class="fi-rs-angle-down"></i></a>
-                                            <ul class="mega-menu">
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">Fruits & Vegetables</a>
-                                                    <ul>
-                                                        <li><a href="shop-product-right.html">Meat & Poultry</a></li>
-                                                        <li><a href="shop-product-right.html">Fresh Vegetables</a></li>
-                                                        <li><a href="shop-product-right.html">Herbs & Seasonings</a>
-                                                        </li>
-                                                        <li><a href="shop-product-right.html">cuts & sprouts</a></li>
-                                                        <li><a href="shop-product-right.html">Exotic Fruits & veggies
-                                                            </a></li>
-                                                        <li><a href="shop-product-right.html">Packaged Produce</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">Breakfast &Dairy</a>
-                                                    <ul>
-                                                        <li><a href="shop-product-right.html">milk & flavoured Milk</a>
-                                                        </li>
-                                                        <li><a href="shop-product-right.html">Butter & margarine</a>
-                                                        </li>
-                                                        <li><a href="shop-product-right.html">eggs Substitutes</a></li>
-                                                        <li><a href="shop-product-right.html">Marmalades</a></li>
-                                                        <li><a href="shop-product-right.html">sour cream</a></li>
-                                                        <li><a href="shop-product-right.html">Cheese</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">Breakfast &Dairy</a>
-                                                    <ul>
-                                                        <li><a href="shop-product-right.html">Breakfast Sausage</a></li>
-                                                        <li><a href="shop-product-right.html">Dinner Sausage</a></li>
-                                                        <li><a href="shop-product-right.html">Chicken</a></li>
-                                                        <li><a href="shop-product-right.html">Sliced meat</a></li>
-                                                        <li><a href="shop-product-right.html">Wild Caught fishs</a></li>
-                                                        <li><a href="shop-product-right.html">Crab and shellfish</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-34">
-                                                    <div class="menu-banner-wrap">
-                                                        <a href="shop-product-right.html"><img
-                                                                src="{% static 'asserts/imgs/banner/menu-banner.jpg' %}"
-                                                                alt="" /></a>
-                                                        <div class="menu-banner-content">
-                                                            <h4>Hot deals</h4>
-                                                            <h3>Don't miss <br>Trending<br></h3>
-                                                            <div class="menu-banner-price">
-                                                                <span class="new-price text-success">Save to 50%</span>
-                                                            </div>
-                                                            <div class="menu-banner-btn">
-                                                                <a href="shop-product-right.html"><br>Shop now<br></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="menu-banner-discount">
-                                                            <h3>
-                                                                <span>25%</span> off
-                                                            </h3>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="blog-category-grid.html">Blog <i class="fi-rs angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog-category-grid.html">Blog Category Grid</a></li>
-                                                <li><a href="blog-category-list.html">Blog Category list</a></li>
-                                                <li><a href="blog-category-big.html">Blog Category big</a></li>
-                                                <li><a href="blog-category-fullwidth.html">Blog Category wide</a></li>
-                                                <li>
-                                                    <a href="#">Single Post <i class="fi-rs-angle-right"></i></a>
-                                                    <ul class="level-menu level-menu-modify">
-                                                        <li><a href="blog-post-left.html">Left Sidebar</a></li>
-                                                        <li><a href="blog-post-right.html">Right Sidebar</a></li>
-                                                        <li><a href="blog-post-fullwidth.html">No Sidebar</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Pages<i class="fi-rs-angle-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="page-contact.html">Contact</a></li>
-                                                <li><a href="page-account.html">My Account</a></li>
-                                                <li><a href="page-login.html">login</a></li>
-                                                <li><a href="page-register.html">Register</a></li>
-                                                <li><a href="page-forgot-password.html">Forgot password</a></li>
-                                                <li><a href="page-reset-password.html">Reset password</a></li>
-                                                <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
-                                                <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-                                                <li><a href="page-terms.html">Terms of Services</a></li>
-                                                <li><a href="page-494,html">404 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="page-contact.html">Contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="hotline d-none d-lg-flex">
-                            <img src="{% static 'asserts/imgs/theme/icons/icon-headphone.svg' %}" alt="hotline" />
-                            <p>1900 - 888<span>24/7 Support Center</span></p>
-                        </div>
-                        <div class="header-action-icon-2 d-block d-lg-none">
-                            <div class="burger-icon burger-icon-white">
-                                <span class="burger-icon-top"></span>
-                                <span class="burger-icon-mid"></span>
-                                <span class="burger-icon-bottom"></span>
-                            </div>
-                        </div>
-                        <div class="header-action-right d-block d-lg-none">
-                            <div class="header-action-2">
-                                <div class="header-action-icon-2">
-                                    <a href="#">
-                                        <img alt="Nest" src="{% static 'asserts/imgs/theme/icons/icon-1.svg' %}" />
-                                        <span class="pro-count white">4</span>
-                                    </a>
-                                </div>
-                                <div class="header-action-icon-2">
-                                    <a class="mini-cart-icon" href="shop-cart.html">
-                                        <img alt="Nest" src="{% static 'asserts/imgs/theme/icons/icon-1.svg' %}" />
-                                        <span class="pro-count white">2</span>
-                                    </a>
-                                    <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                                        <ul>
-                                            <li>
-                                                <div class="shopping-cart-img">
-                                                    <a href="shop-product-right.html">
-                                                        <img alt="Nest"
-                                                            src="{% static 'asserts/imgs/shop/thumbnail-3.jpg' %}" />
-                                                    </a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="shop-product-right.html">Plain striola Shirts</a></h4>
-                                                    <h3><span>1 x</span>$800.00</h3>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="shopping-cart-img">
-                                                    <a href="shop-product-right.html">
-                                                        <img alt="Nest"
-                                                            src="{% static 'asserts/imgs/shop/thumbnail-4.jpg' %}" />
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="shop-product-right.html">Macbook Pro 2022</a></h4>
-                                                    <h3><span>1 X</span>$3500.00</h3>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="shopping-cart-footer">
-                                            <div class="shopping-cart-total">
-                                                <h4>Total <span>$383.00</span></h4>
-                                            </div>
-                                            <div class="shopping-cart-button">
-                                                <a href="shop-cart.html">viewcart</a>
-                                                <a href="shop-cheakout.html" class="btn">cheakout</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if messages %}
-                       {% for message in messages %}
-                    <div class="alert alert-{{ messages.tags}}">
-                        <strong>{{ message }}</strong>
-                    </div>
-                        {% endfor %}
-                    {% endif %}
-                    <script>
-                        setTimeout(()=>{
-                            $('.alert').alert("close");
-                        }, 3000);
-                    </script>
-                </div>
-            </div>
-<<<<<<< Updated upstream
-        </header>
-
-         <h1 style="color: orange; border: 2px brown ;">header AREA end</h1>
-
-
-
-
-        {% block content %}
-
-        {% endblock content %}
-
-         <h1 style="color: orange; border: 2px brown ;">footer AREA</h1>
-
-
-        <footer class="main">
-            <section class="news-letter mb-15">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="position-relative newsletter-inner">
-                                <div class="newsletter-content">
-                                    <h2 class="mb-20">
-                                        Stay home and get your daily <br /> needs from our shop
-                                    </h2>
-                                    <p class="mb-45">
-                                        Start you'r daily shopping with <span class="text-brand">Nest Mart</span></p>
-                                    <form class="form-subcriber d-flex">
-                                        <input type="email" placeholder="Enter your email address" />
-                                        <button class="btn" type="submit">Subscribe</button>
-                                </div>
-                                <img src="{% static 'assets/imgs/banner/banner-9.png'%}" alt="news-letter" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="featured section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
-                            <div class="banner-left-icon d-flex align-items-center wow fadIn animated">
-                                <div class="banner-icon">
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />
-                                </div>
-                                <div class="banner-text">
-                                    <h3 class="icon-box-title">Best prices & Offers</h3>
-                                    <p>Oders $50 & more</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="banner-left-icon d-flex align-items-center wow fadIn animated">
-                                <div class="banner-icon">
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />
-                                </div>
-                                <div class="banner-text">
-                                    <h3 class="icon-box-title">Free delivery</h3>
-                                    <p>24/7 amazing services</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="banner-left-icon d-flex align-items-center wow fadIn animated">
-                                <div class="banner-icon">
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />
-                                </div>
-                                <div class="banner-text">
-                                    <h3 class="icon-box-title">Great Daily deal</h3>
-                                    <p>When you sign up</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="banner-left-icon d-flex align-items-center wow fadIn animated">
-                                <div class="banner-icon">
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />
-                                </div>
-                                <div class="banner-text">
-                                    <h3 class="icon-box-title">Wide assortment</h3>
-                                    <p>Mega discounts</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="banner-left-icon d-flex align-items-center wow fadIn animated">
-                                <div class="banner-icon">
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-5.svg' %}" alt="" />
-                                </div>
-                                <div class="banner-text">
-                                    <h3 class="icon-box-title">Easy returns</h3>
-                                    <p>Within 30 days</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
-                            <div class="banner-left-icon d-flex align-items-center wow fadIn animated">
-                                <div class="banner-icon">
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-6.svg' %}" alt="" />
-                                </div>
-                                <div class="banner-text">
-                                    <h3 class="icon-box-title">Safe delicery</h3>
-                                    <p>with in 30 days</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-=======
         </div>
-    </div>
+
     <div class="container-fluid bg-dark text-white-50 py-4">
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-white" href="https://freewebsitecode.com/">marketing solution</a>. All Rights Reserved.</p>
+                    <p class="mb-md-0">&copy; <a class="text-white" href="https://freewebsitecode.com/">marketing
+                            solution</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-white" href="https://freewebsitecode.com">code_in_night</a></p>
->>>>>>> Stashed changes
+                    <p class="mb-0">Designed by <a class="text-white"
+                            href="https://freewebsitecode.com">code_in_night</a></p>
                 </div>
-            </section>
-            <section class="section-padding footer-mid">
-                <div class="container pt-15 pb-20">
-                    <div class="row">
-                        <div class="col">
-                            <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0">
-                                <div class="logo mb-30">
-                                    <a href="index.html" class="mb-15"><img
-                                            src="{% static 'assets/imgs/theme/logo.svg' %}" alt=""></a>
-                                    <p class="font-lg text-heading">Awesome grocery store website</p>
-                                </div>
-                                <ul class="contact-info"></ul>
-                                <li>
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt="" />
-                                    <strong>Address: </strong> 123 Street, New York, USA
-                                </li>
-                                <li>
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-contact.svg' %}" alt="" />
-                                    <strong>Call Us:</strong> <a href="tel:+0123456789">+012 345 6789</a>
-                                </li>
-                                <li>
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-email-2.svg' %}" alt="" />
-                                    <strong>Email:</strong> <a href="/cdn-cgl/l/email-protection"></a>
-                                </li>
-                                <li>
-                                    <img src="{% static 'assets/imgs/theme/icons/icon-clock.svg' %}" alt="" />
-                                    <strong>Open time:</strong> 10:00 - 18:00, Mon - Sat
-                                </li>
-                                </ul>
-                            </div>
-                            <div class="footer-link-widget col">
-                                <h4 class="widget-title">Information</h4>
-                                <ul class="footer-list mb-sm-5 mb-md-0">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Delivery Information</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms & conditions</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Support Center</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                </ul>
-                                <div class="footer-link-widget col">
-                                    <h4 class="widget-title">accounts</h4>
-                                    <ul class="footer-list mb-sm-5 mb-md-0">
-                                        <li><a href="#">sign In</a></li>
-                                        <li><a href="#">View Cart</a></li>
-                                        <li><a href="#">My Wishlist</a></li>
-                                        <li><a href="#">Track My Order</a></li>
-                                        <li><a href="#">Help Ticket</a></li>
-                                        <li><a href="#">shipping Details</a></li>
-                                        <li><a href="#">compare products</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer-link-widget col">
-                                    <h4 class="widget-title">corporate</h4>
-                                    <ul class="footer-list mb-sm-5 mb-md-0">
-                                        <li><a href="#">Become a Vendor</a></li>
-                                        <li><a href="#">Affliiate Program</a></li>
-                                        <li><a href="#">Farm Business</a></li>
-                                        <li><a href="#">Farm Careers</a></li>
-                                        <li><a href="#">Our Suppliers</a></li>
-                                        <li><a href="#">Accessibility</a></li>
-                                        <li><a href="#">Promotions</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer-link-widget col">
-                                    <h4 class="widget-title">Popular</h4>
-                                    <ul class="footer-list mb-sm-5 mb-md-0">
-                                        <li><a href="#">MilK & Flavoured Milk</a></li>
-                                        <li><a href="#">Butter & Margarine</a></li>
-                                        <li><a href="#">Eggs Substitutes</a></li>
-                                        <li><a href="#">Marmalades</a></li>
-                                        <li><a href="#">Sour Cream and Dips</a></li>
-                                        <li><a href="#">tea & KOmbucha</a></li>
-                                        <li><a href="#">Cheese</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer-link-widget widget-install-app col"></div>
-                                <h4 class="widget-title">Install App</h4>
-                                <p class="wow fadeIn animated">From App Store or Google Play</p>
-                            </div>
-                            <div class="downlaod-app">
-                                <a href="#" class="hover-up mb-sm-2 mb-lg-0"><img class="active"
-                                        src="{% static 'assets/imgs/theme/app-store'%}"></a>
-                                <a href="#" class="" src="{% static 'assets/imgs/theme/google-play.jpg'%}" alt=""></a>
-                            </div>
-                            <div class="Payment-gateway">
-                                <p>Secured Payment GAteWaysG</p>
-                                <img class="Wow fadeIn animated"
-                                    src="{% static 'assets/imgs/theme/payment-method.png' %}" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <section class="container pb-30">
-                        <div class="row align-items-center">
-                            <div class="col-12 mb-30">
-                                <div class="footer-bottom"></div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
-                                <p class="font=sm mb-0">&copy; 2022, <strong class="text-brand">Nest</strong> -kapil's
-                                    Ecommerce
-                                    store <br />All rights reserved</p>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
-                                <div class="hotline d-lg-inline-flex mr-30">
-                                    <img src="{% static 'assets/imgs/theme/icons/phone-call.svg' %}" alt="hotline" />
-                                    <p>1900-6666 <span> Working 8:00 - 22:00</span></p>
-                                </div>
-                                <div class="hotline d-lg-inline-flex">
-                                    <img src="{% static 'assets/imgs/theme/icons/phone-call.svg'%}" alt="hotline" />
-                                    <p>1900-8888 <span>24/7 Support Center</span></p>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
-                                <div class="mobil-social-icon">
-                                    <h6>Follow Us</h6>
-                                    <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-facebook-white.svg'%}"
-                                            alt="" /></a>
-                                    <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-twitter-white.svg'%}"
-                                            alt="" /></a>
-                                    <a href="#"><img
-                                            src="{% static 'assets/imgs/theme/icons/icon-instagram-white.svg'%}"
-                                            alt="" /></a>
-                                    <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-youtube-white.svg'%}"
-                                            alt="" /></a>
-                                </div>
-                                <p class="font-sm">Up to 15% discount on your first subscribe</p>
-                            </div>
-                        </div>
-                    </section>
-        </footer>
-
-        <h1 style="color: orange; border: 2px brown ;">footer AREA end</h1>
-
-<<<<<<< Updated upstream
-        <!-- Pre-loader starts -->
-        <div id="Preloader-active">
-            <div class="preloader d-flex align-items-center justify-content-center">
-                <div class="preloader-inner position-relative">
-                    <div class="text-center">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--vendor JS-->
-        <script data-cfasync="false"
-            src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
-        <script src="{% static 'asserts/js/vendor/modernizr-3.6.0.min.js' %}"></script>
-        <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
-        <script src="{% static 'assets/js/vendor/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/slick.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/jquery.syotimer.min.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/wow.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/slider-range.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/perfect-scrollerbar.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/magnific-popup.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/slect2.min.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/waypoint.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/counterup.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/jquery.counterdown.min.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/images-loaded.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/isotope.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/scrollup.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/jquery.vticker-min.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/jquery.theia.sticky.js' %}"></script>
-        <script src="{% static 'assets/js/plugins/jquery.elevatezoom.js' %}"></script>
-        <!-- Template js -->
-        <script src="{% static './assets/js/main.js?v=5.5' %}"></script>
-        <script src="{% static './assets/js/shop.js?v=5.5' %}"></script>
-=======
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+                </section>
+                            <!-- Back to Top -->
+                            <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
-    <script src="{% static 'assets/js/owlcarousel/owl.carousel.min.js' %}"></script>
+                            <!-- JavaScript Libraries -->
+                            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                            <script
+                                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                            <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+                            <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+                            <script src="{% static 'assets/js/owlcarousel/owl.carousel.min.js' %}"></script>
 
-    <!-- Template Javascript -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
-
-
-    <h1 style="color: orange; border: 2px brown ;">footer AREA end</h1>
->>>>>>> Stashed changes
+                            <!-- Template Javascript -->
+                            <script src="{% static 'assets/js/main.js' %}"></script>
 
 
-<script>
-    window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-    });
-</script>
+                            <script>
+                                window.addEventListener("load", function () {
+                                    document.body.classList.add("loaded");
+                                });
+                            </script>
 
-<script>
-    document.querySelectorAll('.product-img').forEach(card => {
-        card.addEventListener('mouseenter', () => card.classList.add('hovered'));
-        card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
-    });
-</script>
+                            <script>
+                                document.querySelectorAll('.product-img').forEach(card => {
+                                    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+                                    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+                                });
+                            </script>
 
 
-<!-- ------------------bootstrap js------------- -->
+                            <!-- ------------------bootstrap js------------- -->
 
- <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+                            <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
-
-<<<<<<< Updated upstream
-
 </html>
-=======
-</html>
+
 {% load static %}
->>>>>>> Stashed changes
