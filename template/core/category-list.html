@@ -1,4 +1,4 @@
-{% extends "partials/base.html" %}
+<!-- {% extends "partials/base.html" %} -->
 {% load static %}
 {% block content %}
 
@@ -64,7 +64,7 @@
             <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h1>
         </div>
         <div class="row g-3">
-            {% for c in categories %}
+                    {% for c in categories %}
             <div class="col-md-4">
                 <div class="bg-light text-center pt-5 mt-lg-5">
                     <h3 class="text-uppercase"><a href="{{ c.cid }}">{{ c.title }}</a></h3>
@@ -79,8 +79,9 @@
                     </div>
                     <div class="col text-center p-4">
                         <div class="d-flex align-items-center justify-content-between m-1">
-                            <h5 aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html">Wishlist</h5>
-                            <h5 aria-label="Compare" class="action-btn" href="shop-compare.html">Compare</h5>
+                            <h5 aria-label="Add to Wishlist" class="action-btn"><a href="shop-wishlist.html">Wishlist
+                            </h5></a>
+                            <h5 aria-label="Compare" class="action-btn"><a href="shop-compare.html">Compare</h5></a>
                             <div aria-label="Quick view" class="col" data-bs-toggle="modal">
                                 <h2>{{ c.category.all.count}} product{{c.category.count|pluralize}}</h2>
                             </div>
@@ -89,9 +90,9 @@
                 </div>
                 <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
             </div>
+                {% endfor %}
         </div>
     </div>
-    {% endfor %}
 </div>
 
 {% endblock content %}
