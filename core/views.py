@@ -51,7 +51,7 @@ def vendor_list_view(request):
 
 def category_product_list_view(request, cid):
     category = Category.objects.get(cid = cid)
-    products = Product.objects.filter(product_status="published", category = Category)
+    products = Product.objects.filter(product_status="published", category = category)
 
     context = {
         "category": category,
@@ -59,3 +59,5 @@ def category_product_list_view(request, cid):
     }
     return render(request, 'core/category-product-list.html', context)
  
+def cart_view(request):
+    return render(request, 'core/cart.html')

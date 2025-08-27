@@ -1,16 +1,16 @@
 
 {% block content %}
-<h1> {{ category.name }} </h1>
+<h1> {{ category.title }} </h1>
 
 <div class="container-fluid py-5">
     <div class="container">
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
             <h2 class="text-primary text-uppercase">Category Product List</h2>
-            <h5 class="">we found {{product.count}} product{{products.count|pluralize}}</h5>
+            <h5 class="">we found {{products.count}} product{{products.count|pluralize}}</h5>
             <h6 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h6>
         </div>
         <div class="row g-3">
-            {% for p in front_product %}
+            {% for p in products %}
             <div class="col-md-4">
                 <div class="bg-light text-center pt-5 mt-lg-5">
                     <h3 class="text-uppercase"><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h3>
@@ -63,6 +63,5 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
 

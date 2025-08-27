@@ -11,4 +11,5 @@ urlpatterns = [
     path("vendor-list/", views.vendor_list_view, name = "vendor-list"),
     path("product-list/", views.product_list_view, name = "product-list"),
     path("category-list/<cid>/", views.category_product_list_view, name = "category-product-list"),
+    path("cart/", views.cart_view, name = "cart"),
   ]
