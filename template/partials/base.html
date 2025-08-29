@@ -85,7 +85,29 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="product.html" class="nav-item nav-link">Product</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="userauth:sign-in" class="dropdown-item">Sign In</a>
+                        <a href="sign-up" class="dropdown-item">Sign Up</a>
+                        <a href="log-out" class="dropdown-item">Log Out</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu m-0">
+                        {% for c in categories %}
+                        <a href="{% url 'core:category-product-list' c.cid %}"
+                            class="dropdown-item text-capitalize">
+                            <!-- <img class="m-2" style="height: 50px; width: 50px;" src="{{c.image.url}}"> -->
+                            {{c.title}}</a>
+                        {% endfor %}
+                        <hr>
+                        <a href="{% url 'core:category-list'%}" class="dropdown-item">All categories</a>
+                    </div>
+                </div>
+
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -760,53 +782,53 @@
             </div>
         </div>
 
-    <div class="container-fluid bg-dark text-white-50 py-4">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-white" href="https://freewebsitecode.com/">marketing
-                            solution</a>. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-white"
-                            href="https://freewebsitecode.com">code_in_night</a></p>
-                </div>
-                </section>
-                            <!-- Back to Top -->
-                            <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <div class="container-fluid bg-dark text-white-50 py-4">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-md-0">&copy; <a class="text-white" href="https://freewebsitecode.com/">marketing
+                                solution</a>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">Designed by <a class="text-white"
+                                href="https://freewebsitecode.com">code_in_night</a></p>
+                    </div>
+                    </section>
+                    <!-- Back to Top -->
+                    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-                            <!-- JavaScript Libraries -->
-                            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                            <script
-                                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-                            <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-                            <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
-                            <script src="{% static 'assets/js/owlcarousel/owl.carousel.min.js' %}"></script>
+                    <!-- JavaScript Libraries -->
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+                    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+                    <script src="{% static 'assets/js/owlcarousel/owl.carousel.min.js' %}"></script>
 
-                            <!-- Template Javascript -->
-                            <script src="{% static 'assets/js/main.js' %}"></script>
-
-
-                            <script>
-                                window.addEventListener("load", function () {
-                                    document.body.classList.add("loaded");
-                                });
-                            </script>
-
-                            <script>
-                                document.querySelectorAll('.product-img').forEach(card => {
-                                    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
-                                    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
-                                });
-                            </script>
+                    <!-- Template Javascript -->
+                    <script src="{% static 'assets/js/main.js' %}"></script>
 
 
-                            <!-- ------------------bootstrap js------------- -->
+                    <script>
+                        window.addEventListener("load", function () {
+                            document.body.classList.add("loaded");
+                        });
+                    </script>
 
-                            <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+                    <script>
+                        document.querySelectorAll('.product-img').forEach(card => {
+                            card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+                            card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
+                        });
+                    </script>
+
+
+                    <!-- ------------------bootstrap js------------- -->
+
+                    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
+
 </html>
 
 {% load static %}

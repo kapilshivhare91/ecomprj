@@ -57,7 +57,7 @@ def category_product_list_view(request, cid):
         "category": category,
         "products": products,
     }
-    return render(request, 'core/category-product-list.html', context)
- 
+    return render(request,'core/category-product-list.html', context)
+
 def cart_view(request):
     return render(request, 'core/cart.html')
