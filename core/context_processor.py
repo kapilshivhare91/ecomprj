@@ -5,3 +5,8 @@ def default(request):
     return {
         'categories' :categories,
     }
+def products(request):
+    server_products = Product.objects.all()
+    return {
+        'front_product':server_products,
+    }

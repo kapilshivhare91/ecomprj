@@ -98,8 +98,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
                     <div class="dropdown-menu m-0">
                         {% for c in categories %}
-                        <a href="{% url 'core:category-product-list' c.cid %}"
-                            class="dropdown-item text-capitalize">
+                        <a href="{% url 'core:category-product-list' c.cid %}" class="dropdown-item text-capitalize">
                             <!-- <img class="m-2" style="height: 50px; width: 50px;" src="{{c.image.url}}"> -->
                             {{c.title}}</a>
                         {% endfor %}
@@ -826,7 +825,10 @@
                     <!-- ------------------bootstrap js------------- -->
 
                     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

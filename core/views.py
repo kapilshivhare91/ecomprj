@@ -20,11 +20,8 @@ def product_list_view(request):
     server_products = Product.objects.filter(product_status="published").order_by("-id")
 
     context = { 
-
         "front_product":server_products
-         
           }
-
     return render(request, 'core/product-list.html', context)
 
 
@@ -35,18 +32,15 @@ def category_list_view(request):
     context = {
         "categories": categories
     }
-
     return render(request, 'core/category-list.html', context)
 
 
 
 def vendor_list_view(request):
     vendors = Vendor.objects.all()
-
     context = {
-        "vendors": Vendor
+        "vendors": vendors
     }
-
     return render(request, 'core/vendor-list.html', context)
 
 def category_product_list_view(request, cid):
