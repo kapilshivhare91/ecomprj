@@ -55,3 +55,7 @@ def category_product_list_view(request, cid):
 
 def cart_view(request):
     return render(request, 'core/cart.html')
+
+def contact_view(request):
+    context = {}
+    return render(request, 'core/contact.html', context)
