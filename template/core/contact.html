@@ -3,12 +3,14 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Get in Touch</title>
-    <meta name="description" content="Contact us for any inquiries about orders, products, or support. We're here to help within 24 hours.">
-    
+    <meta name="description"
+        content="Contact us for any inquiries about orders, products, or support. We're here to help within 24 hours.">
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -18,6 +20,7 @@
     <!-- Custom CSS -->
     <link href="{% static 'assets/css/contact-styles.css' %}" rel="stylesheet">
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="hero-section d-flex align-items-center justify-content-center position-relative overflow-hidden">
@@ -27,7 +30,7 @@
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
         </div>
-        
+
         <div class="container text-center text-white position-relative">
             <h1 class="display-2 fw-bold mb-4" data-aos="fade-down">Get in Touch</h1>
             <p class="lead mb-5 fs-3" data-aos="fade-up" data-aos-delay="300">
@@ -37,7 +40,7 @@
                 <i class="bi bi-chevron-down"></i>
             </button>
         </div>
-        
+
         <!-- Gradient Overlay -->
         <div class="hero-overlay"></div>
     </section>
@@ -51,37 +54,82 @@
                     <div class="card-body p-5">
                         <h2 class="h3 fw-bold mb-2">Send us a Message</h2>
                         <p class="text-muted mb-4">Fill out the form and we'll get back to you soon</p>
-                        
-                        <form id="contactForm" novalidate>
+                        <!-- Add the form tag with the POST method and CSRF token for security -->
+                        <form method="post">
+                            {% csrf_token %}
+                            {% if messages %}
+                            <div id="message-container">
+                                {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    setTimeout(function () {
+                                        let alerts = document.querySelectorAll('#message-container .alert');
+                                        alerts.forEach(function (alert) {
+                                            let bsAlert = new bootstrap.Alert(alert);
+                                            bsAlert.close();
+                                        });
+                                    }, 8000);
+                                    {% for message in messages %}
+                                    {% if 'success' in message.tags %}
+                                    new bootstrap.Toast(document.getElementById('successToast')).show();
+                                    {% elif 'error' in message.tags or 'danger' in message.tags %}
+                                    new bootstrap.Toast(document.getElementById('errorToast')).show();
+                                    {% endif %}
+                                    {% endfor %}
+                                });
+                            </script>
+                            {% endif %}
+
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+                                        {{ form.name }}
                                         <label for="name">Full Name</label>
-                                        <div class="invalid-feedback">Please enter your name.</div>
+                                        {% if form.name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.name.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                        {{ form.email }}
                                         <label for="email">Email Address</label>
-                                        <div class="invalid-feedback">Please enter a valid email.</div>
+                                        {% if form.email.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.email.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                {{ form.subject }}
                                 <label for="subject">Subject</label>
-                                <div class="invalid-feedback">Please enter a subject.</div>
+                                {% if form.subject.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.subject.errors.0 }}
+                                </div>
+                                {% endif %}
                             </div>
-                            
+
                             <div class="form-floating mb-4">
-                                <textarea class="form-control" id="message" style="height: 120px" placeholder="Message" required></textarea>
+                                {{ form.message }}
                                 <label for="message">Message</label>
-                                <div class="invalid-feedback">Please enter your message.</div>
+                                {% if form.message.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.message.errors.0 }}
+                                </div>
+                                {% endif %}
                             </div>
-                            
+
                             <button type="submit" class="btn btn-gradient w-100 py-3 position-relative overflow-hidden">
                                 <span class="btn-text">
                                     <i class="bi bi-send me-2"></i>
@@ -97,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
                 <div class="card shadow-lg border-0 overflow-hidden position-relative">
                     <!-- Location Badge -->
@@ -107,22 +155,16 @@
                             Our Location
                         </span>
                     </div>
-                    
+
                     <!-- Map -->
                     <div class="map-container position-relative">
-                        <iframe>
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799160891!2d-74.25987368715491!3d40.697670063849594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1640995200000!5m2!1sen!2s"
-                            width="100%"
-                            height="400"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Our Office Location">
-                        </iframe>
+                        <a href="https://maps.app.goo.gl/GqzSnCE7JNSuknES8" target="_blank">
+                            <img src="{% static 'assets/imgs/logos/iiitbbsr.jpg' %}" alt="Our Office Location"
+                                width="100%" height="400" style="object-fit: cover; border-radius: 8px;">
+                        </a>
                         <div class="map-overlay"></div>
                     </div>
-                    
+
                     <!-- Map Info -->
                     <div class="card-body bg-glass p-4">
                         <h5 class="fw-bold">Visit Our Office</h5>
@@ -143,7 +185,7 @@
                 <h2 class="display-6 fw-bold">Quick Contact</h2>
                 <p class="lead text-muted">Get in touch with us through any of these channels</p>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-md-4">
                     <a href="tel:+01234567890" class="text-decoration-none">
@@ -160,7 +202,7 @@
                         </div>
                     </a>
                 </div>
-                
+
                 <div class="col-md-4">
                     <a href="mailto:info@example.com" class="text-decoration-none">
                         <div class="card h-100 border-0 shadow contact-card glass-card">
@@ -176,7 +218,7 @@
                         </div>
                     </a>
                 </div>
-                
+
                 <div class="col-md-4">
                     <a href="https://maps.google.com" target="_blank" class="text-decoration-none">
                         <div class="card h-100 border-0 shadow contact-card glass-card">
@@ -203,56 +245,64 @@
                         <h2 class="display-6 fw-bold">Frequently Asked Questions</h2>
                         <p class="lead text-muted">Find quick answers to common questions</p>
                     </div>
-                    
+
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item border-0 shadow-sm mb-3 rounded">
                             <h3 class="accordion-header">
-                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
                                     How long does shipping take?
                                 </button>
                             </h3>
                             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    We offer standard shipping (5-7 business days) and express shipping (2-3 business days). All orders are processed within 24 hours.
+                                    We offer standard shipping (5-7 business days) and express shipping (2-3 business
+                                    days). All orders are processed within 24 hours.
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item border-0 shadow-sm mb-3 rounded">
                             <h3 class="accordion-header">
-                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <button class="accordion-button collapsed fw-semibold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
                                     What is your return policy?
                                 </button>
                             </h3>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    We offer a 30-day return policy for all items in original condition. Returns are free and can be initiated through your account dashboard.
+                                    We offer a 30-day return policy for all items in original condition. Returns are
+                                    free and can be initiated through your account dashboard.
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item border-0 shadow-sm mb-3 rounded">
                             <h3 class="accordion-header">
-                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <button class="accordion-button collapsed fw-semibold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
                                     Do you offer international shipping?
                                 </button>
                             </h3>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    Yes, we ship to over 50 countries worldwide. International shipping takes 7-14 business days depending on your location.
+                                    Yes, we ship to over 50 countries worldwide. International shipping takes 7-14
+                                    business days depending on your location.
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item border-0 shadow-sm mb-3 rounded">
                             <h3 class="accordion-header">
-                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <button class="accordion-button collapsed fw-semibold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4">
                                     How can I track my order?
                                 </button>
                             </h3>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted">
-                                    Once your order ships, you'll receive a tracking number via email. You can also track your order in real-time through our website.
+                                    Once your order ships, you'll receive a tracking number via email. You can also
+                                    track your order in real-time through our website.
                                 </div>
                             </div>
                         </div>
@@ -265,25 +315,30 @@
         <section class="text-center" data-aos="fade-up" data-aos-delay="1100">
             <h2 class="h3 fw-bold mb-3">Follow Us</h2>
             <p class="text-muted mb-4">Stay connected on social media for updates and news</p>
-            
+
             <div class="d-flex justify-content-center gap-3 mb-5">
-                <a href="https://facebook.com" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Facebook">
+                <a href="https://facebook.com" target="_blank" class="social-link" data-bs-toggle="tooltip"
+                    title="Facebook">
                     <i class="bi bi-facebook"></i>
                 </a>
-                <a href="https://twitter.com" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Twitter">
+                <a href="https://twitter.com" target="_blank" class="social-link" data-bs-toggle="tooltip"
+                    title="Twitter">
                     <i class="bi bi-twitter"></i>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="social-link" data-bs-toggle="tooltip" title="Instagram">
+                <a href="https://instagram.com" target="_blank" class="social-link" data-bs-toggle="tooltip"
+                    title="Instagram">
                     <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link" data-bs-toggle="tooltip" title="LinkedIn">
+                <a href="https://linkedin.com" target="_blank" class="social-link" data-bs-toggle="tooltip"
+                    title="LinkedIn">
                     <i class="bi bi-linkedin"></i>
                 </a>
-                <a href="https://youtube.com" target="_blank" class="social-link" data-bs-toggle="tooltip" title="YouTube">
+                <a href="https://youtube.com" target="_blank" class="social-link" data-bs-toggle="tooltip"
+                    title="YouTube">
                     <i class="bi bi-youtube"></i>
                 </a>
             </div>
-            
+
             <!-- Newsletter Signup -->
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -310,7 +365,7 @@
                 Message sent successfully! 🚀 We'll get back to you within 24 hours.
             </div>
         </div>
-        
+
         <div id="errorToast" class="toast" role="alert">
             <div class="toast-header bg-danger text-white">
                 <i class="bi bi-exclamation-triangle me-2"></i>
@@ -330,6 +385,7 @@
     <!-- Custom JavaScript -->
     <script src="{% static 'assets/js/contact-script.js' %}"></script>
 </body>
+
 </html>
 
 {% endblock content %}

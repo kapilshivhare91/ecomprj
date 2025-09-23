@@ -1,127 +1,304 @@
 {% extends 'partials/base.html' %}
 {% load static %}
 {% block content %}
-<h1>Product List</h1>
-
-<!-- Old code end -->
-<!-- <div class="row">
-    {% for p in front_product %}
-
-    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-        <div class="product-card-wap mb-30">
-            <div class="product-img-action-wrap">
-                <div class="product-img product-img-zoom">
-                    <a href="shop-product-right.html">
-                        <img class="default-img" src="p.image.url " alt="" />
-                        <img class="hover-img" src=" p.image.url " alt="" />
-                    </a>
-                </div>
-                <div class="product-action-1">
-                    <a aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"></a>
-                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"></a>
-                    <a aria-label="Quick view" class="action" data-bs-toggle="modal"></a>
-                </div>
-            </div>
-            {% if p.is_new %}
-
-            <div class="product-badges product-badges-position product-badges-mrg">
-                <span class="hot">-{{p.get_Percentage|floatformat:0}}%</span>
-                {% endif %}
-            </div>
-
-            <div class="product-content-wrap">
-
-                <div class="product-category">
-                    <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
-                </div>
-
-                <h2><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h2>
-
-                <div class="product-rate-cover">
-                    <div class="product-rate d-inline-block">
-                        <div class="product-rating" style="width: 90%"></div>
-                    </div>
-                    <span class="font-small ml-5 text-muted">{{ p.rating }}</span>
-                </div>
-
-                <div>
-                    <span class="font-small text-muted">By <a
-                            href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
-                </div>
-
-                <div class="product-price">
-                    <span>${{ p.price }}</span>
-                    {% if p.old_price %}
-                    <span class="old-price">${{ p.old_price }}</span>
-                    {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Pet Shop</title>
+    <meta name="description" content="Discover the latest pet products and best deals curated for you">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/products-list.css' %}">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom sticky-top">
+        <div class="container-xl">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="brand-icon me-2">🏠</div>
+                <span class="brand-text">PET SHOP</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SERVICE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PRODUCT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PAGES</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-gradient me-3">CONTACT →</button>
+                    <button class="btn btn-link position-relative me-2" id="wishlistBtn">
+                        <i data-lucide="heart"></i>
+                    </button>
+                    <button class="btn btn-link position-relative" id="cartBtn">
+                        <i data-lucide="shopping-cart"></i>
+                        <span class="cart-badge">{{ cart_count|default:0 }}</span>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{% endfor %} -->
-<!-- Old code end -->
+    </nav>
 
-
-<!-- Pricing Plan Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase">Product List</h6>
-            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h1>
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: linear-gradient(135deg, hsl(120 65% 45% / 0.9), hsl(120 70% 35% / 0.8)), url('{% static 'images/hero-pets.jpg' %}');">
+        <div class="hero-content text-center text-white">
+            <h1 class="hero-title" data-aos="fade-down" data-aos-duration="800">Our Products</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                Discover the latest arrivals and best deals curated for you
+            </p>
+            <div class="badge bg-white bg-opacity-20 text-white border border-white border-opacity-30 backdrop-blur fs-6 px-4 py-2">
+                {{ products.count }} Products Available
+            </div>
         </div>
-        <div class="row g-3">
-            {% for p in front_product %}
-            <div class="col-md-4">
-                <div class="bg-light text-center pt-5 mt-lg-5">
-                    <h3 class="text-uppercase"><a href="{% url 'core:cart' %}">{{ p.title }}</a></h3>
-                    <h6 class="text-body mb-5  "> <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
-                    </h6>
-                    <h6 class="text-body mb-5 ">
-                        <span class="font-small">By <a href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
-                    </h6>
-                    <div class="text-center bg-primary p-4 mb-2">
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top" style="size: 80vh; width: 100vh;">
-                                <a href="shop-product-right.html">
-                                    <img class="img-fluid" style="height: 50vh;" src="{{ p.image.url }}" alt="" />
-                                </a>
-                            </small>
-                        </h1>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-bar bg-white shadow-sm" data-aos="slide-down" data-aos-duration="600">
+        <div class="container-xl">
+            <div class="row align-items-center py-3">
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <select class="form-select" id="categoryFilter">
+                                <option value="all">All Categories</option>
+                                {% for category in categories %}
+                                <option value="{{ category.slug }}">{{ category.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" id="priceFilter">
+                                <option value="all">All Prices</option>
+                                <option value="0-25">$0 - $25</option>
+                                <option value="25-50">$25 - $50</option>
+                                <option value="50-100">$50 - $100</option>
+                                <option value="100+">$100+</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" id="sortFilter">
+                                <option value="newest">Newest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="text-center p-4">
-                        <div class="d-flex align-items-center justify-content-between m-1">
-                            <h5 aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"></h5>
-                            <h5 aria-label="Compare" class="action-btn" href="shop-compare.html"></h5>
-                            <h5 aria-label="Quick view" class="action-btn" data-bs-toggle="modal"></h5>
+                </div>
+                <div class="col-lg-6">
+                    <div class="search-container position-relative">
+                        <input type="text" class="form-control ps-5" id="searchInput" placeholder="Search products...">
+                        <i data-lucide="search" class="search-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-5">
+        <div class="container-xl">
+            <div class="row g-4" id="productsGrid">
+                {% for product in products %}
+                <div class="col-xl-3 col-lg-4 col-md-6 product-item" 
+                     data-category="{{ product.category.slug }}" 
+                     data-price="{{ product.price }}"
+                     data-aos="zoom-in" 
+                     data-aos-duration="600" 
+                     data-aos-delay="{{ forloop.counter0|add:100 }}">
+                    <div class="product-card h-100">
+                        <div class="product-image-container position-relative overflow-hidden">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image w-100">
+                            {% if product.is_new %}
+                            <span class="badge badge-new">NEW</span>
+                            {% endif %}
+                            {% if product.discount %}
+                            <span class="badge badge-sale">-{{ product.discount }}%</span>
+                            {% endif %}
+                            <div class="product-overlay">
+                                <button class="btn btn-sm btn-light quick-view-btn" data-product-id="{{ product.id }}">
+                                    <i data-lucide="eye"></i> Quick View
+                                </button>
+                                <button class="btn btn-sm btn-light wishlist-btn" data-product-id="{{ product.id }}">
+                                    <i data-lucide="heart"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="bg-success font-small ml-5 text-muted">{{p.rating}}</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <i class="bi bi-check2 fs-4 text-primary">
-                                <span class="mx-1">${{ p.price }}</span>
-                            </i>
-                            <i class="bi bi-x fs-4 text-danger">
-                                {% if p.old_price %}
-                                <span class="old-price  ">${{ p.old_price }}</span>
+                        <div class="product-info p-3">
+                            <h5 class="product-name">{{ product.name }}</h5>
+                            <div class="product-rating mb-2">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= product.rating %}
+                                    <i data-lucide="star" class="star filled"></i>
+                                    {% else %}
+                                    <i data-lucide="star" class="star"></i>
+                                    {% endif %}
+                                {% endfor %}
+                                <span class="rating-text">({{ product.reviews }} reviews)</span>
+                            </div>
+                            <div class="product-price-section">
+                                {% if product.original_price %}
+                                <span class="original-price">${{ product.original_price }}</span>
                                 {% endif %}
-                            </i>
+                                <span class="current-price">${{ product.price }}</span>
+                            </div>
+                            <button class="btn btn-gradient w-100 mt-3 add-to-cart-btn" data-product-id="{{ product.id }}">
+                                <i data-lucide="shopping-cart"></i> Add to Cart
+                            </button>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span><strong> {% if p.is_new %} <div class="badge bg-success text-white">New
-                        </div>
-                        <span class="hot">-{{p.get_Percentage|floatformat:0}}%</strong> </span>
                     </div>
-                    {% endif %}
-                    </span>
                 </div>
-                <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                {% empty %}
+                <div class="col-12">
+                    <div class="text-center py-5">
+                        <h3 class="text-muted">No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <nav aria-label="Products pagination" class="mt-5">
+                <ul class="pagination justify-content-center" data-aos="fade-in">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                            <i data-lucide="chevron-left"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <li class="page-item active">
+                        <span class="page-link btn-gradient">{{ num }}</span>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+
+            <!-- Load More Button (Alternative to pagination) -->
+            <div class="text-center mt-4" id="loadMoreContainer" style="display: none;">
+                <button class="btn btn-gradient btn-lg px-5" id="loadMoreBtn">
+                    <span class="btn-text">Load More Products</span>
+                    <div class="spinner-border spinner-border-sm ms-2" style="display: none;"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quick View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalImage" src="" alt="" class="w-100 rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modalTitle"></h4>
+                            <div id="modalRating" class="mb-3"></div>
+                            <div id="modalPrice" class="mb-3"></div>
+                            <p id="modalDescription"></p>
+                            <div class="quantity-selector mb-3">
+                                <label class="form-label">Quantity:</label>
+                                <div class="input-group w-auto">
+                                    <button class="btn btn-outline-secondary" type="button" id="decreaseQty">-</button>
+                                    <input type="number" class="form-control text-center" id="quantityInput" value="1" min="1" style="width: 80px;">
+                                    <button class="btn btn-outline-secondary" type="button" id="increaseQty">+</button>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-gradient" id="modalAddToCart">Add to Cart</button>
+                                <button class="btn btn-outline-primary" id="modalBuyNow">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {% endfor %}
-</div>
-<!-- Pricing Plan End -->
 
+    <!-- Floating Cart -->
+    <div class="floating-cart" id="floatingCart">
+        <button class="btn btn-primary rounded-circle position-relative">
+            <i data-lucide="shopping-cart"></i>
+            <span class="cart-count">{{ cart_count|default:0 }}</span>
+        </button>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <button class="btn btn-primary rounded-circle">
+            <i data-lucide="arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'assets/js/products-list.js' %}"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
 {% endblock %}

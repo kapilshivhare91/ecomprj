@@ -1,4 +1,162 @@
-{% extends 'partials/base.html' %}
+{% extends "partials/base.html" %}
+{% load static %}
 {% block content %}
-<h1>hiii this is for cart</h1>
-{% endblock content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop - Shopping Cart</title>
+    <meta name="description" content="Modern e-commerce shopping cart with smooth animations and responsive design. Add, remove, and checkout your favorite pet products.">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/cart-styles.css' %}">
+</head>
+<body>
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+        <div id="cart-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <div class="toast-icon me-2">
+                    <i class="fas fa-check-circle text-success"></i>
+                </div>
+                <strong class="me-auto" id="toast-title">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-message">
+                Item updated successfully
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="cart-header sticky-top">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-back me-3" onclick="continueShopping()">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <div>
+                            <h1 class="h2 mb-1 fw-bold">Shopping Cart</h1>
+                            <p class="text-muted mb-0 small">
+                                <span id="item-count">0</span> item<span id="item-plural">s</span> ready for checkout
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container py-4">
+            <!-- Cart Content -->
+            <div id="cart-content" class="row g-4">
+                <!-- Cart Items Column -->
+                <div class="col-lg-8">
+                    <div id="cart-items" class="cart-items">
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Cart Summary Column -->
+                <div class="col-lg-4">
+                    <div class="cart-summary sticky-top" data-aos="fade-left" data-aos-delay="200">
+                        <div class="card cart-card shadow-sm">
+                            <div class="card-body">
+                                <!-- Summary Header -->
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="summary-icon me-3">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title mb-1">Order Summary</h5>
+                                        <p class="card-text small text-muted mb-0">
+                                            <span id="summary-count">0</span> item<span id="summary-plural">s</span> in your cart
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Summary Details -->
+                                <div class="summary-details mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">Subtotal</span>
+                                        <span class="fw-medium">$<span id="subtotal">0.00</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">Shipping</span>
+                                        <span class="fw-medium" id="shipping-display">$0.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">Tax</span>
+                                        <span class="fw-medium">$<span id="tax">0.00</span></span>
+                                    </div>
+                                    <div id="savings-row" class="d-flex justify-content-between mb-2" style="display: none !important;">
+                                        <span class="text-primary">You save</span>
+                                        <span class="fw-medium text-primary">-$<span id="savings">0.00</span></span>
+                                    </div>
+                                    <hr class="my-3">
+                                    <div class="d-flex justify-content-between">
+                                        <span class="h6 mb-0">Total</span>
+                                        <span class="h6 mb-0 text-primary animated-total">$<span id="total">0.00</span></span>
+                                    </div>
+                                </div>
+
+                                <!-- Checkout Button -->
+                                <button class="btn checkout-btn w-100 mb-3" onclick="proceedToCheckout()">
+                                    <i class="fas fa-credit-card me-2"></i>
+                                    Proceed to Checkout
+                                </button>
+
+                                <!-- Security Badge -->
+                                <div class="security-badge text-center">
+                                    <div class="security-dot me-2"></div>
+                                    <small class="text-muted">Secure 256-bit SSL encryption</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty Cart State -->
+            <div id="empty-cart" class="text-center py-5" style="display: none;">
+                <div class="empty-cart-icon mb-4" data-aos="zoom-in">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h2 class="h3 mb-3" data-aos="fade-up" data-aos-delay="100">Your cart is empty</h2>
+                <p class="text-muted mb-4 mx-auto" style="max-width: 400px;" data-aos="fade-up" data-aos-delay="200">
+                    Looks like you haven't added anything to your cart yet. Start shopping to fill it up!
+                </p>
+                <button class="btn checkout-btn" onclick="continueShopping()" data-aos="fade-up" data-aos-delay="300">
+                    Start Shopping
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom Scripts -->
+    <script src="{% static 'assets/js/cart-animations.js' %}"></script>
+    <script src="{% static 'assets/js/cart-script.js' %}"></script>
+</body>
+</html>
+{% endblock %}

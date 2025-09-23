@@ -153,9 +153,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     "site_header": "e-commerce Admin",
     "site_brand": "e-commerce solutions",
-#   "site_logo": "ecomprj/static/assets/imgs/logos/logo.png",
     "copyright": "e-commerse_solutions.com",
 }
 
 AUTH_USER_MODEL = 'userauths.User'
 # TAILWIND_APP_NAME = 'theme'
+
+
+# Mail-SMTP (Gmail)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'kapilshivhare2004@gmail.com'  
+EMAIL_HOST_PASSWORD = 'xhbu lziv txyz nxuk' 
