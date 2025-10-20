@@ -11,11 +11,27 @@
                 <p class="fs-4 text-white mb-lg-4">We Are Pleased to Surve You</p>
                 <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                     <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
-                    <button type="button" class="btn-play"  onclick="scrollToProducts()" data-aos-delay="600">
-                        <i class="bi bi-bag-fill text-success"></i>
+                    <button type="button" class="btn-play" onclick="scrollToProducts()" data-aos-delay="600">
+                        <a href="/cart" class="cart-link shake-on-hover">
+                            <svg class="play-button-icon shake-on-hover" xmlns="http://www.w3.org/2000/svg"
+                                version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+                                viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve">
+                                <g>
+                                    <linearGradient id="a" x1="71.841" x2="449.658" y1="423.415" y2="45.598"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#fcc60e"></stop>
+                                        <stop offset="1" stop-color="#e92e29"></stop>
+                                    </linearGradient>
+                                    <path fill="url(#a)"
+                                        d="M136.587 322.105h291.968a41.744 41.744 0 0 0 40.656-31.936l42.498-174.366a12 12 0 0 0-11.659-14.842H108.852L91.961 30.03a12 12 0 0 0-11.674-9.22H30.051c-6.627 0-12 5.373-12 12s5.373 12 12 12H70.81l13.371 56.152H11.949c-6.628 0-12 5.373-12 12s5.372 12 12 12h472.825l-38.881 159.523c-1.986 8.146-8.954 13.62-17.339 13.62H136.587c-25.56 0-46.354 20.794-46.354 46.354 0 25.561 20.794 46.355 46.354 46.355h4.341c-18.755 7.936-31.948 26.524-31.948 48.136 0 28.805 23.435 52.239 52.239 52.239s52.238-23.434 52.238-52.239c0-21.612-13.192-40.2-31.947-48.136h230.026c-18.755 7.936-31.948 26.524-31.948 48.136 0 28.805 23.435 52.239 52.239 52.239s52.239-23.434 52.239-52.239c0-21.612-13.193-40.2-31.948-48.136h17.154c6.628 0 12-5.373 12-12s-5.372-12-12-12H136.587c-12.326 0-22.354-10.028-22.354-22.355 0-12.325 10.028-22.354 22.354-22.354zM161.22 467.19c-15.571 0-28.239-12.668-28.239-28.239s12.668-28.239 28.239-28.239c15.57 0 28.238 12.668 28.238 28.239S176.79 467.19 161.22 467.19zm270.608 0c-15.571 0-28.239-12.668-28.239-28.239s12.668-28.239 28.239-28.239 28.239 12.668 28.239 28.239-12.668 28.239-28.239 28.239zM85.36 190.676c-6.627 0-12-5.373-12-12s5.373-12 12-12h146.572c6.627 0 12 5.373 12 12s-5.373 12-12 12zm80.109 65.715H20.168c-6.627 0-12-5.373-12-12s5.373-12 12-12h145.301c6.627 0 12 5.373 12 12s-5.373 12-12 12z"
+                                        opacity="1" data-original="url(#a)"></path>
+                                </g>
+                            </svg>
+                        </a>
                     </button>
-                    <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Start shoping</h5>
+                    <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Shop Now!</h5>
                 </div>
+
             </div>
         </div>
     </div>
@@ -23,134 +39,386 @@
 <!-- Hero End -->
 
 <!-- About Start -->
-<div class="container-fluid py-5">
+<div class="container-fluid py-5 stylish-about-section">
     <div class="container">
-        <div class="row gx-5">
-            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded"
-                        src="{% static 'assets/imgs/home_page/about.jpg' %}" style="object-fit: cover;">
+        <div class="row gx-5 align-items-center">
+
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="image-showcase-stylishs">
+                    <div class="image-bg-shape"></div>
+                    <img class="main-image" src="{% static 'assets/imgs/home_page/about.jpg' %}"
+                        alt="Lifestyle product showcase">
+                    <div class="secondary-image-card">
+                        <img src="{% static 'assets/imgs/home_page/about.jpg' %}" alt="Product detail shot">
+                    </div>
                 </div>
             </div>
+
             <div class="col-lg-7">
-                <div class="border-start border-5 border-primary ps-5 mb-5">
-                    <h6 class="text-primary text-uppercase">About Us</h6>
-                    <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
-                </div>
-                <h4 class="text-body mb-4">Diam dolor diam ipsum tempor sit. Clita erat ipsum et lorem stet no
-                    labore lorem sit clita duo justo magna dolore</h4>
-                <div class="bg-light p-4">
-                    <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
-                        <li class="nav-item w-50" role="presentation">
-                            <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
-                                aria-selected="true">Our Mission</button>
-                        </li>
-                        <li class="nav-item w-50" role="presentation">
-                            <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
-                                aria-selected="false">Our Vission</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-1" role="tabpanel"
-                            aria-labelledby="pills-1-tab">
-                            <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor
-                                diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
-                                sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit.
-                                Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata
-                                consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna
-                            </p>
+                <div class="stylish-content-wrappers">
+                    <div class="background-text-watermarks">$</div>
+
+                    <div class="content-foregrounds">
+                        <div class="border-start border-5 border-primary ps-5 mb-4">
+                            <h6 class="text-primary text-uppercase">About Us</h6>
+                            <h1 class="display-5 text-uppercase mb-0">DEFINE YOUR MOMENT.</h1>
                         </div>
-                        <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
-                            <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor
-                                diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
-                                sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit.
-                                Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata
-                                consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna
-                            </p>
+                        <h4 class="text-body mb-5">This is more than a store—it's a launchpad for your personal style.
+                            We bring you bold, trend-setting collections that empower you to own every room you walk
+                            into.</h4>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="feature-boxs">
+                                    <h5 class="text-uppercase text-primary">OUR VISION</h5>
+                                    <p class="mb-0">To build a global community where individual style is celebrated and
+                                        fearless self-expression is the norm.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-boxs">
+                                    <h5 class="text-uppercase text-primary">OUR MISSION</h5>
+                                    <p class="mb-0">To constantly innovate and deliver inspiring pieces with the speed
+                                        and service you deserve. We're here to fuel your style journey, not just fill
+                                        your closet.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 <!-- About End -->
 
-
 <!-- Services Start -->
 <div class="container-fluid py-5">
     <div class="container">
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase">Services</h6>
-            <h1 class="display-5 text-uppercase mb-0">Our Excellent Pet Care Services</h1>
+            <h6 class="text-primary text-uppercase">Our Features</h6>
+            <h1 class="display-5 text-uppercase mb-0">Why Shop With Us?</h1>
         </div>
+
         <div class="row g-5">
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
-                    <i class="flaticon-house display-1 text-primary me-4"></i>
+                    <svg class="service-icon me-4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <linearGradient id="a" x1="14.951" x2="524.363" y1="513.051" y2="3.64"
+                                data-name="New Gradient Swatch 1" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#003f8a"></stop>
+                                <stop offset=".518" stop-color="#00d7df"></stop>
+                                <stop offset="1" stop-color="#006df0"></stop>
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="b" x1="-15.05" x2="494.362" y1="483.05" y2="-26.362">
+                            </linearGradient>
+                            <path fill="url(#a)"
+                                d="M496 400h-32v-10.71A28.026 28.026 0 0 0 480 364v-64a28.043 28.043 0 0 0-24-27.71V244a28.031 28.031 0 0 0-28-28H244a28.031 28.031 0 0 0-28 28v28.29A28.043 28.043 0 0 0 192 300v64a28.043 28.043 0 0 0 24 27.71V400h-72v-24a8 8 0 0 0-8-8h-32V208h48a7.993 7.993 0 0 0 7.98-8.53l-8-120A8 8 0 0 0 144 72H48a8 8 0 0 0-7.98 7.47l-8 120A7.993 7.993 0 0 0 40 208h48v160H56a8 8 0 0 0-8 8v24H16a8 8 0 0 0-8 8v24a8 8 0 0 0 8 8h480a8 8 0 0 0 8-8v-24a8 8 0 0 0-8-8zM232 244a12.01 12.01 0 0 1 12-12h184a12.01 12.01 0 0 1 12 12v28.29A28.043 28.043 0 0 0 416 300v28H256v-28a28.043 28.043 0 0 0-24-27.71zm-24 120v-64a12.01 12.01 0 0 1 12-12h8a12.01 12.01 0 0 1 12 12v36a8 8 0 0 0 8 8h176a8 8 0 0 0 8-8v-36a12.01 12.01 0 0 1 12-12h8a12.01 12.01 0 0 1 12 12v64a12.01 12.01 0 0 1-12 12H220a12.01 12.01 0 0 1-12-12zm240 28v8h-16v-8zm-32 0v8H264v-8zm-168 0v8h-16v-8zM48.55 192l6.93-104h81.04l6.93 104zM64 384h64v16H64zm424 40H24v-8h464z"
+                                opacity="1" data-original="url(#a)"></path>
+                            <g fill="url(#b)">
+                                <path
+                                    d="M264 192h144a8 8 0 0 0 8-8V80a8 8 0 0 0-8-8H264a8 8 0 0 0-8 8v104a8 8 0 0 0 8 8zm8-104h128v88H272z"
+                                    fill="" opacity="1"></path>
+                                <path
+                                    d="M384 96h-96a8 8 0 0 0-8 8v56a8 8 0 0 0 8 8h96a8 8 0 0 0 8-8v-56a8 8 0 0 0-8-8zm-8 56h-80v-40h80z"
+                                    fill="" opacity="1"></path>
+                            </g>
+                        </g>
+                    </svg>
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Boarding</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <h5 class="text-uppercase mb-3">Wide Selection</h5>
+                        <p>Explore thousands of products from top brands, all in one convenient place.</p>
+                        <a class="text-primary text-uppercase" href="#">Shop Now<i class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
-                    <i class="flaticon-food display-1 text-primary me-4"></i>
+                    <svg class="service-icon me-4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <linearGradient id="a" x1="-118.231" x2="414.881" y1="390.231" y2="-142.881"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#003f8a"></stop>
+                                <stop offset=".518" stop-color="#00d7df"></stop>
+                                <stop offset="1" stop-color="#006df0"></stop>
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="b" x1="-120.231" x2="412.881" y1="388.231"
+                                y2="-144.881"></linearGradient>
+                            <linearGradient xlink:href="#a" id="c" x1="53.769" x2="586.881" y1="562.231" y2="29.119">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="d" x1="83.769" x2="616.881" y1="592.231" y2="59.119">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="e" x1="-22.231" x2="510.881" y1="486.231" y2="-46.881">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="f" x1="145.769" x2="678.881" y1="654.231" y2="121.119">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="g" x1="-2.231" x2="530.881" y1="506.231" y2="-26.881">
+                            </linearGradient>
+                            <g data-name="Truck">
+                                <path fill="url(#a)"
+                                    d="M128 216a72 72 0 1 0-72-72 72.081 72.081 0 0 0 72 72zm0-128a56 56 0 1 1-56 56 56.063 56.063 0 0 1 56-56z"
+                                    opacity="1" data-original="url(#a)"></path>
+                                <path fill="url(#b)"
+                                    d="M138.343 165.657a8 8 0 0 0 11.314-11.314L136 140.687V104a8 8 0 0 0-16 0v40a8 8 0 0 0 2.343 5.657z"
+                                    opacity="1" data-original="url(#b)"></path>
+                                <path fill="url(#c)" d="M232 360h64a8 8 0 0 0 0-16h-64a8 8 0 0 0 0 16z" opacity="1"
+                                    data-original="url(#c)"></path>
+                                <path fill="url(#d)" d="M320 360h8a8 8 0 0 0 0-16h-8a8 8 0 0 0 0 16z" opacity="1"
+                                    data-original="url(#d)"></path>
+                                <path fill="url(#e)"
+                                    d="M88 352a24 24 0 1 0 24 24 24.027 24.027 0 0 0-24-24zm0 32a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"
+                                    opacity="1" data-original="url(#e)"></path>
+                                <path fill="url(#f)"
+                                    d="M424 352a24 24 0 1 0 24 24 24.027 24.027 0 0 0-24-24zm0 32a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"
+                                    opacity="1" data-original="url(#f)"></path>
+                                <path fill="url(#g)"
+                                    d="M496 280h-10.291l-31.144-90.6A8 8 0 0 0 447 184h-87v-64a8 8 0 0 0-8-8H218.509a96 96 0 0 0-181.018 0H16a8 8 0 0 0-8 8v256a8 8 0 0 0 8 8h16.581a55.992 55.992 0 0 0 110.838 0h225.162a55.992 55.992 0 0 0 110.838 0H496a8 8 0 0 0 8-8v-88a8 8 0 0 0-8-8zm-54.709-80 27.5 80H360v-80zM128 64a80 80 0 1 1-80 80 80.091 80.091 0 0 1 80-80zM24 128h9.341a96 96 0 1 0 189.318 0H344v240H143.419a55.992 55.992 0 0 0-110.838 0H24zm64 288a40 40 0 1 1 40-40 40.045 40.045 0 0 1-40 40zm336 0a40 40 0 1 1 40-40 40.045 40.045 0 0 1-40 40zm64-48h-8.581a55.992 55.992 0 0 0-110.838 0H360v-72h128z"
+                                    opacity="1" data-original="url(#g)"></path>
+                            </g>
+                        </g>
+                    </svg>
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Feeding</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <h5 class="text-uppercase mb-3">Fast Shipping</h5>
+                        <p>Get your order delivered to your doorstep quickly and reliably with our trusted partners.</p>
+                        <a class="text-primary text-uppercase" href="#">Learn More<i
+                                class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
-                    <i class="flaticon-grooming display-1 text-primary me-4"></i>
+                    <svg class="service-icon me-4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <linearGradient id="a" x1="105.151" x2="616.254" y1="594.849" y2="83.746"
+                                data-name="New Gradient Swatch 1" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#003f8a"></stop>
+                                <stop offset=".518" stop-color="#00d7df"></stop>
+                                <stop offset="1" stop-color="#006df0"></stop>
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="b" x1="65.151" x2="576.254" y1="554.849" y2="43.746">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="c" x1="-18.849" x2="492.254" y1="470.849" y2="-40.254">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="d" x1="9.151" x2="520.254" y1="498.849" y2="-12.254">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="e" x1="-21.099" x2="490.004" y1="468.599" y2="-42.504">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="f" x1="11.151" x2="522.254" y1="500.849" y2="-10.254">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="g" x1="21.151" x2="532.254" y1="510.849" y2="-.254">
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="h" x1="-50.849" x2="460.254" y1="438.849" y2="-72.254">
+                            </linearGradient>
+                            <path fill="url(#a)"
+                                d="M408 280a8 8 0 0 0 0-16h-56a8 8 0 0 0-8 8v96a8 8 0 0 0 8 8h56a8 8 0 0 0 0-16h-48v-32h32a8 8 0 0 0 0-16h-32v-32z"
+                                opacity="1" data-original="url(#a)"></path>
+                            <path fill="url(#b)" d="M328 360h-48v-88a8 8 0 0 0-16 0v96a8 8 0 0 0 8 8h56a8 8 0 0 0 0-16z"
+                                opacity="1" data-original="url(#b)"></path>
+                            <path fill="url(#c)"
+                                d="M160 280a8 8 0 0 0 0-16h-56a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8h48v32h-48a8 8 0 0 0 0 16h56a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8h-48v-32z"
+                                opacity="1" data-original="url(#c)"></path>
+                            <path fill="url(#d)"
+                                d="M288 248h56a8 8 0 0 0 8-8v-40a8 8 0 0 0-8-8h-16a8 8 0 0 0 0 16h8v24h-40v-80h48a8 8 0 0 0 0-16h-56a8 8 0 0 0-8 8v96a8 8 0 0 0 8 8z"
+                                opacity="1" data-original="url(#d)"></path>
+                            <path fill="url(#e)"
+                                d="M271 240a8 8 0 0 0-7-7.931v-80.138A8 8 0 0 0 263 136h-15a8 8 0 0 0 0 16v80a8 8 0 0 0 0 16h15a8 8 0 0 0 8-8z"
+                                opacity="1" data-original="url(#e)"></path>
+                            <path fill="url(#f)"
+                                d="M488.27 281.91c7.37-7.2 15.73-15.37 15.73-25.91s-8.36-18.71-15.73-25.91c-4.64-4.54-9.89-9.67-10.51-13.2-.67-3.8 2.6-10.59 5.48-16.59 4.39-9.15 9.37-19.51 5.86-29.14-3.57-9.81-14.16-14.59-23.51-18.81-5.97-2.7-12.73-5.75-14.57-8.93-1.89-3.27-1.16-10.72-.52-17.29 1-10.15 2.12-21.64-4.52-29.55-6.66-7.93-18.2-8.81-28.38-9.58-6.57-.5-14.02-1.07-16.88-3.48-2.84-2.38-4.68-9.6-6.31-15.97-2.52-9.91-5.39-21.15-14.38-26.35-8.91-5.16-20.02-2.06-29.81.68-6.38 1.78-13.62 3.8-17.2 2.5-3.41-1.25-7.58-7.35-11.26-12.73-5.8-8.49-12.38-18.11-22.71-19.92-10.02-1.76-18.93 4.63-27.54 10.8-5.44 3.91-11.6 8.33-15.51 8.33s-10.07-4.42-15.51-8.33c-8.61-6.17-17.51-12.56-27.54-10.8-10.33 1.81-16.91 11.43-22.71 19.92-3.68 5.38-7.85 11.48-11.26 12.73-3.58 1.3-10.81-.72-17.2-2.5-9.79-2.74-20.9-5.84-29.81-.68-8.99 5.2-11.86 16.44-14.38 26.35-1.63 6.37-3.47 13.59-6.31 15.97-2.86 2.41-10.31 2.98-16.88 3.48-10.18.77-21.72 1.65-28.38 9.58-6.64 7.91-5.51 19.4-4.52 29.55.64 6.57 1.37 14.02-.52 17.29-1.84 3.18-8.6 6.23-14.57 8.93-9.35 4.22-19.94 9-23.51 18.81-3.51 9.63 1.25 19.55 5.86 29.14 2.88 5.99 6.15 12.79 5.48 16.59-.62 3.53-5.87 8.66-10.51 13.2C16.36 237.29 8 245.46 8 256s8.36 18.71 15.73 25.91c4.64 4.54 9.89 9.67 10.51 13.2.67 3.8-2.6 10.59-5.48 16.59-4.39 9.15-9.37 19.51-5.86 29.14 3.57 9.81 14.16 14.59 23.51 18.81 5.97 2.7 12.73 5.75 14.57 8.93 1.89 3.27 1.16 10.72.52 17.29-1 10.15-2.12 21.64 4.52 29.55 6.66 7.93 18.2 8.81 28.38 9.58 6.57.5 14.02 1.07 16.88 3.48 2.84 2.38 4.68 9.6 6.31 15.97 2.52 9.91 5.39 21.15 14.38 26.35 8.91 5.16 20.02 2.06 29.81-.68 6.38-1.78 13.62-3.8 17.2-2.5 3.41 1.25 7.58 7.35 11.26 12.73 5.8 8.49 12.38 18.11 22.71 19.92 10.02 1.76 18.93-4.63 27.54-10.8 5.44-3.91 11.6-8.33 15.51-8.33s10.07 4.42 15.51 8.33c7.62 5.47 15.47 11.1 24.14 11.1a19.788 19.788 0 0 0 3.4-.3c10.33-1.81 16.91-11.43 22.71-19.92 3.68-5.38 7.85-11.48 11.26-12.73 3.58-1.3 10.81.72 17.2 2.5 9.79 2.74 20.9 5.84 29.81.68 8.99-5.2 11.86-16.44 14.38-26.35 1.63-6.37 3.47-13.59 6.31-15.97 2.86-2.41 10.31-2.98 16.88-3.48 10.18-.77 21.72-1.65 28.38-9.58 6.64-7.91 5.51-19.4 4.52-29.55-.64-6.57-1.37-14.02.52-17.29 1.84-3.18 8.6-6.23 14.57-8.93 9.35-4.22 19.94-9 23.51-18.81 3.51-9.63-1.25-19.55-5.86-29.14-2.88-5.99-6.15-12.79-5.48-16.59.62-3.53 5.87-8.66 10.51-13.2zm-11.19-11.44c-6.67 6.53-13.57 13.27-15.08 21.88-1.55 8.85 2.7 17.71 6.82 26.28 2.87 5.99 6.45 13.44 5.25 16.74-1.27 3.47-8.92 6.92-15.07 9.7-8.56 3.87-17.42 7.87-21.83 15.5-4.47 7.72-3.51 17.45-2.59 26.86.65 6.66 1.46 14.95-.85 17.7-2.34 2.78-10.66 3.41-17.34 3.92-9.42.72-19.16 1.46-25.96 7.18-6.79 5.69-9.19 15.14-11.52 24.27-1.66 6.51-3.73 14.62-6.89 16.45-3.09 1.79-11.08-.45-17.5-2.24-9.13-2.55-18.56-5.18-26.97-2.12-8.25 3-13.71 11-19 18.73-3.82 5.59-8.57 12.55-12.26 13.19-3.4.6-10.09-4.19-15.45-8.04-7.76-5.57-15.78-11.33-24.84-11.33s-17.08 5.76-24.84 11.33c-5.37 3.85-12.04 8.64-15.45 8.04-3.69-.64-8.44-7.6-12.26-13.19-5.29-7.73-10.75-15.73-19-18.73-8.41-3.06-17.84-.43-26.97 2.12-6.42 1.79-14.41 4.03-17.5 2.24-3.16-1.83-5.23-9.94-6.89-16.45-2.33-9.14-4.73-18.58-11.52-24.28-6.81-5.71-16.54-6.45-25.96-7.17-6.68-.51-15.01-1.14-17.34-3.92-2.31-2.76-1.5-11.04-.85-17.7.92-9.41 1.88-19.14-2.59-26.86-4.41-7.64-13.27-11.63-21.83-15.5-6.15-2.78-13.8-6.23-15.07-9.7-1.2-3.3 2.38-10.75 5.25-16.74 4.12-8.57 8.37-17.43 6.82-26.28-1.51-8.61-8.41-15.35-15.08-21.88C30.05 265.72 24 259.8 24 256s6.05-9.72 10.92-14.47C41.59 235 48.49 228.26 50 219.65c1.55-8.85-2.7-17.71-6.82-26.28-2.87-5.99-6.45-13.44-5.25-16.74 1.27-3.47 8.92-6.92 15.07-9.7 8.56-3.87 17.42-7.87 21.83-15.5 4.47-7.72 3.51-17.45 2.59-26.86-.65-6.66-1.46-14.95.85-17.7 2.34-2.78 10.66-3.41 17.34-3.92 9.42-.72 19.16-1.46 25.96-7.18 6.79-5.69 9.19-15.14 11.52-24.27 1.66-6.51 3.73-14.62 6.89-16.45 3.09-1.79 11.08.45 17.5 2.24 9.13 2.55 18.56 5.18 26.97 2.12 8.25-3 13.71-11 19-18.73 3.82-5.59 8.57-12.55 12.26-13.19 3.41-.6 10.09 4.19 15.45 8.04 7.76 5.57 15.78 11.33 24.84 11.33s17.08-5.76 24.84-11.33c5.37-3.85 12.05-8.64 15.45-8.04 3.69.64 8.44 7.6 12.26 13.19 5.29 7.73 10.75 15.73 19 18.73 8.41 3.06 17.84.43 26.97-2.12 6.42-1.79 14.41-4.02 17.5-2.24 3.16 1.83 5.23 9.94 6.89 16.45 2.33 9.14 4.73 18.58 11.52 24.28 6.81 5.71 16.54 6.45 25.96 7.17 6.68.51 15.01 1.14 17.34 3.92 2.31 2.76 1.5 11.04.85 17.7-.92 9.41-1.88 19.14 2.59 26.86 4.41 7.64 13.27 11.63 21.83 15.5 6.15 2.78 13.8 6.23 15.07 9.7 1.2 3.3-2.38 10.75-5.25 16.74-4.12 8.57-8.37 17.43-6.82 26.28 1.51 8.61 8.41 15.35 15.08 21.88C481.95 246.28 488 252.2 488 256s-6.05 9.72-10.92 14.47z"
+                                opacity="1" data-original="url(#f)"></path>
+                            <path fill="url(#g)"
+                                d="M240 264h-56a8 8 0 0 0-8 8v96a8 8 0 0 0 16 0v-40h40v40a8 8 0 0 0 16 0v-96a8 8 0 0 0-8-8zm-8 48h-40v-32h40z"
+                                opacity="1" data-original="url(#g)"></path>
+                            <path fill="url(#h)"
+                                d="M224 184h-8v-40a8 8 0 0 0-8-8h-40a8 8 0 0 0-8 8v96a8 8 0 0 0 8 8h56a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8zm-48-32h24v32h-24zm40 80h-40v-32h40z"
+                                opacity="1" data-original="url(#h)"></path>
+                        </g>
+                    </svg>
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Grooming</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <h5 class="text-uppercase mb-3">Amazing Deals</h5>
+                        <p>We offer competitive prices and exclusive discounts on a wide range of products.</p>
+                        <a class="text-primary text-uppercase" href="#">View Offers<i
+                                class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
-                    <i class="flaticon-cat display-1 text-primary me-4"></i>
+                    <svg class="service-icon me-4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 496 495"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <linearGradient id="a">
+                                <stop offset="0" stop-color="#003f8a"></stop>
+                                <stop offset=".518" stop-color="#00d7df"></stop>
+                                <stop offset="1" stop-color="#006df0"></stop>
+                            </linearGradient>
+                            <linearGradient xlink:href="#a" id="b" x1="-79.872" x2="420.392" y1="416.372" y2="-83.892"
+                                gradientUnits="userSpaceOnUse"></linearGradient>
+                            <linearGradient xlink:href="#a" id="c" x1="84.128" x2="584.392" y1="580.372" y2="80.108"
+                                gradientUnits="userSpaceOnUse"></linearGradient>
+                            <linearGradient xlink:href="#a" id="d" x1="44.128" x2="544.392" y1="540.372" y2="40.108"
+                                gradientUnits="userSpaceOnUse"></linearGradient>
+                            <linearGradient xlink:href="#a" id="e" x1="124.128" x2="624.392" y1="620.372" y2="120.108"
+                                gradientUnits="userSpaceOnUse"></linearGradient>
+                            <linearGradient xlink:href="#a" id="f" x1="4.128" x2="504.392" y1="500.372" y2=".108"
+                                gradientUnits="userSpaceOnUse"></linearGradient>
+                            <linearGradient xlink:href="#a" id="g" x1="164.128" x2="664.392" y1="660.372" y2="160.108"
+                                gradientUnits="userSpaceOnUse"></linearGradient>
+                            <g fill="url(#b)">
+                                <path
+                                    d="M8 200.5h44.383a119.13 119.13 0 0 0 11.265 27.105l-31.41 31.399a8.003 8.003 0 0 0 0 11.32l33.938 33.946a8.004 8.004 0 0 0 11.312 0l31.414-31.418A118.897 118.897 0 0 0 136 284.117V328.5a8 8 0 0 0 8 8h48a8 8 0 0 0 8-8v-44.383a118.897 118.897 0 0 0 27.098-11.265l31.414 31.418c3.175 3 8.14 3 11.312 0l33.946-33.946a8.003 8.003 0 0 0 0-11.32l-31.418-31.399a119.13 119.13 0 0 0 11.265-27.105H328a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8h-44.383a119.13 119.13 0 0 0-11.265-27.105l31.41-31.399a8.003 8.003 0 0 0 0-11.32L269.824 32.73a8.004 8.004 0 0 0-11.312 0l-31.414 31.418A119.322 119.322 0 0 0 200 52.883V8.5a8 8 0 0 0-8-8h-48a8 8 0 0 0-8 8v44.383a119.322 119.322 0 0 0-27.098 11.265L77.488 32.73c-3.176-3-8.14-3-11.312 0L32.23 66.676a8.003 8.003 0 0 0 0 11.32l31.418 31.399A119.13 119.13 0 0 0 52.383 136.5H8a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8zm8-48h42.64a8.003 8.003 0 0 0 7.817-6.29 102.907 102.907 0 0 1 14.016-33.71 8.004 8.004 0 0 0-1.082-9.977L49.199 72.332l22.633-22.633 30.184 30.192A8.004 8.004 0 0 0 112 80.973a103.11 103.11 0 0 1 33.71-14.016 8.003 8.003 0 0 0 6.29-7.816V16.5h32v42.64a8.003 8.003 0 0 0 6.29 7.817A103.11 103.11 0 0 1 224 80.973a8.004 8.004 0 0 0 9.984-1.082l30.184-30.192 22.625 22.633-30.184 30.184a8.004 8.004 0 0 0-1.082 9.984 102.847 102.847 0 0 1 14.008 33.719 8.003 8.003 0 0 0 7.817 6.289H320v32h-42.648a8.003 8.003 0 0 0-7.817 6.289 102.815 102.815 0 0 1-14.008 33.703 8.004 8.004 0 0 0 1.082 9.977l30.192 30.183-22.633 22.64-30.184-30.19a8.004 8.004 0 0 0-9.984-1.083 102.832 102.832 0 0 1-33.703 14.016 8 8 0 0 0-6.297 7.816V320.5h-32v-42.64a8 8 0 0 0-6.297-7.817A102.832 102.832 0 0 1 112 256.027a8.004 8.004 0 0 0-9.984 1.082l-30.184 30.192-22.625-22.633 30.184-30.184a8.004 8.004 0 0 0 1.082-9.984 102.948 102.948 0 0 1-14.016-33.719 8 8 0 0 0-7.816-6.281H16zm0 0"
+                                    fill="" opacity="1"></path>
+                                <path
+                                    d="M168 232.5c35.348 0 64-28.652 64-64s-28.652-64-64-64-64 28.652-64 64c.04 35.328 28.672 63.96 64 64zm0-112c26.508 0 48 21.492 48 48s-21.492 48-48 48-48-21.492-48-48c.027-26.5 21.5-47.973 48-48zm0 0"
+                                    fill="" opacity="1"></path>
+                                <path
+                                    d="M168 256.5c48.602 0 88-39.398 88-88s-39.398-88-88-88-88 39.398-88 88c.059 48.578 39.422 87.941 88 88zm0-160c39.766 0 72 32.234 72 72s-32.234 72-72 72-72-32.234-72-72c.043-39.746 32.254-71.957 72-72zm0 0"
+                                    fill="" opacity="1"></path>
+                            </g>
+                            <path fill="url(#c)"
+                                d="M456 368.5v-64a8 8 0 0 0-8-8h-16v-64a8 8 0 0 0-8-8h-72a8 8 0 0 0-8 8v64h-40a8 8 0 0 0-8 8v64H40c-22.082.027-39.973 17.918-40 40v16c.027 22.082 17.918 39.973 40 40h416c22.082-.027 39.973-17.918 40-40v-16c-.027-22.082-17.918-39.973-40-40zm-16 0h-56v-56h56zm-80-128h56v56h-56zm-48 72h56v56h-56zm168 112c0 13.254-10.746 24-24 24H40c-13.254 0-24-10.746-24-24v-16c0-13.254 10.746-24 24-24h416c13.254 0 24 10.746 24 24zm0 0"
+                                opacity="1" data-original="url(#c)"></path>
+                            <path fill="url(#c)"
+                                d="M248 392.5c-13.254 0-24 10.746-24 24s10.746 24 24 24 24-10.746 24-24-10.746-24-24-24zm0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0 0"
+                                opacity="1" data-original="url(#c)"></path>
+                            <path fill="url(#d)"
+                                d="M168 392.5c-13.254 0-24 10.746-24 24s10.746 24 24 24 24-10.746 24-24-10.746-24-24-24zm0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0 0"
+                                opacity="1" data-original="url(#d)"></path>
+                            <path fill="url(#e)"
+                                d="M328 392.5c-13.254 0-24 10.746-24 24s10.746 24 24 24 24-10.746 24-24-10.746-24-24-24zm0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0 0"
+                                opacity="1" data-original="url(#e)"></path>
+                            <path fill="url(#f)"
+                                d="M88 392.5c-13.254 0-24 10.746-24 24s10.746 24 24 24 24-10.746 24-24-10.746-24-24-24zm0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0 0"
+                                opacity="1" data-original="url(#f)"></path>
+                            <path fill="url(#g)"
+                                d="M408 392.5c-13.254 0-24 10.746-24 24s10.746 24 24 24 24-10.746 24-24-10.746-24-24-24zm0 32a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0 0"
+                                opacity="1" data-original="url(#g)"></path>
+                        </g>
+                    </svg>
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Training</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <h5 class="text-uppercase mb-3">Quality Guarantee</h5>
+                        <p>We stand by the quality of our products, ensuring you receive only the very best.</p>
+                        <a class="text-primary text-uppercase" href="#">Learn More<i
+                                class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
-                    <i class="flaticon-dog display-1 text-primary me-4"></i>
+                    <svg class="service-icon me-4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <defs>
+                                <linearGradient id="a" x1="-10.568" x2="502.072" y1="450.568" y2="-62.072"
+                                    data-name="New Gradient Swatch 1" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#003f8a"></stop>
+                                    <stop offset=".518" stop-color="#00d7df"></stop>
+                                    <stop offset="1" stop-color="#006df0"></stop>
+                                </linearGradient>
+                                <linearGradient xlink:href="#a" id="b" x1="37.432" x2="550.072" y1="498.568"
+                                    y2="-14.072"></linearGradient>
+                                <linearGradient xlink:href="#a" id="c" x1="84.68" x2="597.321" y1="545.817" y2="33.176">
+                                </linearGradient>
+                                <linearGradient xlink:href="#a" id="d" x1="23.432" x2="536.072" y1="484.568"
+                                    y2="-28.072"></linearGradient>
+                            </defs>
+                            <circle cx="248" cy="192" r="16" fill="url(#a)" opacity="1" data-original="url(#a)">
+                            </circle>
+                            <circle cx="344" cy="192" r="16" fill="url(#b)" opacity="1" data-original="url(#b)">
+                            </circle>
+                            <path fill="url(#c)"
+                                d="M438.49 360.6 360 337.98v-27.63c20.29-15.67 37.55-37.47 44.6-62.35H428a28.031 28.031 0 0 0 28-28v-48a28.031 28.031 0 0 0-28-28h-20v-16a112 112 0 0 0-224 0v16h-20a28.031 28.031 0 0 0-28 28v48a28.031 28.031 0 0 0 28 28h4v32a8 8 0 0 0 8 8h32.91A142.581 142.581 0 0 0 232 310.35v27.63l-16 4.61V324a20.02 20.02 0 0 0-20-20H28a20.02 20.02 0 0 0-20 20v120a20.02 20.02 0 0 0 20 20h41.14l-3.56 16H48a8 8 0 0 0 0 16h448a8 8 0 0 0 8-8v-42.33a88.03 88.03 0 0 0-65.51-85.07ZM432 160.7a12.014 12.014 0 0 1 8 11.3v48a12.014 12.014 0 0 1-8 11.3Zm-24-.7h8v72h-8Zm-248 71.3a12.014 12.014 0 0 1-8-11.3v-48a12.014 12.014 0 0 1 8-11.3Zm214.08 127.39-32.99 62.71-32.33-15.84 45.91-52.46ZM296 395.85l-48-54.86V321.1c16.38 9.48 33.46 14.9 48 14.9s31.62-5.42 48-14.9v19.89ZM200 128a96 96 0 0 1 192 0v27.31a79.215 79.215 0 0 1-41.3-31.53 8.009 8.009 0 0 0-10.77-2.37c-.6.37-59.24 35.26-139.93 37.48Zm-24 32h8v72h-8Zm8 112v-24h3.4a103.55 103.55 0 0 0 10.34 24Zm46.51 16h34.87A24.031 24.031 0 0 0 288 304h16a24 24 0 0 0 0-48h-16a24.031 24.031 0 0 0-22.62 16h-48.76C202.55 252.32 200 234.37 200 224v-49.11c70.26-1.8 123.83-26.71 141.78-36.2A93.971 93.971 0 0 0 392 171.94V224c0 13.75-4.46 40.8-34.34 67.58C338.4 308.84 314.19 320 296 320s-42.4-11.16-61.66-28.42c-1.33-1.19-2.6-2.39-3.83-3.58Zm49.49-8a8.011 8.011 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8.011 8.011 0 0 1-8-8Zm-42.67 73.1 45.83 52.38-31.73 15.86-33.03-62.79ZM81.97 480l4.98-22.38v-.01L94.42 424h35.16l7.47 33.61v.01l4.98 22.38Zm69.34-32-7.5-33.74A7.994 7.994 0 0 0 136 408H88a7.994 7.994 0 0 0-7.81 6.26L72.69 448H28a4 4 0 0 1-4-4V324a4 4 0 0 1 4-4h168a4 4 0 0 1 4 4v120a4 4 0 0 1-4 4Zm114.92 32H158.42l-3.56-16H196a20.02 20.02 0 0 0 20-20v-55.64l24.92 47.36a8.011 8.011 0 0 0 10.66 3.44l5.64-2.83 14.14 28.28Zm16.87 0 2.67-8h20.69l3 8Zm23.96-24h-22.12l-13.41-26.82 24.28-12.14 24.68 12.08ZM488 480h-40v-24a8 8 0 0 0-16 0v24H326.54l-5.82-15.54 14.14-28.3 6.17 3.02a7.882 7.882 0 0 0 3.51.82 8 8 0 0 0 7.09-4.28l38.15-72.51L434.15 376a1.209 1.209 0 0 1 .18.05A72.03 72.03 0 0 1 488 445.67Z"
+                                opacity="1" data-original="url(#c)"></path>
+                            <path fill="url(#d)" d="M24 480h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16Z" opacity="1"
+                                data-original="url(#d)"></path>
+                        </g>
+                    </svg>
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Exercise</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <h5 class="text-uppercase mb-3">24/7 Customer Support</h5>
+                        <p>Our dedicated support team is here to help you around the clock with any questions.</p>
+                        <a class="text-primary text-uppercase" href="#">Contact Us<i
+                                class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
                 <div class="service-item bg-light d-flex p-4">
-                    <i class="flaticon-vaccine display-1 text-primary me-4"></i>
+                    <svg class="service-icon me-4" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512" xml:space="preserve">
+                        <g>
+                            <defs>
+                                <linearGradient id="a" x1="54.461" x2="538.224" y1="525.539" y2="41.776"
+                                    data-name="New Gradient Swatch 1" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#003f8a"></stop>
+                                    <stop offset=".518" stop-color="#00d7df"></stop>
+                                    <stop offset="1" stop-color="#006df0"></stop>
+                                </linearGradient>
+                                <linearGradient xlink:href="#a" id="b" x1="82.461" x2="566.224" y1="553.539"
+                                    y2="69.776"></linearGradient>
+                                <linearGradient xlink:href="#a" id="c" x1="-7.539" x2="476.224" y1="463.539"
+                                    y2="-20.224"></linearGradient>
+                                <linearGradient xlink:href="#a" id="d" x1="16.461" x2="500.224" y1="487.539" y2="3.776">
+                                </linearGradient>
+                                <linearGradient xlink:href="#a" id="e" x1="32.461" x2="516.224" y1="503.539"
+                                    y2="19.776"></linearGradient>
+                                <linearGradient xlink:href="#a" id="f" x1="-15.539" x2="468.224" y1="455.539"
+                                    y2="-28.224"></linearGradient>
+                                <linearGradient xlink:href="#a" id="g" x1="-19.539" x2="464.224" y1="451.539"
+                                    y2="-32.224"></linearGradient>
+                                <linearGradient xlink:href="#a" id="h" x1="2.461" x2="486.224" y1="473.539"
+                                    y2="-10.224"></linearGradient>
+                            </defs>
+                            <path fill="url(#a)" d="M144 456H88a8 8 0 0 0 0 16h56a8 8 0 0 0 0-16Z" opacity="1"
+                                data-original="url(#a)"></path>
+                            <path fill="url(#b)" d="M176 456h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16Z" opacity="1"
+                                data-original="url(#b)"></path>
+                            <path fill="url(#c)"
+                                d="M351.99 64.27c0-.09.01-.18.01-.27V40a32.036 32.036 0 0 0-32-32H80a32.036 32.036 0 0 0-32 32v432a32.036 32.036 0 0 0 32 32h240a32.036 32.036 0 0 0 32-32V303.73a120 120 0 0 0-.01-239.46ZM253.75 24l-4 16h-99.69l-4.5-16ZM336 472a16.021 16.021 0 0 1-16 16H80a16.021 16.021 0 0 1-16-16V40a16.021 16.021 0 0 1 16-16h48.94l7.36 26.17A8 8 0 0 0 144 56h112a8 8 0 0 0 7.76-6.06L270.25 24H320a16.021 16.021 0 0 1 16 16v24c0 .09.01.18.01.27a120.037 120.037 0 0 0-98.59 174.92L231.81 256H96a24.032 24.032 0 0 0-24 24v48a24.032 24.032 0 0 0 24 24h208a24.032 24.032 0 0 0 24-24v-25.08q3.975.525 8 .8ZM218.71 309.29a8.028 8.028 0 0 0 5.66 2.34 7.884 7.884 0 0 0 2.53-.41l61.92-20.64a119.178 119.178 0 0 0 23.18 9.08V328a8.011 8.011 0 0 1-8 8H96a8.011 8.011 0 0 1-8-8v-48a8.011 8.011 0 0 1 8-8h130.48l-9.7 29.1a8.012 8.012 0 0 0 1.93 8.19ZM344 288a104.026 104.026 0 0 1-50.54-13.09 8.032 8.032 0 0 0-6.43-.6l-50.01 16.67 8.2-24.59v-.02l8.47-25.4a8.032 8.032 0 0 0-.6-6.43A104.01 104.01 0 1 1 344 288Z"
+                                opacity="1" data-original="url(#c)"></path>
+                            <path fill="url(#d)"
+                                d="M336 208h16a24.027 24.027 0 0 0 24-24v-48a24.027 24.027 0 0 0-24-24h-16a24.027 24.027 0 0 0-24 24v48a24.027 24.027 0 0 0 24 24Zm-8-72a8.009 8.009 0 0 1 8-8h16a8.009 8.009 0 0 1 8 8v48a8.009 8.009 0 0 1-8 8h-16a8.009 8.009 0 0 1-8-8Z"
+                                opacity="1" data-original="url(#d)"></path>
+                            <path fill="url(#e)"
+                                d="M392 168a8 8 0 0 0-8 8v8a32.036 32.036 0 0 1-32 32h-16a32.036 32.036 0 0 1-32-32v-8a8 8 0 0 0-16 0v8a48.055 48.055 0 0 0 48 48v24a8 8 0 0 0 16 0v-24a48.055 48.055 0 0 0 48-48v-8a8 8 0 0 0-8-8Z"
+                                opacity="1" data-original="url(#e)"></path>
+                            <path fill="url(#f)" d="M200 280h-96a8 8 0 0 0 0 16h96a8 8 0 0 0 0-16Z" opacity="1"
+                                data-original="url(#f)"></path>
+                            <path fill="url(#g)" d="M136 304h-32a8 8 0 0 0 0 16h32a8 8 0 0 0 0-16Z" opacity="1"
+                                data-original="url(#g)"></path>
+                            <path fill="url(#h)" d="M168 304h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16Z" opacity="1"
+                                data-original="url(#h)"></path>
+                        </g>
+                    </svg>
                     <div>
-                        <h5 class="text-uppercase mb-3">Pet Treatment</h5>
-                        <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                        <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                        <h5 class="text-uppercase mb-3">Secure Payments</h5>
+                        <p>Your payments are processed securely with end-to-end encryption for your peace of mind.</p>
+                        <a class="text-primary text-uppercase" href="#">Learn More<i
+                                class="bi bi-chevron-right"></i></a>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 <!-- Services End -->
+
 
 
 <!-- Products Start -->
@@ -219,6 +487,90 @@
         </div>
     </div>
 </div>
+<!-- ==================== PREMIUM PRODUCT SECTION ==================== -->
+<section class="product-section py-5">
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <h6 class="text-primary text-uppercase fw-bold letter-spacing">Our Products</h6>
+            <h2 class="display-6 fw-bold">Products for You at Best Price</h2>
+            <p class="text-muted">Discover the perfect picks crafted just for your lifestyle</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Single Product Card -->
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
+                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Quality Pet Foods</h5>
+                        <p class="product-price">$199.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
+                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Quality Pet Foods</h5>
+                        <p class="product-price">$199.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
+                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Quality Pet Foods</h5>
+                        <p class="product-price">$199.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <div class="product-overlay">
+                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
+                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title">Quality Pet Foods</h5>
+                        <p class="product-price">$199.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other products -->
+            <!-- ... -->
+
+        </div>
+    </div>
+</section>
+<!-- ==================== END PREMIUM PRODUCT SECTION ==================== -->
+
 <!-- Products End -->
 
 
@@ -244,112 +596,112 @@
 
 
 <!-- Pricing Plan Start -->
-<!-- <div class="container-fluid py-5">
-        <div class="container">
-            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-                <h6 class="text-primary text-uppercase">Pricing Plan</h6>
-                <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Pet Services</h1>
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Pricing Plan</h6>
+            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Pet Services</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="bg-light text-center pt-5 mt-lg-5">
+                    <h2 class="text-uppercase">Basic</h2>
+                    <h6 class="text-body mb-5">The Best Choice</h6>
+                    <div class="text-center bg-primary p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small
+                                class="align-bottom" style="font-size: 16px; line-height: 40px;">/
+                                Mo</small>
+                        </h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>HTML5 & CSS3</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Bootstrap v5</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Responsive Layout</span>
+                            <i class="bi bi-x fs-4 text-danger"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Browsers Compatibility</span>
+                            <i class="bi bi-x fs-4 text-danger"></i>
+                        </div>
+                        <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                    </div>
+                </div>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="bg-light text-center pt-5 mt-lg-5">
-                        <h2 class="text-uppercase">Basic</h2>
-                        <h6 class="text-body mb-5">The Best Choice</h6>
-                        <div class="text-center bg-primary p-4 mb-2">
-                            <h1 class="display-4 text-white mb-0">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                    Mo</small>
-                            </h1>
+            <div class="col-lg-4">
+                <div class="bg-light text-center pt-5">
+                    <h2 class="text-uppercase">Standard</h2>
+                    <h6 class="text-body mb-5">The Best Choice</h6>
+                    <div class="text-center bg-dark p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99<small
+                                class="align-bottom" style="font-size: 16px; line-height: 40px;">/
+                                Mo</small>
+                        </h1>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>HTML5 & CSS3</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
                         </div>
-                        <div class="text-center p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>HTML5 & CSS3</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Bootstrap v5</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Responsive Layout</span>
-                                <i class="bi bi-x fs-4 text-danger"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Browsers Compatibility</span>
-                                <i class="bi bi-x fs-4 text-danger"></i>
-                            </div>
-                            <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Bootstrap v5</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
                         </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Responsive Layout</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Browsers Compatibility</span>
+                            <i class="bi bi-x fs-4 text-danger"></i>
+                        </div>
+                        <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="bg-light text-center pt-5">
-                        <h2 class="text-uppercase">Standard</h2>
-                        <h6 class="text-body mb-5">The Best Choice</h6>
-                        <div class="text-center bg-dark p-4 mb-2">
-                            <h1 class="display-4 text-white mb-0">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>99<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                    Mo</small>
-                            </h1>
-                        </div>
-                        <div class="text-center p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>HTML5 & CSS3</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Bootstrap v5</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Responsive Layout</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Browsers Compatibility</span>
-                                <i class="bi bi-x fs-4 text-danger"></i>
-                            </div>
-                            <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
-                        </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light text-center pt-5 mt-lg-5">
+                    <h2 class="text-uppercase">Extended</h2>
+                    <h6 class="text-body mb-5">The Best Choice</h6>
+                    <div class="text-center bg-primary p-4 mb-2">
+                        <h1 class="display-4 text-white mb-0">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149<small
+                                class="align-bottom" style="font-size: 16px; line-height: 40px;">/
+                                Mo</small>
+                        </h1>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="bg-light text-center pt-5 mt-lg-5">
-                        <h2 class="text-uppercase">Extended</h2>
-                        <h6 class="text-body mb-5">The Best Choice</h6>
-                        <div class="text-center bg-primary p-4 mb-2">
-                            <h1 class="display-4 text-white mb-0">
-                                <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>149<small
-                                    class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                    Mo</small>
-                            </h1>
+                    <div class="text-center p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>HTML5 & CSS3</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
                         </div>
-                        <div class="text-center p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>HTML5 & CSS3</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Bootstrap v5</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Responsive Layout</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Browsers Compatibility</span>
-                                <i class="bi bi-check2 fs-4 text-primary"></i>
-                            </div>
-                            <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Bootstrap v5</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
                         </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Responsive Layout</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span>Browsers Compatibility</span>
+                            <i class="bi bi-check2 fs-4 text-primary"></i>
+                        </div>
+                        <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+</div>
 <!-- Pricing Plan End -->
 
 
