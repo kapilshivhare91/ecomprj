@@ -1,7 +1,4 @@
 {% load static %}
-
-
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -36,6 +33,9 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'assets/css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/sign-up.css' %}" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -90,7 +90,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{%url 'userauths:sign-in' %}" class="dropdown-item">Sign In</a>
+                        <a href="{%url 'userauths:login' %}" class="dropdown-item">Sign In</a>
                         <a href="{%url 'userauths:sign-up' %}" class="dropdown-item">Sign Up</a>
                         <a href="{%url 'userauths:sign-out' %}" class="dropdown-item">Log Out</a>
                     </div>
@@ -208,9 +208,13 @@
                     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
                     <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
                     <script src="{% static 'assets/js/owlcarousel/owl.carousel.min.js' %}"></script>
+                    <!-- Swiper JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
                     <!-- Template Javascript -->
                     <script src="{% static 'assets/js/main.js' %}"></script>
+                    <script src="{% static 'assets/js/sign-up.js' %}"></script>
+
 
 
                     <script>

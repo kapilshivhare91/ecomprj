@@ -33,7 +33,7 @@ def register_view(request):
     context = {
         'form' : form,
     }
-    return render(request, "userauths/sign-up.html", context )
+    return render(request, "userauths/firstenter.html", context )
 
 
 def login_view(request):
@@ -54,7 +54,7 @@ def login_view(request):
            return redirect("core:index")
         else:
             messages.warning(request,"user Does not Exist, Create an account.")
-            return render(request, "userauths/sign-in.html")
+            return render(request, "userauths/login.html")
 
 
     except:
@@ -62,11 +62,11 @@ def login_view(request):
          context ={
        
     }
-    return render(request,"userauths/sign-up.html",context)
+    return render(request,"userauths/firstenter.html",context)
 
 
 def logout_view(request):
     logout(request)
     messages.success(request, f"You are successfully logged out")
-    return redirect("userauths:sign-in")
+    return redirect("userauths:login")
    
