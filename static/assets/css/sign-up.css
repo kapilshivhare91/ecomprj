@@ -1,69 +1,84 @@
-
-
-/* 1. FONT & BODY SETUP
---------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f3f4f6; /* Light gray background for contrast */
+    background-image: linear-gradient(-20deg, rgb(255, 255, 255), #7c95f2 99%);
+    background-color: #f5f3ff;
+    width: 100%;
+    max-width: 100%;
 }
 
-/* 2. MAIN PAGE & BREADCRUMB
---------------------------------------------*/
 .page-content {
-    padding-top: 80px; /* Reduced padding for a more compact look */
-    padding-bottom: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .breadcrumb-wrap {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 25px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 10px;
 }
 
 .breadcrumb a {
-    color: #007bff; /* Primary Blue */
-    transition: color 0.3s ease;
+    text-decoration: none;
+    color: #4b4bff;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .breadcrumb a:hover {
-    color: #0056b3; /* Darker Blue */
+    color: #2d2dbb;
+    text-shadow: 0 0 8px rgba(76, 76, 255, 0.4);
 }
 
-/* 3. LOGIN CARD & LAYOUT
---------------------------------------------*/
-/* This targets the main container card for the login form */
-.col-xl-8.m-auto > .row {
+.breadcrumb .divider {
+    font-size: 18px;
+    color: #555;
+}
+
+.breadcrumb .current {
+    color: #333;
+    font-weight: 700;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.col-xl-8.m-auto>.row {
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* Ensures child elements respect the border-radius */
-    align-items: center; /* Vertically centers the columns */
+    overflow: hidden;
+    align-items: center;
 }
 
-/* Enhancing the image column */
-.pr-30.d-lg-block img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-/* 4. FORM STYLING
---------------------------------------------*/
 .login_wrp {
-    padding: 2.5rem; /* More padding for better spacing */
+    padding: 1rem;
 }
 
 .heading_s1 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #111827; /* Darker text for high contrast */
+    color: #111827;
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .heading_s1 p {
-    color: #6b7280; /* Softer gray for secondary text */
-    margin-bottom: 2rem;
+    color: #6b7280;
+    margin-bottom: .5rem;
 }
 
 .heading_s1 p a {
@@ -76,7 +91,6 @@ body {
     text-decoration: underline;
 }
 
-/* Input field styling */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
@@ -93,20 +107,16 @@ body {
     color: #9ca3af;
 }
 
-/* Focus state for input fields */
 .form-group input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
-/* Space out the form groups */
 form .form-group {
     margin-bottom: 1.25rem;
 }
 
-/* 5. SECURITY CODE
---------------------------------------------*/
 .security-code-group {
     display: flex;
     align-items: center;
@@ -115,7 +125,7 @@ form .form-group {
 }
 
 .security-code-group input {
-    flex-grow: 1; /* Allows input to take available space */
+    flex-grow: 1;
 }
 
 span.security-code {
@@ -129,13 +139,10 @@ span.security-code {
     font-weight: 600;
 }
 
-/* Style for each number to make them look distinct */
 .security-code b {
     color: #1f2937;
 }
 
-/* 6. OPTIONS & FOOTER
---------------------------------------------*/
 .login_footer {
     display: flex;
     justify-content: space-between;
@@ -161,9 +168,6 @@ span.security-code {
     color: #0056b3;
 }
 
-/* 7. BUTTONS
---------------------------------------------*/
-/* Main sign-up/login button */
 .btn-heading {
     width: 100%;
     background: linear-gradient(90deg, #007bff, #0056b3);
@@ -178,13 +182,11 @@ span.security-code {
 }
 
 .btn-heading:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.592);
 }
 
-/* Social login buttons */
 .card-login {
-    padding: 0 2.5rem; /* Align padding with the form */
+    padding: 0 2.5rem;
 }
 
 .card-login .btn {
@@ -204,8 +206,8 @@ span.security-code {
 }
 
 .card-login .btn:hover {
-    border-color: #d1d5db;
-    background-color: #f9fafb;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.592);
+    background-color: #fffffffc;
 }
 
 .card-login .btn img {
@@ -213,8 +215,6 @@ span.security-code {
     height: 24px;
 }
 
-/* 8. ERROR MESSAGES
---------------------------------------------*/
 .error-message {
     background-color: #fee2e2;
     color: #b91c1c;

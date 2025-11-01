@@ -27,7 +27,6 @@
 
 
     <!-- Template Stylesheet -->
-    <link href="{% static 'assets/css/index.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/sign-up.css' %}" rel="stylesheet">
 
 
@@ -37,9 +36,12 @@
     <main class="main pages">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
-                <div class="breadcrumb">
-                    <a href="#" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-                    <span></span>My Account
+                <div class="breadcrumb-wrap">
+                    <div class="breadcrumb">
+                        <a href="#"><i class="fi-rs-home ml-5"></i> Home</a>
+                        <span class="divider">></span>
+                        <span class="current">My Account</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,18 +50,11 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
                         <div class="row">
-                            <div class="col-lg-6 pr-30 d-none d-lg-block">
-                                <img class="border-radius-15" src="{% static 'assets/imgs/page/login-1.png' %}"
-                                    alt="login" />
+                            <div class="row heading_s1">
+                                <h1 class="text-center mb-3 mt-2">login</h1>
                             </div>
                             <div class="col-lg-6 col-md-8">
-                                <div class="login_wrp widget-taber_content background-white">
                                     <div class="padding_eight_all bg_white">
-                                        <div class="heading_s1">
-                                            <h1 class="mb-5">login</h1>
-                                            <p class="mb-30">Don't have an account? <a href="#"></a>Create
-                                                here</p>
-                                        </div>
                                         <div>
                                             {% if form.errors %}>
                                             <div class="error-message">
@@ -68,8 +63,9 @@
                                             {% endif %}
                                         </div>
                                     </div>
+                                <p class="mb-3">Don't have an account? <a href="#"></a>Create
+                                    here</p>
 
-                                </div>
                                 <form action="" method="post">
                                     {% csrf_token %}
                                     <div class="form-group">
@@ -105,14 +101,14 @@
                                     <a class="text-muted" href="#">Forgot password?</a>
                             </div>
                             <div class="col-lg-6 pr-30 d-none d-lg-block">
-                                <div class="card-login mt-115">
+                                <div class="card-login mt-1">
                                     <a href="{% url 'google_login' %}" class="btn btn-google btn-block mb-20">
-                                        <img src="{% static 'assets/imgs/theme/icons/icon-google.svg' %}"
+                                        <img src="{% static 'assets/imgs/login_img/google.svg' %}"
                                             alt="google" />
                                         <span>Sign in with Google</span>
                                     </a>
                                     <a href="{% url 'facebook_login' %}" class="btn btn-google btn-block mb-20">
-                                        <img src="{% static 'assets/imgs/theme/icons/icon-facebook.svg' %}"
+                                        <img src="{% static 'assets/imgs/login_img/facebook.svg' %}"
                                             alt="facebook" />
                                         <span>Sign in with facebook</span>
                                     </a>
@@ -144,11 +140,8 @@
 
 
     <!-- Template Javascript -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
     <script src="{% static 'assets/js/sign-up.js' %}"></script>
 
 </body>
 
 </html>
-
-!
