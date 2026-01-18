@@ -51,34 +51,6 @@
     });
 
 
-    // Product carousel
-    // $(".product-carousel").owlCarousel({
-    //     autoplay: true,
-    //     smartSpeed: 1000,
-    //     margin: 45,
-    //     dots: false,
-    //     loop: true,
-    //     nav: true,
-    //     navText: [
-    //         '<i class="bi bi-arrow-left"></i>',
-    //         '<i class="bi bi-arrow-right"></i>'
-    //     ],
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         768: {
-    //             items: 2
-    //         },
-    //         992: {
-    //             items: 3
-    //         },
-    //         1200: {
-    //             items: 4
-    //         }
-    //     }
-    // });
-
     // Product carousel-2
     var swiper = new Swiper(".productSwiper", {
         slidesPerView: 4,
@@ -143,6 +115,75 @@
             '<i class="bi bi-arrow-left"></i>',
             '<i class="bi bi-arrow-right"></i>'
         ],
+    });
+
+    // Hero Swiper Initialization
+    var heroSwiper = new Swiper(".heroSwiper", {
+        loop: true,
+        speed: 800,
+        effect: 'fade', // Smooth ease fade
+        fadeEffect: {
+            crossFade: true
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true, // Pause when user hovers (to read text)
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    // Persistent Topbar Reveal
+    // Once hovered, it adds a class to keep it open
+    const mainHeader = document.querySelector('.main-header');
+    const topBarInfo = document.getElementById('top-bar-info');
+
+    if (mainHeader && topBarInfo) {
+        mainHeader.addEventListener('mouseenter', function () {
+            topBarInfo.classList.add('show-topbar');
+        }, { once: true }); // Only needs to trigger once
+    }
+
+    // Product Swiper Initialization
+    var productSwiper = new Swiper(".productSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        loop: true,
+        grabCursor: true, // Use grab cursor for better UX
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 25,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+        },
     });
 
 })(jQuery);

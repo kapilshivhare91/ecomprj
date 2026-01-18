@@ -112,6 +112,24 @@
     }
 }
 
+.navbar .btn.btn-contact-refined {
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 0;
+    padding: 12px 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 22px;
+    padding: 24px 24px;
+    border: 2px solid var(--primary);
+}
+
+.navbar .btn.btn-contact-refined:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+
 /* hero-section */
 
 .hero-header {
@@ -213,6 +231,7 @@
     position: relative;
     height: 500px;
 }
+
 .image-showcase-stylishs .main-image {
     position: relative;
     z-index: 2;
@@ -222,16 +241,18 @@
     border-radius: 8px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+
 .image-showcase-stylishs .image-bg-shape {
     position: absolute;
     bottom: -20px;
     left: -20px;
     width: 80%;
     height: 80%;
-    background-color: #f0f4ff; 
+    background-color: #f0f4ff;
     border-radius: 8px;
     z-index: 1;
 }
+
 .image-showcase-stylishs .secondary-image-card {
     position: absolute;
     bottom: -60px;
@@ -244,6 +265,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     z-index: 3;
 }
+
 .image-showcase-stylishs .secondary-image-card img {
     width: 100%;
     height: 100%;
@@ -254,7 +276,7 @@
 .stylish-content-wrappers {
     position: relative;
     padding: 2rem 0;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .background-text-watermarks {
@@ -262,11 +284,11 @@
     top: 30%;
     left: 40%;
     transform: translate(-50%, -50%);
-    font-size: 15rem; 
+    font-size: 15rem;
     font-weight: 800;
     color: rgba(0, 0, 0, 0.04);
     z-index: 0;
-    user-select: none; 
+    user-select: none;
     line-height: 1;
 }
 
@@ -278,27 +300,32 @@
 .feature-boxs {
     background-color: #ffffff;
     border: 1px solid #e9ecef;
-    border-left: 4px solid var(--bs-primary); 
+    border-left: 4px solid var(--bs-primary);
     padding: 2rem;
     border-radius: 8px;
     height: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     transition: all 0.3s ease-in-out;
 }
+
 .feature-boxs:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
 .feature-boxs .feature-icon {
     width: 45px;
     height: 45px;
 }
+
 .feature-boxs .feature-icon path {
     fill: var(--bs-primary);
 }
+
 .feature-boxs h5 {
     font-weight: 700;
 }
+
 /* About-Us-end */
 
 
@@ -346,88 +373,96 @@
 
 /* category-start */
 .product-section {
-  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
 }
 
 .letter-spacing {
-  letter-spacing: 2px;
+    letter-spacing: 2px;
 }
 
 .product-card {
-  background-color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease-in-out;
-  position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease-in-out;
+    position: relative;
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
-  position: relative;
-  overflow: hidden;
-  height: 250px;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
 }
+
 .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
+
 .product-card:hover .product-image img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .product-overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: all 0.3s ease;
-  display: flex;
-  gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 10px;
 }
+
 .product-card:hover .product-overlay {
-  opacity: 1;
-  bottom: 20px;
+    opacity: 1;
+    bottom: 20px;
 }
+
 .product-overlay .btn {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
 }
 
 .product-info {
-  text-align: center;
-  padding: 1.5rem 1rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
 }
+
 .product-title {
-  font-weight: 600;
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
 }
+
 .product-price {
-  font-weight: 700;
-  color: var(--bs-primary);
-  font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  .product-image { height: 200px; }
+    .product-image {
+        height: 200px;
+    }
 }
 
 /* category-End */
 
-/* Product start */
+/* offer - start */
 
 .product-item {
     padding: 30px;
@@ -473,7 +508,8 @@
 .product-carousel .owl-nav .owl-next:hover {
     color: var(--dark);
 }
-/* Product End */
+
+/* offer - End */
 
 .bg-offer {
     background: url(../imgs/home_page/leather.jpg) top right no-repeat;
@@ -653,4 +689,369 @@
 }
 
 
+
 /* End of Template CSS */
+
+/* --- Premium Product Card Upgrade --- */
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Card Styling */
+.product-card {
+    background-color: #fff;
+    border-radius: 16px;
+    /* Increased radius */
+    overflow: hidden;
+    border: none;
+    /* Remove harsh borders */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 10px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    /* Lift up */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* Darker shadow */
+}
+
+/* Image Styling */
+.product-image {
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    /* Ensure image respects border radius if needed, though overflow:hidden on card usually handles it. 
+       If padding is added inside body, we might need radius here. */
+}
+
+.product-image img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+    /* Zoom effect */
+}
+
+/* Card Content Spacing */
+.product-info {
+    padding: 20px;
+    /* Breathe */
+    text-align: center;
+}
+
+/* Typography Enhancements */
+.category-label {
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #888;
+}
+
+.product-title {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    /* Keep brand color */
+}
+
+/* Buttons */
+.btn-pill {
+    border-radius: 50px;
+    /* Pill shape */
+    padding: 8px 24px;
+    transition: all 0.3s ease;
+}
+
+.btn-pill.hover-fill:hover {
+    background-color: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+/* --- Hero Swiper Configuration --- */
+
+/* Wrapper */
+.hero-header-wrapper {
+    position: relative;
+    /* width: 100%; */
+    /* Ensure height is substantial */
+    height: 700px;
+}
+
+.heroSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* Slides */
+.hero-slide {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Overlay to improve text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hover-Reveal Navigation */
+.custom-swiper-nav {
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    opacity: 0;
+    /* Hidden by default */
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-swiper-nav::after {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.custom-swiper-nav:hover {
+    background-color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* Reveal Controls on Hover */
+.heroSwiper:hover .custom-swiper-nav {
+    opacity: 1;
+}
+
+/* Text Animations */
+.animate-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.swiper-slide-active .animate-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-header-wrapper {
+        height: 500px;
+    }
+}
+
+/* --- Navigation & Layout Refinement --- */
+
+/* 1. Header Wrapper */
+.main-header {
+    z-index: 1030;
+    background-color: #fff;
+}
+
+/* 2. Topbar Hover Reveal */
+#top-bar-info {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+}
+
+/* Reveal on Header Hover OR when class is added via JS */
+.main-header:hover #top-bar-info,
+#top-bar-info.show-topbar {
+    max-height: 100px;
+    /* Adjust based on content height */
+    opacity: 1;
+    border-bottom: 1px solid #eee;
+}
+
+/* 3. Refined Contact Button */
+.btn-contact-refined {
+    border-radius: 50px;
+    padding: 8px 24px;
+    /* Reduced padding */
+    font-size: 0.9rem;
+    /* Slightly smaller text */
+    font-weight: 600;
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    box-shadow: 0 4px 6px rgba(122, 183, 48, 0.2);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    /* Ensure icon aligns well */
+    align-items: center;
+}
+
+.btn-contact-refined:hover {
+    background-color: white;
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(122, 183, 48, 0.3);
+}
+
+.btn-contact-refined i {
+    transition: transform 0.3s ease;
+}
+
+.btn-contact-refined:hover i {
+    transform: translateX(5px);
+}
+
+/* 4. Full Screen Hero Layout */
+/* Overwrite previous hero height to fit screen minus navbar */
+.hero-header-wrapper {
+    /* 100vh - approx navbar height (80px) */
+    height: calc(100vh - 90px);
+    min-height: 600px;
+    /* Prevent being too small on short screens */
+}
+
+/* Mobile check */
+@media (max-width: 991px) {
+    .hero-header-wrapper {
+        /* On mobile, navbar might be different, let's keep it fixed or auto */
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    /* Ensure topbar is visible or handled differently on mobile if requested? 
+       User said "hover down", usually implies desktop. 
+       On mobile hover doesn't exist. Keeping hidden or default behavior. */
+}
+
+/* --- Product  Section  start--- */
+.product-slider-container {
+    position: relative;
+    padding: 20px 10px 50px 10px;
+    /* Bottom padding for pagination */
+    overflow: hidden;
+}
+
+.product-card-inner {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    height: 100%;
+}
+
+.product-card-inner:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.product-img-wrapper {
+    height: 300px;
+    /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.product-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card-inner:hover .product-img {
+    transform: scale(1.05);
+}
+
+/* Action Icons Overlay */
+.action-icons {
+    bottom: -50px;
+    /* Hidden initially */
+    transition: bottom 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.product-card-inner:hover .action-icons {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Swiper Navigation Customization */
+.productSwiper .custom-nav-btn {
+    color: var(--primary);
+    background: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.productSwiper .custom-nav-btn::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.productSwiper .swiper-pagination-bullet-active {
+    background-color: var(--primary);
+}
+
+/* --- Product  Section  end--- */

@@ -2,38 +2,103 @@
 {% load static %}
 {% block content %}
 <!-- Hero Start -->
-<div class="container-fluid bg-primary py-5 mb-5 hero-header">
-    <div class="container py-5">
-        <div class="row justify-content-start">
-            <div class="col-lg-8 text-center text-lg-start">
-                <h1 class="text-uppercase text-dark mb-lg-4">ecomprj</h1>
-                <h1 class="text-uppercase text-white mb-lg-4">perfect e-commerce </h1>
-                <p class="fs-4 text-white mb-lg-4">We Are Pleased to Surve You</p>
-                <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                    <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
-                    <button type="button" class="btn-play" onclick="scrollToProducts()" data-aos-delay="600">
-                        <a href="/cart" class="cart-link shake-on-hover">
-                            <svg class="play-button-icon shake-on-hover" xmlns="http://www.w3.org/2000/svg"
-                                version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                                viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                                <g>
-                                    <linearGradient id="a" x1="71.841" x2="449.658" y1="423.415" y2="45.598"
-                                        gradientUnits="userSpaceOnUse">
-                                        <stop offset="0" stop-color="#fcc60e"></stop>
-                                        <stop offset="1" stop-color="#e92e29"></stop>
-                                    </linearGradient>
-                                    <path fill="url(#a)"
-                                        d="M136.587 322.105h291.968a41.744 41.744 0 0 0 40.656-31.936l42.498-174.366a12 12 0 0 0-11.659-14.842H108.852L91.961 30.03a12 12 0 0 0-11.674-9.22H30.051c-6.627 0-12 5.373-12 12s5.373 12 12 12H70.81l13.371 56.152H11.949c-6.628 0-12 5.373-12 12s5.372 12 12 12h472.825l-38.881 159.523c-1.986 8.146-8.954 13.62-17.339 13.62H136.587c-25.56 0-46.354 20.794-46.354 46.354 0 25.561 20.794 46.355 46.354 46.355h4.341c-18.755 7.936-31.948 26.524-31.948 48.136 0 28.805 23.435 52.239 52.239 52.239s52.238-23.434 52.238-52.239c0-21.612-13.192-40.2-31.947-48.136h230.026c-18.755 7.936-31.948 26.524-31.948 48.136 0 28.805 23.435 52.239 52.239 52.239s52.239-23.434 52.239-52.239c0-21.612-13.193-40.2-31.948-48.136h17.154c6.628 0 12-5.373 12-12s-5.372-12-12-12H136.587c-12.326 0-22.354-10.028-22.354-22.355 0-12.325 10.028-22.354 22.354-22.354zM161.22 467.19c-15.571 0-28.239-12.668-28.239-28.239s12.668-28.239 28.239-28.239c15.57 0 28.238 12.668 28.238 28.239S176.79 467.19 161.22 467.19zm270.608 0c-15.571 0-28.239-12.668-28.239-28.239s12.668-28.239 28.239-28.239 28.239 12.668 28.239 28.239-12.668 28.239-28.239 28.239zM85.36 190.676c-6.627 0-12-5.373-12-12s5.373-12 12-12h146.572c6.627 0 12 5.373 12 12s-5.373 12-12 12zm80.109 65.715H20.168c-6.627 0-12-5.373-12-12s5.373-12 12-12h145.301c6.627 0 12 5.373 12 12s-5.373 12-12 12z"
-                                        opacity="1" data-original="url(#a)"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </button>
-                    <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Shop Now!</h5>
+<div class="container-fluid mb-5 hero-header-wrapper px-0">
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide hero-slide"
+                style="background-image: url('{% static 'assets/imgs/home_page/stole.jpg' %}');">
+                <div class="hero-overlay"></div>
+                <div class="container py-5 hero-content">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="text-uppercase text-warning mb-lg-4 animate-reveal"
+                                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">ecomprj</h1>
+                            <h1 class="text-uppercase text-white mb-lg-4 animate-reveal delay-100"
+                                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">Perfect Styling</h1>
+                            <p class="fs-4 text-white mb-lg-4 animate-reveal delay-200"
+                                style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Discover the latest trends in fashion
+                                and lifestyle.</p>
+                            <div
+                                class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5 animate-reveal delay-300">
+                                <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
+                                <button type="button" class="btn-play" onclick="scrollToProducts()">
+                                    <svg class="play-button-icon shake-on-hover" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512 512">
+                                        <g>
+                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" style="stop-color:#fcc60e;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#e92e29;stop-opacity:1" />
+                                            </linearGradient>
+                                            <path fill="url(#grad1)"
+                                                d="M136.587 322.105h291.968a41.744 41.744 0 0 0 40.656-31.936l42.498-174.366a12 12 0 0 0-11.659-14.842H108.852L91.961 30.03a12 12 0 0 0-11.674-9.22H30.051c-6.627 0-12 5.373-12 12s5.373 12 12 12H70.81l13.371 56.152H11.949c-6.628 0-12 5.373-12 12s5.372 12 12 12h472.825l-38.881 159.523c-1.986 8.146-8.954 13.62-17.339 13.62H136.587c-25.56 0-46.354 20.794-46.354 46.354 0 25.561 20.794 46.355 46.354 46.355h4.341c-18.755 7.936-31.948 26.524-31.948 48.136 0 28.805 23.435 52.239 52.239 52.239s52.238-23.434 52.238-52.239c0-21.612-13.192-40.2-31.947-48.136h230.026c-18.755 7.936-31.948 26.524-31.948 48.136 0 28.805 23.435 52.239 52.239 52.239s52.239-23.434 52.239-52.239c0-21.612-13.193-40.2-31.948-48.136h17.154c6.628 0 12-5.373 12-12s-5.372-12-12-12H136.587c-12.326 0-22.354-10.028-22.354-22.355 0-12.325 10.028-22.354 22.354-22.354zM161.22 467.19c-15.571 0-28.239-12.668-28.239-28.239s12.668-28.239 28.239-28.239c15.57 0 28.238 12.668 28.238 28.239S176.79 467.19 161.22 467.19zm270.608 0c-15.571 0-28.239-12.668-28.239-28.239s12.668-28.239 28.239-28.239 28.239 12.668 28.239 28.239-12.668 28.239-28.239 28.239zM85.36 190.676c-6.627 0-12-5.373-12-12s5.373-12 12-12h146.572c6.627 0 12 5.373 12 12s-5.373 12-12 12zm80.109 65.715H20.168c-6.627 0-12-5.373-12-12s5.373-12 12-12h145.301c6.627 0 12 5.373 12 12s-5.373 12-12 12z" />
+                                        </g>
+                                    </svg>
+                                </button>
+                                <a href="{% url 'core:category-list' %}"
+                                    class="text-white text-decoration-none ms-4 d-none d-sm-block">
+                                    <h5 class="font-weight-normal m-0" style="text-shadow: 1px 1px 2px black;">Shop Now!
+                                    </h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide hero-slide"
+                style="background-image: url('{% static 'assets/imgs/home_page/cover.jpg' %}');">
+                <div class="hero-overlay"></div>
+                <div class="container py-5 hero-content">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="text-uppercase text-warning mb-lg-4 animate-reveal"
+                                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">Seasonal</h1>
+                            <h1 class="text-uppercase text-white mb-lg-4 animate-reveal delay-100"
+                                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">Top Collections</h1>
+                            <p class="fs-4 text-white mb-lg-4 animate-reveal delay-200"
+                                style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Upgrade your wardrobe with our
+                                exclusive seasonal picks.</p>
+                            <div
+                                class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5 animate-reveal delay-300">
+                                <a href="{% url 'core:category-list' %}"
+                                    class="btn btn-primary py-md-3 px-md-5 me-5 shadow-lg">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide hero-slide"
+                style="background-image: url('{% static 'assets/imgs/home_page/leather.jpg' %}');">
+                <div class="hero-overlay"></div>
+                <div class="container py-5 hero-content">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="text-uppercase text-danger mb-lg-4 animate-reveal"
+                                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">Exclusive</h1>
+                            <h1 class="text-uppercase text-white mb-lg-4 animate-reveal delay-100"
+                                style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">Premium Leather</h1>
+                            <p class="fs-4 text-white mb-lg-4 animate-reveal delay-200"
+                                style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Unmatched quality and durability for
+                                the modern era.</p>
+                            <div
+                                class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5 animate-reveal delay-300">
+                                <a href="{% url 'core:category-list' %}"
+                                    class="btn btn-light py-md-3 px-md-5 me-5 shadow-lg">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next custom-swiper-nav"></div>
+        <div class="swiper-button-prev custom-swiper-nav"></div>
     </div>
 </div>
 <!-- Hero End -->
@@ -424,145 +489,175 @@
     <div class="container">
 
         <div class="text-center mb-5">
-            <h6 class="text-primary text-uppercase fw-bold letter-spacing">Our Products</h6>
-            <h2 class="display-6 fw-bold">Products for You at Best Price</h2>
-            <p class="text-muted">Discover the perfect picks crafted just for your lifestyle</p>
+            <h6 class="text-primary text-uppercase fw-bold letter-spacing">Our Collections</h6>
+            <h2 class="display-6 fw-bold">Shop By Category</h2>
+            <p class="text-muted">Premium essentials for every aspect of your life</p>
         </div>
 
         <div class="row g-4 justify-content-center">
 
+            <!-- Card 1: Electronics -->
             <div class="col-md-6 col-lg-3">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Electronics">
                         <div class="product-overlay">
                             <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
                             <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h5 class="product-title">Quality Pet Foods</h5>
-                        <p class="product-price">$199.00</p>
+                        <span class="category-label text-uppercase text-muted small d-block mb-2"
+                            style="font-size: 0.75rem; letter-spacing: 1px;">Electronics</span>
+                        <h5 class="product-title text-dark fw-bold">Modern Gadgets</h5>
+                        <p class="product-price text-primary fw-bold mb-3">$299.00</p>
+                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Card 2: Household -->
             <div class="col-md-6 col-lg-3">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <img src="{% static 'assets/imgs/home_page/2.jpg' %}" alt="Household">
                         <div class="product-overlay">
                             <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
                             <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h5 class="product-title">Quality Pet Foods</h5>
-                        <p class="product-price">$199.00</p>
+                        <span class="category-label text-uppercase text-muted small d-block mb-2"
+                            style="font-size: 0.75rem; letter-spacing: 1px;">Household</span>
+                        <h5 class="product-title text-dark fw-bold">Home Essentials</h5>
+                        <p class="product-price text-primary fw-bold mb-3">$149.00</p>
+                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Card 3: Cloths -->
             <div class="col-md-6 col-lg-3">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <img src="{% static 'assets/imgs/home_page/black_coat.jpg' %}" alt="Cloths">
                         <div class="product-overlay">
                             <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
                             <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h5 class="product-title">Quality Pet Foods</h5>
-                        <p class="product-price">$199.00</p>
+                        <span class="category-label text-uppercase text-muted small d-block mb-2"
+                            style="font-size: 0.75rem; letter-spacing: 1px;">Apparel</span>
+                        <h5 class="product-title text-dark fw-bold">Stylish Cloths</h5>
+                        <p class="product-price text-primary fw-bold mb-3">$89.00</p>
+                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Card 4: Fresh Food -->
             <div class="col-md-6 col-lg-3">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Product 1">
+                        <img src="{% static 'assets/imgs/home_page/3.jpg' %}" alt="Fresh Food">
                         <div class="product-overlay">
                             <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
                             <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h5 class="product-title">Quality Pet Foods</h5>
-                        <p class="product-price">$199.00</p>
+                        <span class="category-label text-uppercase text-muted small d-block mb-2"
+                            style="font-size: 0.75rem; letter-spacing: 1px;">Fresh Food</span>
+                        <h5 class="product-title text-dark fw-bold">Organic Fruits</h5>
+                        <p class="product-price text-primary fw-bold mb-3">$25.00</p>
+                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 <!-- category end  -->
 
-<!-- Products Start -->
-<div class="container-fluid py-5">
-    <div class="container">
+<!-- Product Swiper Section -->
+<div class="container-fluid py-5 product-section">
+    <div class="container" id="product">
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase">Products</h6>
+            <h6 class="text-primary text-uppercase">Product List</h6>
             <h1 class="display-5 text-uppercase mb-0">Products For You At Best Price</h1>
         </div>
-        <div class="owl-carousel product-carousel">
-            <div class="pb-5">
-                <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                    <img class="img-fluid mb-4" src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="">
-                    <h6 class="text-uppercase">Quality product</h6>
-                    <h5 class="text-primary mb-0">$199.00</h5>
-                    <div class="btn-action d-flex justify-content-center">
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+
+        <!-- Swiper Container -->
+        <div class="swiper productSwiper product-slider-container">
+            <div class="swiper-wrapper">
+                {% for p in front_product %}
+                <div class="swiper-slide">
+                    <!-- Product Card -->
+                    <div class="product-card-inner position-relative">
+                        <!-- Image Area -->
+                        <div class="product-img-wrapper position-relative overflow-hidden bg-light">
+                            <a href="{% url 'core:product-list' %}">
+                                <img class="img-fluid w-100 product-img" src="{{ p.image.url }}" alt="{{ p.title }}">
+                            </a>
+                            <!-- Hover Action Buttons -->
+                            <div class="action-icons position-absolute start-0 w-100 text-center">
+                                <a aria-label="Add to Wishlist" class="action-btn btn btn-light rounded-circle mx-1"
+                                    href="shop-wishlist.html"><i class="bi bi-heart"></i></a>
+                                <a aria-label="View Details" class="action-btn btn btn-light rounded-circle mx-1"
+                                    href="shop-compare.html"><i class="bi bi-eye"></i></a>
+                            </div>
+                            <!-- Badge -->
+                            {% if p.is_new %}
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-success">New</span>
+                            </div>
+                            {% endif %}
+                            {% if p.get_percentage %}
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-danger">{{p.get_percentage|floatformat:0}}% OFF</span>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Content Area -->
+                        <div class="text-center p-4">
+                            <h5 class="text-uppercase mb-1 text-truncate"><a href="{% url 'core:product-list' %}"
+                                    class="text-dark text-decoration-none">{{ p.title }}</a></h5>
+                            <p class="text-muted small mb-2"><a href="{% url 'core:category-list' %}"
+                                    class="text-muted">{{
+                                    p.category.title }}</a></p>
+
+                            <!-- Rating (Static for now, dynamic if available) -->
+                            <div class="d-flex justify-content-center mb-3 text-warning small">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <span class="h5 fw-bold text-primary me-3">${{ p.price }}</span>
+                                {% if p.old_price %}
+                                <span class="text-muted text-decoration-line-through">${{ p.old_price }}</span>
+                                {% endif %}
+                            </div>
+                            <a href="" class="btn btn-outline-primary rounded-pill py-2 px-4">Add to Cart</a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            <div class="pb-5">
-                <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                    <img class="img-fluid mb-4" src="{% static 'assets/imgs/home_page/2.jpg' %}" alt="">
-                    <h6 class="text-uppercase">Quality Pet Foods</h6>
-                    <h5 class="text-primary mb-0">$199.00</h5>
-                    <div class="btn-action d-flex justify-content-center">
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="pb-5">
-                <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                    <img class="img-fluid mb-4" src="{% static 'assets/imgs/home_page/3.jpg' %}" alt="">
-                    <h6 class="text-uppercase">Quality Pet Foods</h6>
-                    <h5 class="text-primary mb-0">$199.00</h5>
-                    <div class="btn-action d-flex justify-content-center">
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="pb-5">
-                <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                    <img class="img-fluid mb-4" src="{% static 'assets/imgs/home_page/black_coat.jpg' %}" alt="">
-                    <h6 class="text-uppercase">Quality Pet Foods</h6>
-                    <h5 class="text-primary mb-0">$199.00</h5>
-                    <div class="btn-action d-flex justify-content-center">
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="pb-5">
-                <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                    <img class="img-fluid mb-4" src="{% static 'assets/imgs/home_page/boy.jpg' %}" alt="">
-                    <h6 class="text-uppercase">Quality Pet Foods</h6>
-                    <h5 class="text-primary mb-0">$199.00</h5>
-                    <div class="btn-action d-flex justify-content-center">
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                        <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                    </div>
-                </div>
-            </div>
+
+            <!-- Custom Navigation Arrows -->
+            <div class="swiper-button-next custom-nav-btn"></div>
+            <div class="swiper-button-prev custom-nav-btn"></div>
+            <div class="swiper-pagination mt-4"></div>
         </div>
     </div>
 </div>
-<!-- Products End -->
 
 <!-- Offer Start -->
 <div class="container-fluid bg-offer my-5 py-5">
@@ -601,7 +696,7 @@
                         <h1 class="display-4 text-white mb-0">
                             <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>49<small
                                 class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                Mo</small>
+                                yr</small>
                         </h1>
                     </div>
                     <div class="text-center p-4">
@@ -908,72 +1003,5 @@
 
 <h1 style="color: orange; border: 2px brown ;">header AREA end</h1>
 
-
-
-
-
-<!-- Pricing Plan Start -->
-<div class="container-fluid py-5">
-    <div class="container" id="product">
-        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase">Product List</h6>
-            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h1>
-        </div>
-        <div class="row g-3">
-            {% for p in front_product %}
-            <div class="col-md-4">
-                <div class="bg-light text-center pt-5 mt-lg-5">
-                    <h3 class="text-uppercase"><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h3>
-                    <h6 class="text-body mb-5  "> <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a>
-                    </h6>
-                    <h6 class="text-body mb-5 ">
-                        <span class="font-small">By <a href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
-                    </h6>
-                    <div class="text-center bg-primary p-4 mb-2">
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top" style="size: 80vh; width: 100vh;">
-                                <a href="shop-product-right.html">
-                                    <img class="img-fluid" style="height: 50vh;" src="{{ p.image.url }}" alt="" />
-                                </a>
-                            </small>
-                        </h1>
-                    </div>
-                    <div class="text-center p-4">
-                        <div class="d-flex align-items-center justify-content-between m-1">
-                            <a aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"></a>
-                            <a aria-label="Compare" class="action-btn" href="shop-compare.html"></a>
-                            <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"></a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="font-small ml-5 text-muted">{{p.rating}}</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <i class="bi bi-check2 fs-4 text-primary">
-                                <span class="mx-1">${{ p.price }}</span>
-                            </i>
-                            <i class="bi bi-x fs-4 text-danger">
-                                {% if p.old_price %}
-                                <span class="old-price  ">${{ p.old_price }}</span>
-                                {% endif %}
-                            </i>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span>
-                                {% if p.is_new %}
-                                <div class="badge bg-success text-white">New</div>
-                                <span class="hot">-{{p.get_Percentage|floatformat:0}}%</span>
-                        </div>
-                        {% endif %}
-                        </span>
-                    </div>
-                    <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-</div>
-<!-- Pricing Plan End -->
 
 {% endblock content %}

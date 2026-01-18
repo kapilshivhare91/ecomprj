@@ -18,6 +18,8 @@ def index(request):
     return render(request, 'core/index.html' , context)
 
 
+    return render(request, 'core/index.html' , context)
+
 
 def product_list_view(request):
     server_products = Product.objects.filter(product_status="published").order_by("-id")

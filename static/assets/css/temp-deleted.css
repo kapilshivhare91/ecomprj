@@ -1,0 +1,156 @@
+/* product css start */
+
+/* 1. Container Relative Positioning */
+.product-slider-container {
+    position: relative;
+    padding: 20px 10px; /* Space for shadow */
+    overflow: hidden;
+}
+
+/* 2. The Card Aesthetic Upgrade */
+.product-card-inner {
+    background: #ffffff; /* Pure white looks cleaner than bg-light */
+    border-radius: 15px; /* Modern rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 100%; /* Ensure equal height */
+    border: 1px solid #eee;
+}
+
+/* Hover Effect: Lift Card */
+.product-card-inner:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* 3. Image Sizing Fix (Crucial) */
+/* This overrides the inline styles in your HTML that were causing issues */
+.image-container {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.product-img {
+    height: 250px !important; /* Fixed height for uniformity */
+    width: 100%;
+    object-fit: cover; /* Ensures image fills space nicely */
+}
+
+/* 4. Price & Text Tweaks */
+.price-text {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #0d6efd;
+}
+
+/* 5. HOVER REVEAL CONTROLS (The Logic) */
+.custom-nav-btn {
+    color: #0d6efd; /* Primary Blue */
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0; /* HIDDEN BY DEFAULT */
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.custom-nav-btn::after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* When hovering the container, show the buttons */
+.product-slider-container:hover .custom-nav-btn {
+    opacity: 1;
+}
+
+/* Adjust button position to be on the sides */
+.swiper-button-prev { left: 10px; }
+.swiper-button-next { right: 10px; }
+
+/* product css end */
+
+
+
+
+
+
+<!-- product card -->
+<div class="container-fluid py-5">
+    <div class="container" id="product">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Product List</h6>
+            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h1>
+        </div>
+
+        <!-- SWIPER CONTAINER STARTS HERE -->
+        <div class="swiper productSwiper product-slider-container">
+            <div class="swiper-wrapper">
+                {% for p in front_product %}
+                <!-- Note: Changed col-md-4 to swiper-slide -->
+                <div class="swiper-slide">
+                    <!-- YOUR ORIGINAL CARD HTML STARTS HERE -->
+                    <div class="product-card-inner bg-light text-center pt-5 mt-lg-5">
+                        <h3 class="text-uppercase"><a href="{% url 'core:product-list' %}">{{ p.title }}</a></h3>
+                        <h6 class="text-body mb-5"> <a href="{% url 'core:category-list' %}">{{ p.category.title }}</a></h6>
+                        <h6 class="text-body mb-5">
+                            <span class="font-small">By <a href="{% url 'core:vendor-list' %}">{{p.vendor.title}}</a></span>
+                        </h6>
+                        <div class="text-center bg-primary p-4 mb-2">
+                            <h1 class="display-4 text-white mb-0">
+                                <!-- Added a class to image to control size via CSS -->
+                                <small class="align-top image-container">
+                                    <a href="shop-product-right.html">
+                                        <img class="img-fluid product-img" src="{{ p.image.url }}" alt="" />
+                                    </a>
+                                </small>
+                            </h1>
+                        </div>
+                        <div class="text-center p-4">
+                            <!-- Keeping your icons/prices exactly as requested -->
+                            <div class="d-flex align-items-center justify-content-between m-1">
+                                <a aria-label="Add to Wishlist" class="action-btn" href="shop-wishlist.html"><i class="bi bi-heart"></i></a>
+                                <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="bi bi-shuffle"></i></a>
+                                <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span class="font-small ml-5 text-muted">{{p.rating}}</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <i class="bi bi-check2 fs-4 text-primary">
+                                    <span class="mx-1 price-text">${{ p.price }}</span>
+                                </i>
+                                <i class="bi bi-x fs-4 text-danger">
+                                    {% if p.old_price %}
+                                    <span class="old-price text-decoration-line-through">${{ p.old_price }}</span>
+                                    {% endif %}
+                                </i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>
+                                    {% if p.is_new %}
+                                    <div class="badge bg-success text-white">New</div>
+                                    <span class="hot ms-2 text-danger">-{{p.get_Percentage|floatformat:0}}%</span>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
+                        </div>
+                    </div>
+                    <!-- YOUR ORIGINAL CARD HTML ENDS HERE -->
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Manual Navigation Buttons (Hidden by default) -->
+            <div class="swiper-button-next custom-nav-btn"></div>
+            <div class="swiper-button-prev custom-nav-btn"></div>
+        </div>
+    </div>
+</div>
+<!-- product card end -->
