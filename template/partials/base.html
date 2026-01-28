@@ -118,6 +118,16 @@
                             <a href="detail.html" class="dropdown-item">Blog Detail</a>
                         </div>
                     </div>
+
+                    <!-- Cart Icon -->
+                    <a href="{% url 'core:cart' %}" class="nav-item nav-link position-relative me-3">
+                        <i class="bi bi-cart-fill fs-5"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-items-count">
+                            {{ cart_count|default:"0" }}
+                        </span>
+                    </a>
+
                     <a href="{% url 'core:contact' %}"
                         class="btn btn-primary btn-contact-refined ms-lg-5 d-none d-lg-block">Contact Us <i
                             class="bi bi-arrow-right ms-2"></i></a>
@@ -214,6 +224,7 @@
                     <!-- Template Javascript -->
                     <script src="{% static 'assets/js/main.js' %}"></script>
                     <script src="{% static 'assets/js/sign-up.js' %}"></script>
+                    <script src="{% static 'assets/js/cart.js' %}"></script>
 
 
 

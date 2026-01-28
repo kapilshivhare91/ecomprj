@@ -16,9 +16,12 @@ urlpatterns = [
 
     #vendor
     path("vendor-list/", views.vendor_list_view, name = "vendor-list"),
-    path("cart/", views.cart_view, name = "cart"),
-
     #contact
     path("contact/", views.contact_view, name = "contact"),
+
+    # add to cart
+    path('add-to-cart/', views.add_to_cart, name='add-to-cart'),
+    path('cart/', views.cart_view, name='cart'),
+    path('delete-from-cart/', views.delete_item_from_cart, name='delete-from-cart'),
   ]
 

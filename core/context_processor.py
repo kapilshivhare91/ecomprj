@@ -10,3 +10,7 @@ def products(request):
     return {
         'front_product':server_products,
     }
+
+def cart_count(request):
+    cart_data = request.session.get('cart_data_obj', {})
+    return {'cart_count': len(cart_data)}

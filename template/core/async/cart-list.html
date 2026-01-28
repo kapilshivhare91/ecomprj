@@ -1,0 +1,86 @@
+<div class="row" id="cart-list">
+    <!-- CART LIST (Left Side) -->
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="ps-4">Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product_id, item in cart_data.items %}
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ item.image }}" class="rounded me-3"
+                                            style="width: 60px; height: 60px; object-fit: cover;">
+                                        <div>
+                                            <h6 class="mb-0 text-dark">{{ item.title }}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>${{ item.price }}</td>
+                                <td>
+                                    <!-- Simple read-only qty for now, update logic can be added later -->
+                                    <span class="badge bg-secondary">{{ item.qty }}</span>
+                                </td>
+                                <td class="fw-bold text-success">
+                                    ${% widthratio item.price 1 item.qty %}
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-danger delete-product"
+                                        data-product="{{ product_id }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center py-5">
+                                    <h4 class="text-muted">Your cart is empty 😔</h4>
+                                    <a href="{% url 'core:index' %}" class="btn btn-primary mt-3">Continue Shopping</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART SUMMARY (Right Side) -->
+    <div class="col-lg-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold mb-4">Order Summary</h5>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Subtotal</span>
+                    <span class="fw-bold">${{ total_amount|floatformat:2 }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Shipping</span>
+                    <span class="text-success">Free</span>
+                </div>
+                <div class="d-flex justify-content-between mb-4">
+                    <span class="text-muted">Tax</span>
+                    <span>$0.00</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between mb-4">
+                    <span class="fs-5 fw-bold">Total</span>
+                    <span class="fs-5 fw-bold text-success">${{ total_amount|floatformat:2 }}</span>
+                </div>
+
+                <a href="#" class="btn btn-primary w-100 py-2">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>

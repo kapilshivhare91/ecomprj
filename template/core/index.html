@@ -485,97 +485,34 @@
 <!-- Services End -->
 
 <!-- category Start -->
-<section class="product-section py-5">
+<section class="category-section py-5 bg-light-gradient">
     <div class="container">
-
         <div class="text-center mb-5">
-            <h6 class="text-primary text-uppercase fw-bold letter-spacing">Our Collections</h6>
-            <h2 class="display-6 fw-bold">Shop By Category</h2>
-            <p class="text-muted">Premium essentials for every aspect of your life</p>
+            <h5 class="text-primary text-uppercase letter-spacing-2">Browse Collections</h5>
+            <h2 class="display-5 fw-bold text-dark">Trending Categories</h2>
         </div>
 
-        <div class="row g-4 justify-content-center">
-
-            <!-- Card 1: Electronics -->
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/1.jpg' %}" alt="Electronics">
-                        <div class="product-overlay">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
-                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
+        <div class="swiper categorySwiper px-3">
+            <div class="swiper-wrapper">
+                {% for c in categories %}
+                <div class="swiper-slide">
+                    <a href="{% url 'core:category-product-list' c.cid %}" class="category-card-3d">
+                        <div class="img-box">
+                            <img src="{{ c.image.url }}" alt="{{ c.title }}">
+                            <div class="glass-overlay"></div>
                         </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="category-label text-uppercase text-muted small d-block mb-2"
-                            style="font-size: 0.75rem; letter-spacing: 1px;">Electronics</span>
-                        <h5 class="product-title text-dark fw-bold">Modern Gadgets</h5>
-                        <p class="product-price text-primary fw-bold mb-3">$299.00</p>
-                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Household -->
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/2.jpg' %}" alt="Household">
-                        <div class="product-overlay">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
-                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
+                        <div class="content-box">
+                            <h5 class="fw-bold">{{ c.title }}</h5>
+                            <span class="btn-link text-primary align-items-center d-flex justify-content-center">
+                                Explore <i class="bi bi-arrow-right ms-2"></i>
+                            </span>
                         </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="category-label text-uppercase text-muted small d-block mb-2"
-                            style="font-size: 0.75rem; letter-spacing: 1px;">Household</span>
-                        <h5 class="product-title text-dark fw-bold">Home Essentials</h5>
-                        <p class="product-price text-primary fw-bold mb-3">$149.00</p>
-                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
-                    </div>
+                    </a>
                 </div>
+                {% endfor %}
             </div>
-
-            <!-- Card 3: Cloths -->
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/black_coat.jpg' %}" alt="Cloths">
-                        <div class="product-overlay">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
-                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="category-label text-uppercase text-muted small d-block mb-2"
-                            style="font-size: 0.75rem; letter-spacing: 1px;">Apparel</span>
-                        <h5 class="product-title text-dark fw-bold">Stylish Cloths</h5>
-                        <p class="product-price text-primary fw-bold mb-3">$89.00</p>
-                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: Fresh Food -->
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'assets/imgs/home_page/3.jpg' %}" alt="Fresh Food">
-                        <div class="product-overlay">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-cart"></i></a>
-                            <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="category-label text-uppercase text-muted small d-block mb-2"
-                            style="font-size: 0.75rem; letter-spacing: 1px;">Fresh Food</span>
-                        <h5 class="product-title text-dark fw-bold">Organic Fruits</h5>
-                        <p class="product-price text-primary fw-bold mb-3">$25.00</p>
-                        <a href="#" class="btn btn-outline-primary btn-pill w-100 hover-fill">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
@@ -644,7 +581,16 @@
                                 <span class="text-muted text-decoration-line-through">${{ p.old_price }}</span>
                                 {% endif %}
                             </div>
-                            <a href="" class="btn btn-outline-primary rounded-pill py-2 px-4">Add to Cart</a>
+
+                            <!-- HIDDEN INPUTS FOR CART -->
+                            <input type="hidden" value="1" class="product-qty-{{ p.id }}">
+                            <input type="hidden" value="{{ p.pid }}" class="product-id-{{ p.id }}">
+                            <input type="hidden" value="{{ p.title }}" class="product-title-{{ p.id }}">
+                            <input type="hidden" class="product-image-{{ p.id }}" value="{{ p.image.url }}">
+                            <input type="hidden" value="{{ p.price }}" class="product-price-{{ p.id }}">
+
+                            <button class="btn btn-outline-primary rounded-pill py-2 px-4 add-to-cart-btn"
+                                data-index="{{ p.id }}">Add to Cart</button>
                         </div>
                     </div>
                 </div>

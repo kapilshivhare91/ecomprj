@@ -78,6 +78,7 @@ TEMPLATES = [
             'context_processors': [
                 'core.context_processor.products', 
                 'core.context_processor.default', 
+                'core.context_processor.cart_count',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',

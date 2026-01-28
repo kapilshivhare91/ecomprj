@@ -2,96 +2,43 @@
 {% load static %}
 {% block content %}
 
-<div>
-    <h1 class="mb-15">Categorie's</h1>
-    <div class="breadcrumb">
-        <a href="{% url 'core:index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-        <span class="divider">/</span>
-        <span>Categorie's</span>
-    </div>
-    <div class="page-content mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="shop-product-fillter mb-50 pr-30">
-                        <div class="totall-product">
-                            <h2>
-                                <img class="w-36px mr-10" src="" alt="" />
-                                {{ categories.count }} categorie's
-                            </h2>
-                        </div>
-                        <div class="sort-by-product-area">
-                            <div class="sort-by-cover mr-20">
-                                <div class="sort-by-product-wrap">
-                                    <div class="sort-by">
-                                        <span><i class="fi-rs-apps"></i>Show:</span>
-                                    </div>
-                                    <div class="sort-by-dropdown-wrap">
-                                        <span> 50 <i class="fi-rs-angle-small-down"></i></span>
-                                    </div>
-                                </div>
-                                <div class="sort-by-dropdown">
-                                    <ul>
-                                        <li><a class="active" href="#">home</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sort-by-cover">
-                                <div class="sort-by-product-wrap">
-                                    <div class="sort-by">
-                                        <span><i class="fi-rs-apps-sort"></i>Sort:</span>
-                                    </div>
-                                    <div class="sort-by-dropdown-wrap">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Header -->
+<div class="container-fluid py-5 bg-light-gradient">
+    <div class="container text-center">
+        <h5 class="text-primary text-uppercase letter-spacing-2">Collections</h5>
+        <h1 class="display-4 fw-bold text-dark">All Categories</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase">
+                <li class="breadcrumb-item"><a href="{% url 'core:index' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Categories</li>
+            </ol>
+        </nav>
     </div>
 </div>
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase">category List</h6>
-            <h1 class="display-5 text-uppercase mb-0">Competitive Pricing For Services</h1>
-        </div>
-        <div class="row g-3">
-                    {% for c in categories %}
-            <div class="col-md-4">
-                <div class="bg-light text-center pt-5 mt-lg-5">
-                    <h3 class="text-uppercase"><a href="{{ c.cid }}">{{ c.title }}</a></h3>
-                    <div class="text-center bg-primary p-4 mb-2">
-                        <h1 class="display-4 text-white mb-0">
-                            <small class="align-top" style="size: 80vh; width: 100vh;">
-                                <a href="shop-product-right.html">
-                                    <img class="img-fluid" style="height: 50vh;" src="{{ c.image.url }}" alt="" />
-                                </a>
-                            </small>
-                        </h1>
+
+<!-- Category Grid -->
+<div class="container py-5">
+    <div class="row g-4 justify-content-center">
+        {% for c in categories %}
+        <div class="col-md-6 col-lg-4 col-xl-3">
+            <a href="{% url 'core:category-product-list' c.cid %}" class="text-decoration-none">
+                <div class="category-card-3d bg-white shadow-sm h-100">
+                    <div class="img-box position-relative" style="height: 250px;">
+                        <img src="{{ c.image.url }}" alt="{{ c.title }}" class="w-100 h-100 object-fit-cover">
+                        <div class="glass-overlay"></div>
                     </div>
-                    <div class="col text-center p-4">
-                        <div class="d-flex align-items-center justify-content-between m-1">
-                            <h5 aria-label="Add to Wishlist" class="action-btn"><a href="shop-wishlist.html">Wishlist
-                            </h5></a>
-                            <h5 aria-label="Compare" class="action-btn"><a href="shop-compare.html">Compare</h5></a>
-                            <div aria-label="Quick view" class="col" data-bs-toggle="modal">
-                                <h2>{{ c.category.all.count}} product{{c.category.count|pluralize}}</h2>
-                            </div>
-                        </div>
+                    <div class="content-box p-3 text-center border-top">
+                        <h5 class="fw-bold text-dark mb-1">{{ c.title }}</h5>
+                        <p class="text-muted small mb-0">{{ c.category.count }} Items</p>
                     </div>
                 </div>
-                <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
-            </div>
-                {% endfor %}
+            </a>
         </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <h3 class="text-muted">No categories found.</h3>
+        </div>
+        {% endfor %}
     </div>
 </div>
 

@@ -58,8 +58,78 @@ def category_product_list_view(request, cid):
     }
     return render(request,'core/category-product-list.html', context)
 
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+
+def add_to_cart(request):
+    # Get parameters from the AJAX GET request
+    pid = request.GET.get("id")
+    qty = request.GET.get("qty")
+    title = request.GET.get("title")
+    price = request.GET.get("price")
+    image = request.GET.get("image")
+
+    # Initialize cart session if it doesn't exist
+    cart_data = request.session.get('cart_data_obj', {})
+
+    # Check if item is already in cart
+    if pid in cart_data:
+        cart_data[str(pid)]['qty'] = int(cart_data[str(pid)]['qty']) + int(qty)
+        cart_data[str(pid)]['price'] = price # Optional: update price if changed
+    else:
+        # Add new item
+        cart_data[str(pid)] = {
+            'title': title,
+            'qty': int(qty),
+            'price': price,
+            'image': image,
+            'pid': pid,
+        }
+
+    # Save session
+    request.session['cart_data_obj'] = cart_data
+    
+    # Calculate total items
+    return JsonResponse({
+        "data": request.session['cart_data_obj'], 
+        "totalcartitems": len(request.session['cart_data_obj'])
+    })
+
 def cart_view(request):
-    return render(request, 'core/cart.html')
+    cart_total_amount = 0
+    if 'cart_data_obj' in request.session:
+        for p_id, item in request.session['cart_data_obj'].items():
+            cart_total_amount += float(item['price']) * int(item['qty'])
+            
+    return render(request, 'core/cart.html', {
+        "cart_data": request.session.get('cart_data_obj', {}), 
+        "total_amount": cart_total_amount, 
+        "currency": "$" # Or fetch from settings
+    })
+
+def delete_item_from_cart(request):
+    pid = request.GET.get('id')
+    cart_data = request.session.get('cart_data_obj', {})
+    
+    if pid in cart_data:
+        del cart_data[pid]
+        request.session['cart_data_obj'] = cart_data
+    
+    cart_total_amount = 0
+    if 'cart_data_obj' in request.session:
+        for p_id, item in request.session['cart_data_obj'].items():
+            cart_total_amount += float(item['price']) * int(item['qty'])
+            
+    context = render_to_string("core/async/cart-list.html", {
+        "cart_data": request.session['cart_data_obj'], 
+        "total_amount": cart_total_amount, 
+        "currency": "$"
+    })
+    
+    return JsonResponse({
+        "data": context, 
+        "totalcartitems": len(request.session['cart_data_obj'])
+    })
 
 def contact_view(request):
     context = {}

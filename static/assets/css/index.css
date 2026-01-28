@@ -1055,3 +1055,110 @@ body {
 }
 
 /* --- Product  Section  end--- */
+/* Category Section Styles */
+
+/* --- Dynamic Category Slider Styles --- */
+.category-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.categorySwiper {
+    padding-bottom: 50px !important; 
+    padding-top: 20px !important;
+}
+
+.category-card-3d {
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    height: 320px; 
+}
+
+.category-card-3d:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.img-box {
+    position: relative;
+    height: 75%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.category-card-3d:hover .img-box img {
+    transform: scale(1.1);
+}
+
+/* Glassmorphism Effect */
+.glass-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.category-card-3d:hover .glass-overlay {
+    opacity: 0.8;
+}
+
+.content-box {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.content-box h5 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.category-card-3d:hover .content-box h5 {
+    color: var(--primary);
+}
+
+.btn-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+
+.category-card-3d:hover .btn-link {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Swiper Pagination Customization */
+.swiper-pagination-bullet-active {
+    background-color: var(--primary) !important;
+    width: 25px !important;
+    border-radius: 5px !important;
+}
+
